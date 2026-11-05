@@ -1,0 +1,324 @@
+{
+  "source": "https://arxiv.org/category_taxonomy",
+  "checked_date": "2026-11-01",
+  "scope": "Physics group h4 category codes; navigation mapping only, not tutorial completeness",
+  "categories": [
+    {
+      "code": "astro-ph.CO",
+      "local_fields": [
+        13
+      ]
+    },
+    {
+      "code": "astro-ph.EP",
+      "local_fields": [
+        13,
+        14
+      ]
+    },
+    {
+      "code": "astro-ph.GA",
+      "local_fields": [
+        13
+      ]
+    },
+    {
+      "code": "astro-ph.HE",
+      "local_fields": [
+        13
+      ]
+    },
+    {
+      "code": "astro-ph.IM",
+      "local_fields": [
+        13,
+        18
+      ]
+    },
+    {
+      "code": "astro-ph.SR",
+      "local_fields": [
+        13
+      ]
+    },
+    {
+      "code": "cond-mat.dis-nn",
+      "local_fields": [
+        9
+      ]
+    },
+    {
+      "code": "cond-mat.mes-hall",
+      "local_fields": [
+        9
+      ]
+    },
+    {
+      "code": "cond-mat.mtrl-sci",
+      "local_fields": [
+        9
+      ]
+    },
+    {
+      "code": "cond-mat.other",
+      "local_fields": [
+        9
+      ]
+    },
+    {
+      "code": "cond-mat.quant-gas",
+      "local_fields": [
+        8,
+        9
+      ]
+    },
+    {
+      "code": "cond-mat.soft",
+      "local_fields": [
+        9
+      ]
+    },
+    {
+      "code": "cond-mat.stat-mech",
+      "local_fields": [
+        3,
+        9
+      ]
+    },
+    {
+      "code": "cond-mat.str-el",
+      "local_fields": [
+        9
+      ]
+    },
+    {
+      "code": "cond-mat.supr-con",
+      "local_fields": [
+        9
+      ]
+    },
+    {
+      "code": "gr-qc",
+      "local_fields": [
+        6,
+        13
+      ]
+    },
+    {
+      "code": "hep-ex",
+      "local_fields": [
+        11
+      ]
+    },
+    {
+      "code": "hep-lat",
+      "local_fields": [
+        11
+      ]
+    },
+    {
+      "code": "hep-ph",
+      "local_fields": [
+        11
+      ]
+    },
+    {
+      "code": "hep-th",
+      "local_fields": [
+        11
+      ]
+    },
+    {
+      "code": "math-ph",
+      "local_fields": [
+        16
+      ]
+    },
+    {
+      "code": "nlin.AO",
+      "local_fields": [
+        20
+      ]
+    },
+    {
+      "code": "nlin.CD",
+      "local_fields": [
+        20
+      ]
+    },
+    {
+      "code": "nlin.CG",
+      "local_fields": [
+        20
+      ]
+    },
+    {
+      "code": "nlin.PS",
+      "local_fields": [
+        20
+      ]
+    },
+    {
+      "code": "nlin.SI",
+      "local_fields": [
+        20
+      ]
+    },
+    {
+      "code": "nucl-ex",
+      "local_fields": [
+        10
+      ]
+    },
+    {
+      "code": "nucl-th",
+      "local_fields": [
+        10
+      ]
+    },
+    {
+      "code": "physics.acc-ph",
+      "local_fields": [
+        23
+      ]
+    },
+    {
+      "code": "physics.ao-ph",
+      "local_fields": [
+        14
+      ]
+    },
+    {
+      "code": "physics.app-ph",
+      "local_fields": [
+        24
+      ]
+    },
+    {
+      "code": "physics.atm-clus",
+      "local_fields": [
+        8,
+        22
+      ]
+    },
+    {
+      "code": "physics.atom-ph",
+      "local_fields": [
+        8
+      ]
+    },
+    {
+      "code": "physics.bio-ph",
+      "local_fields": [
+        15
+      ]
+    },
+    {
+      "code": "physics.chem-ph",
+      "local_fields": [
+        22
+      ]
+    },
+    {
+      "code": "physics.class-ph",
+      "local_fields": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "code": "physics.comp-ph",
+      "local_fields": [
+        17
+      ]
+    },
+    {
+      "code": "physics.data-an",
+      "local_fields": [
+        18
+      ]
+    },
+    {
+      "code": "physics.ed-ph",
+      "local_fields": [
+        25
+      ]
+    },
+    {
+      "code": "physics.flu-dyn",
+      "local_fields": [
+        19
+      ]
+    },
+    {
+      "code": "physics.gen-ph",
+      "local_fields": [
+        0
+      ]
+    },
+    {
+      "code": "physics.geo-ph",
+      "local_fields": [
+        14
+      ]
+    },
+    {
+      "code": "physics.hist-ph",
+      "local_fields": [
+        25
+      ]
+    },
+    {
+      "code": "physics.ins-det",
+      "local_fields": [
+        18
+      ]
+    },
+    {
+      "code": "physics.med-ph",
+      "local_fields": [
+        15
+      ]
+    },
+    {
+      "code": "physics.optics",
+      "local_fields": [
+        5
+      ]
+    },
+    {
+      "code": "physics.plasm-ph",
+      "local_fields": [
+        12
+      ]
+    },
+    {
+      "code": "physics.pop-ph",
+      "local_fields": [
+        25
+      ]
+    },
+    {
+      "code": "physics.soc-ph",
+      "local_fields": [
+        20,
+        25
+      ]
+    },
+    {
+      "code": "physics.space-ph",
+      "local_fields": [
+        14,
+        12
+      ]
+    },
+    {
+      "code": "quant-ph",
+      "local_fields": [
+        7,
+        21
+      ]
+    }
+  ]
+}
