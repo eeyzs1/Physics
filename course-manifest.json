@@ -1,5 +1,5 @@
 {
-  "lesson_count": 158,
+  "lesson_count": 175,
   "project_count": 25,
   "topic_entry_count": 369,
   "demo_count": 19,
@@ -684,8 +684,16 @@
           "q": "地面附近每升高 1 m，时钟相对变快的 Δf/f 约是多少（单位 10⁻¹⁶）？"
         },
         {
-          "title": "从度规认识引力时间膨胀",
+          "title": "广义相对论的经典检验",
           "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "偏折 α=4GM/(c²b)；进动 Δφ=6πGM/[c²a(1−e²)]",
+          "q": "GR 预言的太阳边缘光线偏折约多少角秒？"
+        },
+        {
+          "title": "从度规认识引力时间膨胀",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "dτ=√(1−r_s/r)dt；r_s=2GM/c²",
@@ -1952,6 +1960,30 @@
           "kind": "lesson",
           "formula": "x_{n+1}=r x_n(1−x_n)；分岔间距比→4.669…",
           "q": "r=2.8 时稳定不动点 x* 是多少？"
+        },
+        {
+          "title": "相空间、不动点与稳定性",
+          "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "ẋ=f(x)：不动点附近 ẋ≈Df(x*)(x−x*)",
+          "q": "线性化特征值 λ=+2（s⁻¹）的方向上，1 秒后小扰动放大到几倍（e²≈7.4）？"
+        },
+        {
+          "title": "极限环与自持振荡",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "van der Pol：ẍ−μ(1−x²)ẋ+x=0",
+          "q": "极限环在二维相平面中是几维的闭曲线？"
+        },
+        {
+          "title": "孤子与可积系统",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "KdV：u_t+6uu_x+u_xxx=0；孤子 u=2κ²sech²[κ(x−4κ²t)]",
+          "q": "KdV 孤子速度按幅度参数 κ 的几次方增长？"
         }
       ],
       "project": {
@@ -2025,6 +2057,14 @@
           "kind": "lesson",
           "formula": "三比特翻转码：|0_L⟩=|000⟩，|1_L⟩=|111⟩",
           "q": "三比特翻转码能同时纠正几个物理比特错误？"
+        },
+        {
+          "title": "量子密钥分发与 BB84",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "窃听引入误码 25%；安全阈值约 11%（单向纠错）",
+          "q": "窃听者用随机基测量 BB84，引入的误码率是百分之多少？"
         }
       ],
       "project": {
@@ -2082,6 +2122,30 @@
           "kind": "lesson",
           "formula": "k≈(kBT/h)e^(−Ea/RT)（Eyring 形式）",
           "q": "Ea=50 kJ/mol 时从 300 K 升到 310 K，速率约变为几倍？"
+        },
+        {
+          "title": "分子振动与红外光谱",
+          "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "ν̄=(1/2πc)√(k/μ)",
+          "q": "C–H 伸缩吸收带约在多少 cm⁻¹？"
+        },
+        {
+          "title": "化学键与分子轨道",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "键级=(N成键−N反键)/2",
+          "q": "O₂ 的键级是多少？"
+        },
+        {
+          "title": "表面催化与 Sabatier 原理",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "速率 ∝θ(1−θ)；θ=KP/(1+KP)",
+          "q": "覆盖度 θ=0.5 时 θ(1−θ) 等于多少？"
         }
       ],
       "project": {
@@ -2139,6 +2203,30 @@
           "kind": "lesson",
           "formula": "U₀[eV]≈88.5·E[GeV]⁴/ρ[m]（电子）",
           "q": "电子能量加倍（弯转半径不变），每圈损失变为几倍？"
+        },
+        {
+          "title": "射频加速与同步条件",
+          "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "f_rf=h·f_rev；能量增益 qV cosφ_s",
+          "q": "谐波数 35640、回旋频率 11 kHz，射频频率约多少 MHz？"
+        },
+        {
+          "title": "对撞亮度与事例率",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "L=N₁N₂ f/(4πσ_x σ_y)；R=Lσ",
+          "q": "亮度 2×10³⁴ cm⁻²s⁻¹、截面 50 pb 的产生率约多少 Hz？"
+        },
+        {
+          "title": "自由电子激光",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "共振波长 λ_r=λ_u(1+K²/2)/(2γ²)",
+          "q": "电子能量加倍（K 不变），共振波长变为原来的几分之一？"
         }
       ],
       "project": {
@@ -2196,6 +2284,30 @@
           "kind": "lesson",
           "formula": "单结 η_SQ≈33.7%（带隙≈1.34 eV，AM1.5）",
           "q": "理想单结电池的 Shockley–Queisser 极限效率约为百分之多少？"
+        },
+        {
+          "title": "热泵、制冷与能量品位",
+          "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "COP_制热上限=T_h/(T_h−T_c)",
+          "q": "T_h=300 K、T_c=270 K 的逆卡诺制热 COP 上限是多少？"
+        },
+        {
+          "title": "电池、电容与储能密度",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "E=½CV²；电池比能≈ΔG/活性质量",
+          "q": "汽油比能约 46 MJ/kg，锂电池约 0.7 MJ/kg，约差多少倍？"
+        },
+        {
+          "title": "核能与聚变能的物理图景",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "U-235 裂变约 200 MeV/核；D–T 聚变 17.6 MeV/反应",
+          "q": "1 g U-235 完全裂变的能量量级是多少（单位 10¹⁰ J）？"
         }
       ],
       "project": {
@@ -2253,6 +2365,30 @@
           "kind": "lesson",
           "formula": "s∝t²（匀加速运动学特征）",
           "q": "从静止匀加速，第 2 秒内的位移是第 1 秒内的几倍？"
+        },
+        {
+          "title": "从以太到相对论",
+          "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "条纹移动 Δm=2L(v²/c²)/λ",
+          "q": "该实验预期的条纹移动量约是多少条？"
+        },
+        {
+          "title": "量子诠释之争与贝尔不等式",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "CHSH 组合 |S|≤2（定域隐变量）；量子上限 2√2",
+          "q": "量子力学允许的 CHSH 关联最大值是多少（两位小数）？"
+        },
+        {
+          "title": "大科学与开放科学",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "大合作组作者数 ~10³/篇（粒子物理实证）",
+          "q": "现代粒子物理大合作组单篇论文作者数的量级是 10 的几次方？"
         }
       ],
       "project": {
