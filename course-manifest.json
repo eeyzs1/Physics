@@ -1,5 +1,5 @@
 {
-  "lesson_count": 126,
+  "lesson_count": 138,
   "project_count": 25,
   "topic_entry_count": 369,
   "demo_count": 19,
@@ -169,8 +169,24 @@
           "q": "m=2 kg、k=8 N/m 时振子角频率是多少 rad/s？"
         },
         {
-          "title": "哈密顿方程与相空间",
+          "title": "非惯性系与惯性力",
           "file": "08.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "转动系：F惯=−m[2Ω×v′+Ω×(Ω×r′)]",
+          "q": "纬度 45° 处科里奥利参数 f=2Ω sin45° 是多少（10⁻⁴ s⁻¹）？"
+        },
+        {
+          "title": "两体问题与约化质量",
+          "file": "09.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "μ=m₁m₂/(m₁+m₂)；μ r̈=F(r)",
+          "q": "两个质量均为 m 的物体，约化质量是多少（以 m 为单位）？"
+        },
+        {
+          "title": "哈密顿方程与相空间",
+          "file": "10.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "p=∂L/∂q̇；H=pq̇−L；q̇=∂H/∂p，ṗ=−∂H/∂q",
@@ -346,8 +362,24 @@
           "q": "若某能级 βε=ln5（μ=0），平均占据数是多少？"
         },
         {
-          "title": "自由能与相变的最简模型",
+          "title": "输运与扩散：分子运动论",
           "file": "08.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "λ=1/(√2 nσ)；D≈½ v̄ λ（量级估计）",
+          "q": "数密度加倍（其余不变），平均自由程变为原来的几分之一？"
+        },
+        {
+          "title": "相变与临界指数：伊辛模型",
+          "file": "09.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "H=−J Σ⟨ij⟩ sᵢsⱼ；平均场 Tc=zJ/kB",
+          "q": "平均场下 T→Tc⁻ 时磁化按 (Tc−T) 的多少次幂趋于零？"
+        },
+        {
+          "title": "自由能与相变的最简模型",
+          "file": "10.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "F(m)=am²/2+bm⁴/4；b>0",
@@ -452,8 +484,24 @@
           "q": "匝数加倍、其他不变，电动势是多少 V？"
         },
         {
-          "title": "导体边界与镜像法",
+          "title": "麦克斯韦方程组与位移电流",
           "file": "08.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "∇·E=ρ/ε₀；∇·B=0；∇×E=−∂B/∂t；∇×B=μ₀J+μ₀ε₀∂E/∂t",
+          "q": "由 c=1/√(μ₀ε₀) 计算真空光速（单位 10⁸ m/s）是多少？"
+        },
+        {
+          "title": "坡印廷定理与电磁能流",
+          "file": "09.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "S=(1/μ₀)E×B；u=½(ε₀E²+B²/μ₀)",
+          "q": "真空中平面波的 S/u 等于多少（单位 10⁸ m/s）？"
+        },
+        {
+          "title": "导体边界与镜像法",
+          "file": "10.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "V=(q/4πε₀)(1/r实−1/r像)",
@@ -612,8 +660,16 @@
           "q": "两束各 3 GeV 的光子正面相遇，系统 Mc² 为多少 GeV？"
         },
         {
-          "title": "从度规认识引力时间膨胀",
+          "title": "微分几何入门：度规与测地线",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "ds²=g_μν dx^μ dx^ν；测地线方程 d²x^μ/dτ²+Γ^μ_αβ (dx^α/dτ)(dx^β/dτ)=0",
+          "q": "地面附近每升高 1 m，时钟相对变快的 Δf/f 约是多少（单位 10⁻¹⁶）？"
+        },
+        {
+          "title": "从度规认识引力时间膨胀",
+          "file": "05.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "dτ=√(1−r_s/r)dt；r_s=2GM/c²",
@@ -737,6 +793,14 @@
           "kind": "lesson",
           "formula": "H=H₀+λV；Eₙ≈Eₙ⁽⁰⁾+λ〈n|V|n〉",
           "q": "E₀=3，λ=0.2，〈V〉=−2，一阶近似能量多少？"
+        },
+        {
+          "title": "路径积分初步",
+          "file": "11.html",
+          "stage": "高阶选题",
+          "kind": "lesson",
+          "formula": "K(b,a)=∫D[x(t)] e^(iS[x]/ℏ)",
+          "q": "两条路径作用量相差多少 ℏ 时相位差达到 π？"
         }
       ],
       "project": {
@@ -1050,6 +1114,22 @@
           "kind": "lesson",
           "formula": "修正尺度 ∼ c(E/Λ)^p",
           "q": "E/Λ=0.2、p=2、系数 1，相对修正是多少？"
+        },
+        {
+          "title": "格点规范理论",
+          "file": "05.html",
+          "stage": "高阶选题",
+          "kind": "lesson",
+          "formula": "格距 a→0 极限保持 g²(a)N 固定；Wilson 圈判据",
+          "q": "格距 0.1 fm 对应的动量截断 π/a 约多少 GeV？（ℏc=0.197 GeV·fm）"
+        },
+        {
+          "title": "全息原理与 AdS/CFT",
+          "file": "06.html",
+          "stage": "高阶选题",
+          "kind": "lesson",
+          "formula": "S_BH=kA/(4l_p²)；AdS₅/CFT₄ 对偶",
+          "q": "黑洞熵与视界面积成几次方比例？"
         }
       ],
       "project": {
@@ -1420,8 +1500,16 @@
           "q": "∫dx/(x²+4)（从 −∞ 到 ∞）等于多少？"
         },
         {
-          "title": "对称性与诺特守恒量",
+          "title": "张量与协变性",
           "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "T′^μ_ν=(∂x′^μ/∂x^α)(∂x^β/∂x′_ν) T^α_β",
+          "q": "混合张量 T^μ_ν 缩并（取 μ=ν 求和）后剩几个自由指标？"
+        },
+        {
+          "title": "对称性与诺特守恒量",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "∂L/∂q=0 ⇒ d(∂L/∂q̇)/dt=0",
@@ -1769,6 +1857,14 @@
           "kind": "lesson",
           "formula": "ρ₀₁(t)=ρ₀₁(0)e^(−t/T₂)",
           "q": "t=2T₂ 时非对角元衰减为原来的多少倍？"
+        },
+        {
+          "title": "量子纠错码",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "三比特翻转码：|0_L⟩=|000⟩，|1_L⟩=|111⟩",
+          "q": "三比特翻转码能同时纠正几个物理比特错误？"
         }
       ],
       "project": {
