@@ -20,7 +20,7 @@ assert len({x['code'] for x in official['categories']})==len(official['categorie
 field_ids={int(f['id']) for f in manifest['fields']}
 assert all(x['local_fields'] and set(x['local_fields'])<=field_ids for x in official['categories'])
 pages=sorted(ROOT.rglob('*.html'))
-expected=manifest['lesson_count']+manifest['project_count']+len(manifest['fields'])+3
+expected=manifest['lesson_count']+manifest['project_count']+len(manifest['fields'])+4
 assert len(pages)==expected, (len(pages),expected)
 for file in pages:
  text=file.read_text(encoding='utf-8'); parser=Links();parser.feed(text)
@@ -49,8 +49,8 @@ with sync_playwright() as p:
    quiz.locator('input').fill(answer);quiz.locator('input').press('Enter')
    assert '正确' in quiz.locator('.feedback').inner_text(),file
   if page.locator('.complete').count():
-   box=page.locator('.complete');box.check();page.reload();assert page.locator('.complete').is_checked(),file
-   page.locator('.complete').uncheck()
+   box=page.locator('.complete').first;box.check();page.reload();assert box.is_checked(),file
+   box.uncheck()
   if page.locator('.lab').count():
    demo_count+=1
    assert page.locator('.lab svg').inner_html(),file
@@ -81,7 +81,7 @@ report=f'''# 教材检查记录
 
 检查日期：{date.today().isoformat()}。运行命令：`python tools/check_course.py`。
 
-- {len(pages)} 个 HTML 页面本地链接全部有效：{len(lessons)} 节正文、{len(projects)} 项研究训练、{len(manifest['fields'])} 个领域入口，以及首页/分类树/路线。
+- {len(pages)} 个 HTML 页面本地链接全部有效：{len(lessons)} 节正文、{len(projects)} 项研究训练、{len(manifest['fields'])} 个领域入口，以及首页/分类树/路线/核心概念清单。
 - Chromium 在离线模式下逐页加载，无 JavaScript 异常。
 - {len(lessons)} 课的空答案、错误答案、正确答案及回车提交验证通过。
 - 正文与研究训练的完成标记经刷新仍可恢复；检查后已清除测试标记。

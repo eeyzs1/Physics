@@ -1,6 +1,6 @@
 # 物理学学习手册
 
-入口：[HTML 首页](index.html) · [详细分类树](taxonomy.html) · [入门到研究训练路线](learning-path.html)
+入口：[HTML 首页](index.html) · [详细分类树](taxonomy.html) · [入门到研究训练路线](learning-path.html) · [核心概念清单](checklist.html)
 
 ## 先回答范围问题
 

@@ -39,7 +39,7 @@ def extend(root, base_rows, page, link, sources):
  # Original 38 lessons are preserved, with their existing progress keys.
  for n in range(19):
   a=base_rows[n]
-  for i in range(2): fields[n]['lessons'].append({'title':a[5+i*7],'file':f'{i+1:02d}.html','stage':'入门','kind':'lesson'})
+  for i in range(2): fields[n]['lessons'].append({'title':a[5+i*7],'file':f'{i+1:02d}.html','stage':'入门','kind':'lesson','formula':a[7+i*7],'q':a[9+i*7]})
  refs={
   0:('MIT：单变量微积分','https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/'),
   1:('David Tong：Classical Dynamics','https://davidtong.org/teaching/classical-dynamics/'),
@@ -63,7 +63,7 @@ def extend(root, base_rows, page, link, sources):
   steps=derivation.split('；')
   body=f'''<nav>{link('总览','../index.html')} / {link(f['name'],'index.html')} / 第 {i} 课</nav><p class="eyebrow">{E(stage)} · 约 30–60 分钟</p><h1>{E(title)}</h1><p class="lead">目标：跟随推导建立模型，独立计算一个新情形，并指出近似何时失效。</p><aside>先修：{E(pre)}。先修不熟时先回到 {link('数学准备','../00-学习准备/index.html')}。同一分支的两节入门课不等于满足所有高阶先修。</aside><section><h2>问题与物理图像</h2><p>{E(concept)}</p><div class="formula">{E(formula)}</div><h2>从假设走到结果</h2><ol>{''.join('<li>'+E(s)+'。</li>' for s in steps)}</ol><p>请在纸上补出中间代数步骤。不能复现时，先指出卡住的等式，再向我提问。</p></section><section><h2>例题与核对</h2><p>{E(example)}</p><h3>适用边界</h3><p>{E(limit)}</p></section><section class="quiz" data-answer="{E(answer)}"><h2>独立计算</h2><label for="answer">{E(q)}（只填数值）</label><div class="answer-row"><input id="answer" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>展开本题解答</summary><p>{E(solution)}</p></details><h3>迁移与反例</h3><p>{E(transfer)}</p><details><summary>对照迁移题解答</summary><p>{E(transfer_solution)}</p></details></section><section><h2>进入下一阶段前</h2><ol><li>不看正文，重新写出本课推导并解释每个符号。</li><li>从适用边界选一个被忽略因素，说明如何修改模型。</li><li>隔 1、3、7 天重做两道题，并把不懂的步骤发给我。</li></ol><p>参考入口：{link(ref_title,ref_url)}。这些入口用于继续系统学习，不表示本小课已覆盖整门大学课程；具体课程和文献见 {link('分级学习路线','../learning-path.html')}。</p><label><input type="checkbox" class="complete" data-key="{ident}-deep-{i}"> 我能独立推导并解释近似条件</label><p class="storage-note"></p></section><nav class="bottom-nav">{link('上一课',f'{i-1:02d}.html' if i>1 else 'index.html')}{link('返回分支与下一步','index.html')}</nav>'''
   folder=root/f['folder'];folder.mkdir(exist_ok=True);(folder/filename).write_text(page(title,body),encoding='utf-8')
-  f['lessons'].append({'title':title,'file':filename,'stage':stage,'kind':'lesson'})
+  f['lessons'].append({'title':title,'file':filename,'stage':stage,'kind':'lesson','formula':formula,'q':q})
  # Research preparation pages have explicit deliverables and known-result checks.
  project_rows=parse(PROJECTS,7)
  for ident,title,method,checks,deliverables,failures,extension in project_rows:
@@ -72,7 +72,7 @@ def extend(root, base_rows, page, link, sources):
   (root/f['folder']/'research.html').write_text(page(title,body),encoding='utf-8')
   f['project']={'title':title,'file':'research.html','stage':'研究训练','kind':'project'}
  more={int(a[0]):a[1].split('；') for a in parse(MORE_TOPICS,2)}
- taxonomy=[];cards=[];readme_table=[]
+ taxonomy=[];cards=[];readme_table=[];cl=[]
  stages=['入门','本科核心','高阶选题','研究训练']
  for n,f in fields.items():
   topics=list(dict.fromkeys(f['topics']+more.get(n,[])));f['all_topics']=topics
@@ -85,6 +85,9 @@ def extend(root, base_rows, page, link, sources):
   cards.append(f'<a class="card" href="{E(folder)}/index.html"><span>{f["id"]} / {E(f["group"])}</span><h2>{E(f["name"])}</h2><p>{E("；".join(topics[:6]))}</p><small>{count} 节正文课'+(' + 1 项研究训练' if project_count else '')+'</small></a>')
   taxonomy.append(f'<section id="field-{n}" class="taxonomy-field"><h2>{f["id"]} · {link(f["name"],folder+"/index.html")}</h2><p>{E(f["group"])} · 已有 {count} 节选题教程'+('与研究训练任务' if project_count else '')+'；细分方向未全部写成课程。</p><ul>'+''.join('<li>'+E(t)+'</li>' for t in topics)+'</ul></section>')
   readme_table.append(f'| {f["id"]} | [{f["name"]}]({folder}/index.html) | {f["group"]} | {count} | '+('1' if project_count else '—')+' |')
+  cl_items=''.join(f'<li><label><input type="checkbox" class="complete" data-key="cl-{f["id"]}-{i}"> <strong>{E(l["stage"])}</strong> · {link(l["title"],f["folder"]+"/"+l["file"])}</label><p>{E(l["formula"])}｜闭卷自测：{E(l["q"])}</p></li>' for i,l in enumerate(f['lessons']))
+  if 'project' in f:cl_items+=f'<li><label><input type="checkbox" class="complete" data-key="cl-{f["id"]}-research"> <strong>研究训练</strong> · {link(f["project"]["title"],f["folder"]+"/research.html")}</label><p>完成复现与误差分析，并经他人复核后再勾选。</p></li>'
+  cl.append(f'<section><h2>{f["id"]} · {link(f["name"],folder+"/index.html")}</h2><ol>{cl_items}</ol><p class="storage-note"></p></section>')
  total=sum(len(f['lessons']) for f in fields.values()); topic_count=sum(len(f['all_topics']) for f in fields.values())
  source_note=f'''<p>分类参考：{link('APS PhySH','https://physh.org/')} 和 {link('arXiv Category Taxonomy','https://arxiv.org/category_taxonomy')}（核对日期 2026-11-01）。这里是为学习重新组织的中文导航，不是对官方分类的逐项翻译或完整镜像；研究领域、物理系统、技术和相关学科是不同维度，会相互交叉。</p>'''
  taxonomy_body=f'''<nav>{link('学习首页','index.html')} / {link('分级路线','learning-path.html')}</nav><p class="eyebrow">分类地图与覆盖边界</p><h1>分支不能只用一张<br>互斥名单装下。</h1><p class="lead">本地导航含 {len(fields)-1} 个学习领域和共同准备，合计 {topic_count} 个方向条目（跨领域名称可重复）。这是较广的学习地图，仍不声称囊括物理学全部分类。</p><section><h2>同时使用四种视角</h2><ol><li>基础理论：经典力学、电磁学、热力学统计、量子与相对论。</li><li>研究对象与尺度：原子、核、粒子、凝聚态、等离子体、地球与宇宙。</li><li>研究方法：理论、数学、计算、实验、观测、数据分析；这些方法贯穿各分支。</li><li>应用与相关学科：医学、化学、能源、信息、历史与教育；它们不全是与基础理论并列的“主分支”。</li></ol>{source_note}<p>相同主题可能有多个归属：量子光学连接光学与原子物理；磁重联连接空间与等离子体；主动软物质连接凝聚态与生物物理。这里用多个入口表达这种关系。</p></section><label for="topic-search">按方向名称搜索</label><input id="topic-search" type="search" placeholder="例如：超导、湍流、量子引力" aria-describedby="topic-status"><p id="topic-status" role="status">显示全部领域</p>'''+''.join(taxonomy)+'''<section><h2>还有哪些不能声称已经覆盖</h2><p>细分技术、具体材料、特定天体、不断出现的交叉方向，无法靠固定目录穷尽。弦论、量子引力和超出标准模型的某些方案是候选理论，不与实验已确认结论混写。前沿分类更新时应重新核查官方主题体系。</p></section>'''
@@ -96,13 +99,15 @@ def extend(root, base_rows, page, link, sources):
  (root/'taxonomy.html').write_text(page('分类树与覆盖范围',taxonomy_body,0),encoding='utf-8')
  path_body=f'''<nav>{link('首页','index.html')} / {link('分类树','taxonomy.html')}</nav><p class="eyebrow">从学习知识走向独立判断</p><h1>入门 → 核心 → 高阶<br>→ 研究训练。</h1><p class="lead">“大师”不是一个可以凭读完文件授予的等级。这里把目标拆成可以检查的能力，按先修前进，而不是按网页数量估计水平。</p><section><h2>阶段 0：准备</h2><p>学习代数、三角函数、单位和图像；继续补微积分、复数、线性代数、概率。对应 {link('学习准备','00-学习准备/index.html')}。通过条件：能给物理式检查量纲、解释导数和积分、解二阶线性方程与简单本征值题。</p><h2>阶段 1：基础物理</h2><p>顺序为经典力学 → 振动波动 → 热学、电磁学 → 光学 → 狭义相对论与量子入门。先学现象与实验依据，再建立模型。通过条件：能独立画受力图、做能量账本、用场解释相互作用、用概率解释量子测量。</p><h2>阶段 2：本科核心</h2><p>系统补分析力学、矢量电磁学、热力学与统计、量子力学；并行学习数学方法、实验测量和计算。当前各分支第 03 课是选题切入，不足以替代完整学期。应读主教材对应章节，完成章后题并接受批改。</p><h2>阶段 3：高阶专门化</h2><p>选择 1–2 个方向深入：例如凝聚态需要多体与统计；粒子需要相对论量子理论和场论；引力需要微分几何；流体需要 PDE 与稳定性。当前第 04 课只示范部分高阶方法，其他主题在分类树中仍为待补。</p><h2>阶段 4：研究训练与独立工作</h2><p>先复现已知结果，再比较模型与数据，阅读综述和论文，逐步形成可检验的新问题。通过条件应包括导师或同行评议、可复现材料和对局限的准确判断。原创研究没有统一保证完成的年限。</p></section><section><h2>按学习目标安排训练</h2><ol><li>概念兴趣：先遍历入门课，找到想深入的两三个问题。</li><li>大学基础：围绕四大理论安排连续学期，不能只做本项目的短自测。</li><li>研究准备：锁定具体方向，补先修、完成复现项目，并获得外部反馈。</li></ol><p>每周可采用：2 次概念与推导、2 次独立习题、1 次实验或计算、1 次闭卷复习。时长按你的基础调整，当前没有虚构个人测评结果。</p></section><section><h2>系统课程与开放资料</h2><ul><li>{link('OpenStax 大学物理','https://openstax.org/subjects/science')}：基础教材与章后题。</li><li>{link('MIT OCW 8.01SC','https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/')}：完整力学课程的例题和练习组织。</li><li>{link('David Tong 讲义目录','https://davidtong.org/teaching/')}：本科到研究生的理论物理讲义，按每门课先修阅读。</li><li>{link('arXiv 学科目录','https://arxiv.org/category_taxonomy')}：找论文主题入口；预印本需独立核对论证与后续评议。</li></ul><p>外链需要联网；当前中文小课和训练说明均可离线阅读。</p></section><h2>逐领域课程与项目</h2><div class="grid">'''+''.join(cards)+'</div>'
  (root/'learning-path.html').write_text(page('分级学习路线',path_body,0),encoding='utf-8')
- intro=f'''<p class="eyebrow">中文离线物理教材 · 范围与完成度公开</p><h1>看清物理全景，<br>逐步学会做研究。</h1><p class="lead">从基础概念、控制方程和推导，走向计算、实验与论文复现。每一阶段都用可检查的证据检验学习。</p><div class="stats"><span><strong>{len(fields)-1}</strong>学习领域 + 共同准备</span><span><strong>{total}</strong>已编写正文课</span><span><strong>{len(project_rows)}</strong>研究训练任务</span><span><strong>{len(base_rows)}</strong>交互图示</span></div><section><h2>先看两张地图</h2><p>{link('分类树：所有本地列出的方向与覆盖边界','taxonomy.html')} → {link('分级路线：先修、阶段与考核','learning-path.html')}。</p><p>当前共有 {total} 节正文课与 {len(project_rows)} 项复现训练说明；这是扩展后的选题教材。未完成全部子方向的系统教材，也不把读完页面等同于精通。分类覆盖与课程完成度是两件事。</p><p>零基础先 00 → 01 → 02，再学 03、04、05，之后进入相对论、量子和感兴趣的专门方向。高级课程必须另外补齐数学先修。</p></section><h2>课程目录</h2><div class="grid">'''+''.join(cards)+f'''</div><section><h2>本地使用</h2><p>双击 index.html 即可离线学习；参考书与论文外链需联网。完成标记保存在当前浏览器，可能受本地文件存储限制，不等于能力认证。</p>{source_note}</section>'''
+ checklist_body=f'''<nav>{link('学习首页','index.html')} / {link('分类树','taxonomy.html')} / {link('分级路线','learning-path.html')}</nav><p class="eyebrow">逐课自查 · 复述 · 计算 · 边界</p><h1>核心概念清单。</h1><p class="lead">把“学过”变成可以逐项打勾的证据：每一行对应一节课，勾选前先闭卷完成它的自测题。</p><section><h2>打勾标准（四条全满足）</h2><ol><li>不看正文，用自己的话说出这个模型在描述什么、公式里每个量是什么。</li><li>默写公式，闭卷完成本行自测且数值正确。</li><li>说出公式的适用条件，并举出一个模型会失效的场景。</li><li>迁移题独立完成；任何一步卡住就取消勾选，回课程页复习后再来。</li></ol><p>覆盖 {total} 节正文课与 {len(project_rows)} 项研究训练；建议第 1、3、7 天回看勾选项。勾选保存在当前浏览器，仅作自查记录，不等于能力认证。</p></section>{''.join(cl)}'''
+ (root/'checklist.html').write_text(page('核心概念清单',checklist_body,0),encoding='utf-8')
+ intro=f'''<p class="eyebrow">中文离线物理教材 · 范围与完成度公开</p><h1>看清物理全景，<br>逐步学会做研究。</h1><p class="lead">从基础概念、控制方程和推导，走向计算、实验与论文复现。每一阶段都用可检查的证据检验学习。</p><div class="stats"><span><strong>{len(fields)-1}</strong>学习领域 + 共同准备</span><span><strong>{total}</strong>已编写正文课</span><span><strong>{len(project_rows)}</strong>研究训练任务</span><span><strong>{len(base_rows)}</strong>交互图示</span></div><section><h2>先看三张地图</h2><p>{link('分类树：所有本地列出的方向与覆盖边界','taxonomy.html')} → {link('分级路线：先修、阶段与考核','learning-path.html')} → {link('核心概念清单：逐课自查','checklist.html')}。</p><p>当前共有 {total} 节正文课与 {len(project_rows)} 项复现训练说明；这是扩展后的选题教材。未完成全部子方向的系统教材，也不把读完页面等同于精通。分类覆盖与课程完成度是两件事。</p><p>零基础先 00 → 01 → 02，再学 03、04、05，之后进入相对论、量子和感兴趣的专门方向。高级课程必须另外补齐数学先修。</p></section><h2>课程目录</h2><div class="grid">'''+''.join(cards)+f'''</div><section><h2>本地使用</h2><p>双击 index.html 即可离线学习；参考书与论文外链需联网。完成标记保存在当前浏览器，可能受本地文件存储限制，不等于能力认证。</p>{source_note}</section>'''
  (root/'index.html').write_text(page('物理学学习手册',intro,0),encoding='utf-8')
  manifest={'lesson_count':total,'project_count':len(project_rows),'topic_entry_count':topic_count,'demo_count':len(base_rows),'fields':list(fields.values())}
  (root/'course-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
  md='''# 物理学学习手册
 
-入口：[HTML 首页](index.html) · [详细分类树](taxonomy.html) · [入门到研究训练路线](learning-path.html)
+入口：[HTML 首页](index.html) · [详细分类树](taxonomy.html) · [入门到研究训练路线](learning-path.html) · [核心概念清单](checklist.html)
 
 ## 先回答范围问题
 

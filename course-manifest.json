@@ -21,25 +21,33 @@
           "title": "从测量到模型",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "v = Δx / Δt",
+          "q": "位移 20 m 用时 5 s，平均速度多少 m/s？"
         },
         {
           "title": "图像与变化率",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Δx = v Δt（匀速）",
+          "q": "速度 −3 m/s 持续 2 s，位移多少 m？"
         },
         {
           "title": "导数与积分怎样连接运动",
           "file": "03.html",
           "stage": "数学准备",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "v=dx/dt；x(t)=x₀+∫₀ᵗv(s)ds",
+          "q": "x₀=2 m，v(t)=4t m/s，t=2 s 时位置多少 m？"
         },
         {
           "title": "线性代数：本征向量为什么重要",
           "file": "04.html",
           "stage": "数学准备",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Av=λv；det(A−λI)=0",
+          "q": "上述矩阵作用于 (1,−1) 时对应的本征值是多少？"
         }
       ],
       "all_topics": [
@@ -76,25 +84,33 @@
           "title": "力怎样改变运动",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "ΣF = ma",
+          "q": "质量 3 kg，合力 12 N，加速度多少 m/s²？"
         },
         {
           "title": "能量与流体连续性",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "K = mv²/2；A₁v₁ = A₂v₂",
+          "q": "入口截面积是出口的 3 倍，入口流速 2 m/s，出口流速多少 m/s？"
         },
         {
           "title": "从作用量推导单摆方程",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "L=T−V；d/dt(∂L/∂θ̇)−∂L/∂θ=0",
+          "q": "ℓ=4 m，g=10 m/s²，小角度方程 θ̈=−Cθ 中 C 是多少 s⁻²？"
         },
         {
           "title": "哈密顿方程与相空间",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "p=∂L/∂q̇；H=pq̇−L；q̇=∂H/∂p，ṗ=−∂H/∂q",
+          "q": "m=2，k=8，q=0.25 时，ṗ 多少 N？"
         }
       ],
       "project": {
@@ -141,25 +157,33 @@
           "title": "从弹簧认识振动",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "T = 2π√(m/k)",
+          "q": "质量变为原来的 9 倍，周期变为原来的几倍？"
         },
         {
           "title": "波在走，介质怎样动",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "v = fλ",
+          "q": "波速 300 m/s，频率 150 Hz，波长多少 m？"
         },
         {
           "title": "阻尼、驱动与共振峰",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "mẍ+bẋ+kx=F₀cosωt；A=F₀/√[(k−mω²)²+(bω)²]",
+          "q": "同一系统在 ω=0 时位移振幅多少 m？"
         },
         {
           "title": "简正模式：两个摆如何共享能量",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "mẍ₁=−(k+κ)x₁+κx₂；ω同²=k/m，ω反²=(k+2κ)/m",
+          "q": "若 m=1，k=4，κ=6，反相角频率多少 rad/s？"
         }
       ],
       "project": {
@@ -205,25 +229,33 @@
           "title": "能量怎样进出系统",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "ΔU = Q − W",
+          "q": "吸热 80 J，对外做功 20 J，内能增加多少 J？"
         },
         {
           "title": "从粒子到压强",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "pV = nRT",
+          "q": "定容理想气体从 200 K 升至 600 K，压强变为几倍？"
         },
         {
           "title": "从配分函数计算二能级系统",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Z=Σe^(−βEᵢ)；pᵢ=e^(−βEᵢ)/Z；β=1/(kBT)",
+          "q": "ε/(kBT)=ln4 时，激发概率是多少？"
         },
         {
           "title": "自由能与相变的最简模型",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "F(m)=am²/2+bm⁴/4；b>0",
+          "q": "a=−9，b=1，正的稳定序参量为多少？"
         }
       ],
       "project": {
@@ -271,25 +303,33 @@
           "title": "用场描述相互作用",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "F = qE",
+          "q": "电荷 0.02 C，电场 100 N/C，力的大小多少 N？"
         },
         {
           "title": "电路是能量的通道",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "I = U/R；P = UI",
+          "q": "10 Ω 电阻两端 20 V，电流多少 A？"
         },
         {
           "title": "从麦克斯韦方程得到电磁波",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "∇×E=−∂B/∂t；∇×B=μ₀ε₀∂E/∂t；c=1/√(μ₀ε₀)",
+          "q": "取 c=3×10⁸ m/s，E₀=600 V/m，B₀ 多少 μT？"
         },
         {
           "title": "导体边界与镜像法",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "V=(q/4πε₀)(1/r实−1/r像)",
+          "q": "真电荷大小加倍而 a 固定，吸引力变为原来的几倍？"
         }
       ],
       "project": {
@@ -335,25 +375,33 @@
           "title": "光为什么折射",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "n₁sinθ₁ = n₂sinθ₂",
+          "q": "正入射时入射角为 0°，折射角多少度？"
         },
         {
           "title": "两束光怎样相加",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Δy ≈ λL/d",
+          "q": "其他条件不变，波长加倍，条纹间距变为几倍？"
         },
         {
           "title": "衍射与成像分辨率",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "θ_R≈1.22λ/D（圆孔瑞利判据）",
+          "q": "波长不变、孔径扩大 2 倍，原分辨角除以几？"
         },
         {
           "title": "激光阈值的速率模型",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "dn/dt=(G−κ)n+S",
+          "q": "G=8，κ=5，忽略 S 时指数增长率多少 s⁻¹？"
         }
       ],
       "project": {
@@ -399,25 +447,33 @@
           "title": "运动时钟的比较",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Δt = γΔτ；γ = 1/√(1−v²/c²)",
+          "q": "v = 0 时 γ 等于多少？"
         },
         {
           "title": "质量、能量与引力",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "E₀ = mc²；E² = p²c² + m²c⁴",
+          "q": "静止质量变为 2 倍，静止能量变为几倍？"
         },
         {
           "title": "四动量与碰撞不变量",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "M²c⁴=E总²−p总²c²",
+          "q": "两束各 3 GeV 的光子正面相遇，系统 Mc² 为多少 GeV？"
         },
         {
           "title": "从度规认识引力时间膨胀",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "dτ=√(1−r_s/r)dt；r_s=2GM/c²",
+          "q": "r=4r_s 时，(dτ/dt)² 等于多少？"
         }
       ],
       "project": {
@@ -462,25 +518,33 @@
           "title": "先学概率振幅",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Pᵢ = ∣aᵢ∣²；ΣPᵢ = 1",
+          "q": "两个结果概率分别为 0.3 和 P，P 是多少？"
         },
         {
           "title": "束缚为什么产生能级",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Eₙ = n²h²/(8mL²)，n = 1,2,…",
+          "q": "第三能级与第一能级的能量比是多少？"
         },
         {
           "title": "算符、对易关系与不确定度",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "ΔAΔB≥|〈[A,B]〉|/2；[x,p]=iℏ",
+          "q": "ℏ=1，Δx=2，Δp 的最小下界是多少？"
         },
         {
           "title": "微扰论：怎样估计能级修正",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "H=H₀+λV；Eₙ≈Eₙ⁽⁰⁾+λ〈n|V|n〉",
+          "q": "E₀=3，λ=0.2，〈V〉=−2，一阶近似能量多少？"
         }
       ],
       "project": {
@@ -527,25 +591,33 @@
           "title": "光谱为什么有线",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "ΔE = hf = hc/λ",
+          "q": "能级差 4 eV，波长约多少 nm？"
         },
         {
           "title": "分子有更多能量尺度",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "ω = √(k/μ)；μ = m₁m₂/(m₁+m₂)",
+          "q": "两原子质量均为 4 个质量单位，约化质量为多少单位？"
         },
         {
           "title": "两能级原子的拉比振荡",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "P_e(t)=sin²(Ωt/2)",
+          "q": "Ωt=π/2 时激发概率为多少？"
         },
         {
           "title": "光谱线宽与寿命",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Δν_FWHM=1/(2πτ)（寿命极限）",
+          "q": "寿命变为原来的 4 倍，原寿命极限线宽除以几？"
         }
       ],
       "project": {
@@ -593,25 +665,33 @@
           "title": "大量原子怎样形成材料",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "E光子 ≥ E带隙（简化带间吸收阈值）",
+          "q": "带隙 3 eV，2 eV 光子距带隙还差多少 eV？"
         },
         {
           "title": "相变与集体现象",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "M = 磁矩总和 / 体积",
+          "q": "相同磁化强度下，体积增大到 3 倍，总磁矩变为几倍？"
         },
         {
           "title": "一维紧束缚模型与能带",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "E(k)=ε₀−2t cos(ka)",
+          "q": "t=2 eV 时，这个模型的带宽多少 eV？"
         },
         {
           "title": "费米分布与温度展宽",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "f(E)=1/[exp((E−μ)/(kBT))+1]",
+          "q": "(E−μ)/(kBT)=ln9 时，占据概率为多少？"
         }
       ],
       "project": {
@@ -662,25 +742,33 @@
           "title": "半衰期是统计规律",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "N(t) = N₀·2^(−t/T)",
+          "q": "初始 1000 个核，2 个半衰期后期望剩余几个？"
         },
         {
           "title": "结合能与核反应",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "B = Δmc²；Q = (m初−m末)c²",
+          "q": "质量差加倍，释放能量变为几倍？"
         },
         {
           "title": "库仑势垒与核隧穿",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "T≈exp[−2∫κ(x)dx]；κ=√[2m(V−E)]/ℏ",
+          "q": "κa 从 2 增至 3，指数近似中 T 的比值为 e 的多少次方？"
         },
         {
           "title": "核反应阈值与动量守恒",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "E_a,阈=[M末²−m_a²−m_b²]c²/(2m_b)",
+          "q": "上例束流动能阈值是多少（同一能量单位）？"
         }
       ],
       "project": {
@@ -727,25 +815,33 @@
           "title": "物质由什么构成",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Q质子 = 2Qᵤ + Q_d",
+          "q": "以 e 为单位，两个上夸克加一个下夸克的总电荷是多少？"
         },
         {
           "title": "碰撞怎样揭示结构",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "N ≈ σ L积分 ε",
+          "q": "产生 200 个事件，效率 0.5，预期记录几个？"
         },
         {
           "title": "场的简谐模式与粒子数",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "H=Σ_kℏω_k(n_k+1/2)",
+          "q": "以 ℏω=2 为单位尺度，增加 4 个量子使能量增加多少？"
         },
         {
           "title": "有效场论与能标展开",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "修正尺度 ∼ c(E/Λ)^p",
+          "q": "E/Λ=0.2、p=2、系数 1，相对修正是多少？"
         }
       ],
       "project": {
@@ -794,25 +890,33 @@
           "title": "带电气体的集体响应",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "λ_D = √(ε₀k_BTₑ/(nₑe²))",
+          "q": "电子密度增至 9 倍，原德拜长度除以几得到新长度？"
         },
         {
           "title": "粒子在磁场中绕行",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "r_L = mv⊥/(∣q∣B)",
+          "q": "其他量不变，磁场增至 4 倍，原半径除以几？"
         },
         {
           "title": "电子等离子体振荡",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "ω_p=√(nₑe²/(mₑε₀))",
+          "q": "密度增为 25 倍，等离子体角频率变为几倍？"
         },
         {
           "title": "磁流体中的阿尔芬波",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "v_A=B₀/√(μ₀ρ)",
+          "q": "磁场变为 3 倍、密度变为 9 倍，速度相对原值是多少倍？"
         }
       ],
       "project": {
@@ -856,25 +960,33 @@
           "title": "从收到的光推断天体",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "F = L/(4πd²)",
+          "q": "同光度天体距离变为 3 倍，通量变为原来的几分之一？"
         },
         {
           "title": "宇宙膨胀的入门模型",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "v ≈ H₀d；z = (λ观−λ发)/λ发",
+          "q": "发射波长 500 nm，观测波长 600 nm，红移 z 是多少？"
         },
         {
           "title": "维里定理与引力质量估计",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "2〈K〉+〈U〉=0；M尺度∼Rv²/G",
+          "q": "同结构系统 R 增至 2 倍、v 增至 3 倍，质量尺度增为几倍？"
         },
         {
           "title": "弗里德曼方程与宇宙成分",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "H²=(8πG/3)ρ−kc²/a²+Λc²/3",
+          "q": "a 变为 3 倍，物质密度变为原来的几分之一？"
         }
       ],
       "project": {
@@ -924,25 +1036,33 @@
           "title": "用波研究看不见的内部",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "t = d/v（均匀介质直线路径）",
+          "q": "均匀介质中距离 24 km，波速 6 km/s，传播多少 s？"
         },
         {
           "title": "热怎样传过地层",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "qₓ = −k·dT/dx",
+          "q": "k = 2，温度梯度为 +0.04 K/m，qₓ 为多少 W/m²？"
         },
         {
           "title": "反演不是唯一：地震走时模型",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "tᵢ=Σ_jLᵢⱼs_j；s_j=1/v_j",
+          "q": "10 km 路径以 2 km/s 通过，另 10 km 以 5 km/s，通过总时长多少 s？"
         },
         {
           "title": "转动地球上的科里奥利尺度",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "f=2Ωsinφ；Ro=U/(fL)",
+          "q": "U=2，f=10⁻⁴，L=10⁵，Ro 多少？"
         }
       ],
       "project": {
@@ -989,25 +1109,33 @@
           "title": "随机运动怎样形成扩散",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "〈x²〉 = 2Dt（一维，从原点出发）",
+          "q": "D = 1 μm²/s，t = 2 s，均方根位移多少 μm？"
         },
         {
           "title": "成像测量的是信号",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "I = I₀e^(−μx)",
+          "q": "初始强度 100，经过两层各透过一半的材料后强度为多少？"
         },
         {
           "title": "膜电位的 RC 模型",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "C dV/dt=I−g(V−E_L)；τ=C/g",
+          "q": "C=200 pF，g=10 nS，时间常数多少 ms？"
         },
         {
           "title": "扩散方程与高斯传播核",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "∂p/∂t=D∂²p/∂x²；p=e^(−x²/4Dt)/√(4πDt)",
+          "q": "D=2，t=9 时，方差多少（对应长度平方单位）？"
         }
       ],
       "project": {
@@ -1055,25 +1183,33 @@
           "title": "方程需要初始条件",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "dx/dt = −kx；x(t) = x₀e^(−kt)",
+          "q": "k = 0 时，x₀ = 5，任何时刻 x 等于多少？"
         },
         {
           "title": "把复杂波形拆成简单波",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "f(t) = Σ[aₙcos(nωt)+bₙsin(nωt)]",
+          "q": "要无混叠地采样最高 10 Hz 的带限信号，采样率需严格大于多少 Hz？"
         },
         {
           "title": "分离变量与边界本征值",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "∂T/∂t=α∂²T/∂x²；T_n∝sin(nπx/L)e^(−α(nπ/L)²t)",
+          "q": "第 3 模式衰减率是第 1 模式的几倍？"
         },
         {
           "title": "对称性与诺特守恒量",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "∂L/∂q=0 ⇒ d(∂L/∂q̇)/dt=0",
+          "q": "半径变为 3 倍，原角速度除以几？"
         }
       ],
       "project": {
@@ -1122,25 +1258,33 @@
           "title": "用小步长逼近演化",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "xₙ₊₁ = xₙ + vₙΔt",
+          "q": "x = 1 m，v = 3 m/s，Δt = 0.2 s，下一步 x 为多少 m？"
         },
         {
           "title": "怎样相信模拟结果",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "误差 ≈ C·Δt（一阶全局误差模型）",
+          "q": "一阶方法中步长缩至 1/4，预期误差缩至原来的几分之一？"
         },
         {
           "title": "辛欧拉法为何更适合振子",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "p_(n+1)=p_n−kq_nΔt；q_(n+1)=q_n+p_(n+1)Δt/m",
+          "q": "同一初值，Δt=0.2，q₁ 是多少？"
         },
         {
           "title": "蒙特卡洛误差与相关样本",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "SE≈s/√N；N_eff≈N/(1+2Σρ_k)",
+          "q": "N=9000、相关修正因子 9，有效样本数多少？"
         }
       ],
       "project": {
@@ -1185,25 +1329,33 @@
           "title": "每个测量都有不确定度",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "u平均 = s/√N",
+          "q": "s = 3 mm，N = 9，平均值标准误差约多少 mm？"
         },
         {
           "title": "从数据建立证据",
           "file": "02.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "rᵢ = yᵢ − y预测,i",
+          "q": "实测值 8，预测值 10，残差为多少？"
         },
         {
           "title": "误差传播与协方差",
           "file": "03.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "u_f²≈∇fᵀΣ∇f",
+          "q": "x、y 独立且标准差均为 2，f=x+y 的方差是多少？"
         },
         {
           "title": "拟合、似然与残差诊断",
           "file": "04.html",
           "stage": "高阶选题",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "χ²=Σ[(yᵢ−f(xᵢ;θ))/σᵢ]²",
+          "q": "标准化残差 1、2、−2 时 χ² 多少？"
         }
       ],
       "project": {
@@ -1252,13 +1404,17 @@
           "title": "雷诺数：先判断哪种效应重要",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Re=ρUL/μ",
+          "q": "ρ=1000、U=0.01、L=0.001、μ=0.001 时 Re 多少？"
         },
         {
           "title": "泊肃叶流：从局部方程到流量",
           "file": "02.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Q=πR⁴Δp/(8μL)",
+          "q": "相同压差、黏度与长度，半径增为 3 倍，流量增为几倍？"
         }
       ],
       "project": {
@@ -1297,13 +1453,17 @@
           "title": "逻辑斯蒂映射与稳定性",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "x_(n+1)=rx_n(1−x_n)；稳定需 |f′(x*)|<1",
+          "q": "r=2.5 时非零固定点 x* 是多少？"
         },
         {
           "title": "李雅普诺夫指数与可预测性",
           "file": "02.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "λ≈(1/N)Σln|f′(x_n)|；δ_n≈δ₀e^(λn)",
+          "q": "λ=ln2，3 步后误差放大几倍？"
         }
       ],
       "project": {
@@ -1342,13 +1502,17 @@
           "title": "量子比特：从振幅到测量",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "|ψ〉=α|0〉+β|1〉；|α|²+|β|²=1",
+          "q": "|+〉在计算基下测得 1 的概率多少？"
         },
         {
           "title": "纠缠、约化态与纠错边界",
           "file": "02.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "|Φ+〉=(|00〉+|11〉)/√2；ρ_A=Tr_Bρ=I/2",
+          "q": "该态计算基测量得到 01 的概率多少？"
         }
       ],
       "project": {
@@ -1387,13 +1551,17 @@
           "title": "反应速率与活化尺度",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "k=Ae^(−E_a/RT)",
+          "q": "若 ln(k₂/k₁)=ln5，则速率比是多少？"
         },
         {
           "title": "玻恩—奥本海默近似与势能面",
           "file": "02.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "H_e(R)φ_n(r;R)=E_n(R)φ_n(r;R)",
+          "q": "同一力常数下约化质量增为 4 倍，原振动频率除以几？"
         }
       ],
       "project": {
@@ -1432,13 +1600,17 @@
           "title": "磁刚度：磁铁怎样选择束流轨道",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Bρ=p/|q|",
+          "q": "动量增为 3 倍、电荷和半径不变，磁场增为几倍？"
         },
         {
           "title": "束流矩阵与相空间发射度",
           "file": "02.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "Σ_out=MΣ_inMᵀ；ε=√detΣ",
+          "q": "x=1 mm，x′=2 mrad，漂移 L=1 m，末位置多少 mm？"
         }
       ],
       "project": {
@@ -1477,13 +1649,17 @@
           "title": "热机效率与能源评价",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "η=W/Q_h；η_C=1−T_c/T_h",
+          "q": "T_h=800 K，T_c=400 K，卡诺效率多少？"
         },
         {
           "title": "扩散长度与器件尺度",
           "file": "02.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "L_D=√(Dτ)",
+          "q": "寿命提高 9 倍、D 不变，扩散长度增为几倍？"
         }
       ],
       "project": {
@@ -1522,13 +1698,17 @@
           "title": "怎样区分模型、解释与证据",
           "file": "01.html",
           "stage": "入门",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "后验比=先验比×似然比",
+          "q": "先验比 A:B=2:1，似然比为 3，后验 A:B 的数值比是多少？"
         },
         {
           "title": "如何检验一种教学方法有效",
           "file": "02.html",
           "stage": "本科核心",
-          "kind": "lesson"
+          "kind": "lesson",
+          "formula": "d=(均值_A−均值_B)/合并标准差",
+          "q": "均值差 8 分，合并标准差 16 分，d 是多少？"
         }
       ],
       "project": {
