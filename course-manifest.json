@@ -1,5 +1,5 @@
 {
-  "lesson_count": 112,
+  "lesson_count": 126,
   "project_count": 25,
   "topic_entry_count": 369,
   "demo_count": 19,
@@ -524,8 +524,24 @@
           "q": "波长不变、孔径扩大 2 倍，原分辨角除以几？"
         },
         {
-          "title": "激光阈值的速率模型",
+          "title": "偏振与马吕斯定律",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "I=I₀cos²θ",
+          "q": "θ=45° 时透射光强是 I₀ 的多少倍？"
+        },
+        {
+          "title": "相干长度与傅里叶光学",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "L_c≈c/Δν；Δν·τ_c≈1",
+          "q": "相干时间 2 ns 对应的相干长度约多少 cm？"
+        },
+        {
+          "title": "激光阈值的速率模型",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "dn/dt=(G−κ)n+S",
@@ -862,8 +878,24 @@
           "q": "t=2 eV 时，这个模型的带宽多少 eV？"
         },
         {
-          "title": "费米分布与温度展宽",
+          "title": "超导与迈斯纳效应",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "体内 B=0（迈斯纳）；伦敦方程 m(dJ/dt)=n_s e² E",
+          "q": "达到迈斯纳态后超导体深部的 B 是多少 T？"
+        },
+        {
+          "title": "量子霍尔效应",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "R_H=h/(e²ν)，ν=1,2,…",
+          "q": "ν=2 平台的霍尔电阻是多少 kΩ？"
+        },
+        {
+          "title": "费米分布与温度展宽",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "f(E)=1/[exp((E−μ)/(kBT))+1]",
@@ -1380,8 +1412,16 @@
           "q": "第 3 模式衰减率是第 1 模式的几倍？"
         },
         {
-          "title": "对称性与诺特守恒量",
+          "title": "复变函数与留数定理",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "∮f(z)dz=2πi·ΣRes",
+          "q": "∫dx/(x²+4)（从 −∞ 到 ∞）等于多少？"
+        },
+        {
+          "title": "对称性与诺特守恒量",
+          "file": "05.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "∂L/∂q=0 ⇒ d(∂L/∂q̇)/dt=0",
@@ -1591,6 +1631,22 @@
           "kind": "lesson",
           "formula": "Q=πR⁴Δp/(8μL)",
           "q": "相同压差、黏度与长度，半径增为 3 倍，流量增为几倍？"
+        },
+        {
+          "title": "湍流与能量级串",
+          "file": "03.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "Re=vL/ν；惯性区能谱 E(k)∝k^(−5/3)",
+          "q": "水（ν=10⁻⁶ m²/s）以 1 m/s 流过 1 m 特征长度，Re 是多少？"
+        },
+        {
+          "title": "边界层与流动分离",
+          "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "δ≈(νx/U)^(1/2)（平板层流）；分离点：壁面剪应力为零",
+          "q": "沿平板前进距离变为 4 倍，层流边界层厚度变为几倍？"
         }
       ],
       "project": {
@@ -1640,6 +1696,14 @@
           "kind": "lesson",
           "formula": "λ≈(1/N)Σln|f′(x_n)|；δ_n≈δ₀e^(λn)",
           "q": "λ=ln2，3 步后误差放大几倍？"
+        },
+        {
+          "title": "分岔与倍周期通向混沌",
+          "file": "03.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "x_{n+1}=r x_n(1−x_n)；分岔间距比→4.669…",
+          "q": "r=2.8 时稳定不动点 x* 是多少？"
         }
       ],
       "project": {
@@ -1689,6 +1753,22 @@
           "kind": "lesson",
           "formula": "|Φ+〉=(|00〉+|11〉)/√2；ρ_A=Tr_Bρ=I/2",
           "q": "该态计算基测量得到 01 的概率多少？"
+        },
+        {
+          "title": "量子门与电路模型",
+          "file": "03.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "H=2^(−1/2)[[1,1],[1,−1]]；{单比特门, CNOT} 通用",
+          "q": "对 (|0⟩+|1⟩)/√2 测量 Z，得到 0 的概率是多少？"
+        },
+        {
+          "title": "退相干与量子噪声通道",
+          "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "ρ₀₁(t)=ρ₀₁(0)e^(−t/T₂)",
+          "q": "t=2T₂ 时非对角元衰减为原来的多少倍？"
         }
       ],
       "project": {
@@ -1738,6 +1818,14 @@
           "kind": "lesson",
           "formula": "H_e(R)φ_n(r;R)=E_n(R)φ_n(r;R)",
           "q": "同一力常数下约化质量增为 4 倍，原振动频率除以几？"
+        },
+        {
+          "title": "过渡态理论与活化速率",
+          "file": "03.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "k≈(kBT/h)e^(−Ea/RT)（Eyring 形式）",
+          "q": "Ea=50 kJ/mol 时从 300 K 升到 310 K，速率约变为几倍？"
         }
       ],
       "project": {
@@ -1787,6 +1875,14 @@
           "kind": "lesson",
           "formula": "Σ_out=MΣ_inMᵀ；ε=√detΣ",
           "q": "x=1 mm，x′=2 mrad，漂移 L=1 m，末位置多少 mm？"
+        },
+        {
+          "title": "同步辐射与弯转能量损失",
+          "file": "03.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "U₀[eV]≈88.5·E[GeV]⁴/ρ[m]（电子）",
+          "q": "电子能量加倍（弯转半径不变），每圈损失变为几倍？"
         }
       ],
       "project": {
@@ -1836,6 +1932,14 @@
           "kind": "lesson",
           "formula": "L_D=√(Dτ)",
           "q": "寿命提高 9 倍、D 不变，扩散长度增为几倍？"
+        },
+        {
+          "title": "光伏极限与细致平衡",
+          "file": "03.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "单结 η_SQ≈33.7%（带隙≈1.34 eV，AM1.5）",
+          "q": "理想单结电池的 Shockley–Queisser 极限效率约为百分之多少？"
         }
       ],
       "project": {
@@ -1885,6 +1989,14 @@
           "kind": "lesson",
           "formula": "d=(均值_A−均值_B)/合并标准差",
           "q": "均值差 8 分，合并标准差 16 分，d 是多少？"
+        },
+        {
+          "title": "伽利略与实验方法的确立",
+          "file": "03.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "s∝t²（匀加速运动学特征）",
+          "q": "从静止匀加速，第 2 秒内的位移是第 1 秒内的几倍？"
         }
       ],
       "project": {
