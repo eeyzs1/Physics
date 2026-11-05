@@ -1,5 +1,5 @@
 {
-  "lesson_count": 138,
+  "lesson_count": 158,
   "project_count": 25,
   "topic_entry_count": 369,
   "demo_count": 19,
@@ -258,8 +258,24 @@
           "q": "同一系统在 ω=0 时位移振幅多少 m？"
         },
         {
-          "title": "简正模式：两个摆如何共享能量",
+          "title": "声强、分贝与多普勒效应",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "β=10 log₁₀(I/I₀)，I₀=10⁻¹² W/m²；f′=f(v∓v₀)/(v∓v_s)",
+          "q": "声强从 10⁻⁶ 增至 10⁻⁴ W/m²，分贝数增加多少？"
+        },
+        {
+          "title": "驻波、边界与弦的简正频率",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "fₙ=n v/(2L)；v=√(T/μ)",
+          "q": "两端固定弦的 n=3 谐波是基频的几倍？"
+        },
+        {
+          "title": "简正模式：两个摆如何共享能量",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "mẍ₁=−(k+κ)x₁+κx₂；ω同²=k/m，ω反²=(k+2κ)/m",
@@ -868,8 +884,24 @@
           "q": "Ωt=π/2 时激发概率为多少？"
         },
         {
-          "title": "光谱线宽与寿命",
+          "title": "原子壳层与元素周期表",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "主壳层容量 2n²；基态按能量从低到高填充",
+          "q": "n=2 壳层最多容纳几个电子？"
+        },
+        {
+          "title": "激光冷却与冷原子",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "多普勒极限 T_D=ℏΓ/(2k_B)",
+          "q": "铷 D2 线（Γ/2π=6 MHz）的多普勒极限约多少 μK？"
+        },
+        {
+          "title": "光谱线宽与寿命",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "Δν_FWHM=1/(2πτ)（寿命极限）",
@@ -1035,8 +1067,24 @@
           "q": "κa 从 2 增至 3，指数近似中 T 的比值为 e 的多少次方？"
         },
         {
-          "title": "核反应阈值与动量守恒",
+          "title": "核素图与液滴模型",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "B=a_V A−a_S A^(2/3)−a_C Z(Z−1)/A^(1/3)−a_A(A−2Z)²/A±δ",
+          "q": "每核子结合能曲线的峰值出现在哪个元素附近（原子序数）？"
+        },
+        {
+          "title": "幻数与壳层模型",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "幻数序列 2, 8, 20, 28, 50, 82, 126",
+          "q": "第三个幻数是多少？"
+        },
+        {
+          "title": "核反应阈值与动量守恒",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "E_a,阈=[M末²−m_a²−m_b²]c²/(2m_b)",
@@ -1199,8 +1247,24 @@
           "q": "密度增为 25 倍，等离子体角频率变为几倍？"
         },
         {
-          "title": "磁流体中的阿尔芬波",
+          "title": "等离子体频率与波的传播",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "ω_p=√(n_e e²/(ε₀ m_e))；色散 ω²=ω_p²+c²k²",
+          "q": "电子密度 10²⁰ m⁻³ 的等离子体频率约多少 GHz？"
+        },
+        {
+          "title": "磁约束与托卡马克位形",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "聚变三重积 nTτ_E≳3×10²¹ keV·s/m³（D-T）",
+          "q": "T=10 keV 对应温度约多少（单位 10⁸ K）？"
+        },
+        {
+          "title": "磁流体中的阿尔芬波",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "v_A=B₀/√(μ₀ρ)",
@@ -1269,8 +1333,24 @@
           "q": "同结构系统 R 增至 2 倍、v 增至 3 倍，质量尺度增为几倍？"
         },
         {
-          "title": "弗里德曼方程与宇宙成分",
+          "title": "恒星结构与主序",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "流体静力学 dP/dr=−Gm(r)ρ/r²；主序 L∝M^3.5（近似）",
+          "q": "质量为太阳 4 倍的主序星光度约为太阳几倍？"
+        },
+        {
+          "title": "宇宙微波背景与早期宇宙",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "T(z)=T₀(1+z)；光子退耦红移 z≈1100",
+          "q": "红移 z=1100 对应的背景温度约多少 K？"
+        },
+        {
+          "title": "弗里德曼方程与宇宙成分",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "H²=(8πG/3)ρ−kc²/a²+Λc²/3",
@@ -1345,8 +1425,24 @@
           "q": "10 km 路径以 2 km/s 通过，另 10 km 以 5 km/s，通过总时长多少 s？"
         },
         {
-          "title": "转动地球上的科里奥利尺度",
+          "title": "地球分层与地震波成像",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "射线参数 p=r sinθ/v 沿射线守恒",
+          "q": "液态外核中 S 波的速度是多少 km/s？"
+        },
+        {
+          "title": "大气环流与温室效应",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "有效温度 T_eff=[S(1−α)/(4σ)]^(1/4)",
+          "q": "地球的有效辐射温度约多少 K？"
+        },
+        {
+          "title": "转动地球上的科里奥利尺度",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "f=2Ωsinφ；Ro=U/(fL)",
@@ -1418,8 +1514,24 @@
           "q": "C=200 pF，g=10 nS，时间常数多少 ms？"
         },
         {
-          "title": "扩散方程与高斯传播核",
+          "title": "蛋白质折叠与能量地形",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "折叠速率 ∝ exp(−ΔG‡/k_BT)",
+          "q": "折叠势垒 ΔG‡=10 k_BT 时的 Boltzmann 因子约是多少（单位 10⁻⁵）？"
+        },
+        {
+          "title": "分子马达与热棘轮",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "Stokes 阻力 F=6πηrv；能量标尺 k_BT≈4.1 pN·nm",
+          "q": "室温下 k_BT 约为多少 pN·nm？"
+        },
+        {
+          "title": "扩散方程与高斯传播核",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "∂p/∂t=D∂²p/∂x²；p=e^(−x²/4Dt)/√(4πDt)",
@@ -1583,8 +1695,24 @@
           "q": "同一初值，Δt=0.2，q₁ 是多少？"
         },
         {
-          "title": "蒙特卡洛误差与相关样本",
+          "title": "有限差分与泊松方程",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "∇²φ≈(φᵢ₊₁ⱼ+φᵢ₋₁ⱼ+φᵢⱼ₊₁+φᵢⱼ₋₁−4φᵢⱼ)/h²",
+          "q": "网格距减半，二阶差分格式的截断误差约变为原来的几分之一？"
+        },
+        {
+          "title": "分子动力学与系综采样",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "Velocity-Verlet：x(t+Δt)=x+vΔt+FΔt²/(2m)",
+          "q": "10⁶ 步、每步 1 fs 对应多长的模拟时间（ns）？"
+        },
+        {
+          "title": "蒙特卡洛误差与相关样本",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "SE≈s/√N；N_eff≈N/(1+2Σρ_k)",
@@ -1654,8 +1782,24 @@
           "q": "x、y 独立且标准差均为 2，f=x+y 的方差是多少？"
         },
         {
-          "title": "拟合、似然与残差诊断",
+          "title": "噪声、信噪比与锁相放大",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "SNR∝信号×√(τ/带宽)；锁相等效带宽 B≈1/(2τ)",
+          "q": "时间常数 τ=1 s 的锁相放大器等效噪声带宽约多少 Hz？"
+        },
+        {
+          "title": "计量、溯源与系统误差",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "u_c=√(Σ(∂f/∂xᵢ)²uᵢ²+2Σ协方差项)；U=k·u_c",
+          "q": "k=2 的扩展不确定度对应约百分之多少的置信水平？"
+        },
+        {
+          "title": "拟合、似然与残差诊断",
+          "file": "06.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "χ²=Σ[(yᵢ−f(xᵢ;θ))/σᵢ]²",
@@ -1735,6 +1879,22 @@
           "kind": "lesson",
           "formula": "δ≈(νx/U)^(1/2)（平板层流）；分离点：壁面剪应力为零",
           "q": "沿平板前进距离变为 4 倍，层流边界层厚度变为几倍？"
+        },
+        {
+          "title": "伯努利原理与流动能量",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "p+½ρv²+ρgz=常数（沿流线）",
+          "q": "速度从 v 增至 2v，动压 ½ρv² 变为几倍？"
+        },
+        {
+          "title": "可压缩流与激波",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "马赫数 M=v/c；正激波 p₂/p₁=1+2γ/(γ+1)·(M²−1)",
+          "q": "M=2（γ=1.4）正激波的压强比 p₂/p₁ 是多少？"
         }
       ],
       "project": {
