@@ -1,5 +1,5 @@
 {
-  "lesson_count": 90,
+  "lesson_count": 112,
   "project_count": 25,
   "topic_entry_count": 369,
   "demo_count": 19,
@@ -48,6 +48,38 @@
           "kind": "lesson",
           "formula": "Av=λv；det(A−λI)=0",
           "q": "上述矩阵作用于 (1,−1) 时对应的本征值是多少？"
+        },
+        {
+          "title": "矢量微积分：梯度、散度与旋度",
+          "file": "05.html",
+          "stage": "数学准备",
+          "kind": "lesson",
+          "formula": "∇f；∇·F=∂Fx/∂x+∂Fy/∂y+∂Fz/∂z；∇×F",
+          "q": "F=(3x,0,0) 的散度是多少？"
+        },
+        {
+          "title": "复数、相位与振动的表示",
+          "file": "06.html",
+          "stage": "数学准备",
+          "kind": "lesson",
+          "formula": "e^iθ=cosθ+i sinθ；A e^i(ωt+φ)",
+          "q": "两个等幅振动相位差 2π/3，合成振幅是单个振幅的几倍？"
+        },
+        {
+          "title": "概率、期望与涨落",
+          "file": "07.html",
+          "stage": "数学准备",
+          "kind": "lesson",
+          "formula": "〈X〉=ΣxP(x)；σ²=〈X²〉−〈X〉²；泊松：σ²=〈N〉",
+          "q": "泊松计数的均值为 400，标准差是多少？"
+        },
+        {
+          "title": "泰勒展开与量级估计",
+          "file": "08.html",
+          "stage": "数学准备",
+          "kind": "lesson",
+          "formula": "f(x+δ)=f(x)+f′δ+½f″δ²+…",
+          "q": "cosθ≈1−θ²/2 在 θ=0.1 rad 时约等于多少？"
         }
       ],
       "all_topics": [
@@ -105,8 +137,40 @@
           "q": "ℓ=4 m，g=10 m/s²，小角度方程 θ̈=−Cθ 中 C 是多少 s⁻²？"
         },
         {
-          "title": "哈密顿方程与相空间",
+          "title": "动量守恒与碰撞",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "Σp 守恒（ΣF外=0）；弹性碰撞同时守恒动能",
+          "q": "同一初条件若为弹性碰撞，1 kg 物体的末速是多少 m/s？"
+        },
+        {
+          "title": "刚体转动与角动量",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "τ=Iα；L=Iω；I=Σmr²",
+          "q": "同一根杆绕中心转动的转动惯量是多少 kg·m²？"
+        },
+        {
+          "title": "有心力与开普勒问题",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "L=mr²ω 守恒；圆轨道 T²=4π²r³/(GM)",
+          "q": "轨道半径变为原来的 4 倍，周期变为原来的几倍？"
+        },
+        {
+          "title": "变分法与欧拉—拉格朗日方程",
+          "file": "07.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "d/dt(∂L/∂q̇)−∂L/∂q=0",
+          "q": "m=2 kg、k=8 N/m 时振子角频率是多少 rad/s？"
+        },
+        {
+          "title": "哈密顿方程与相空间",
+          "file": "08.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "p=∂L/∂q̇；H=pq̇−L；q̇=∂H/∂p，ṗ=−∂H/∂q",
@@ -250,8 +314,40 @@
           "q": "ε/(kBT)=ln4 时，激发概率是多少？"
         },
         {
-          "title": "自由能与相变的最简模型",
+          "title": "熵与第二定律",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "dS=δQ可逆/T；孤立系统 ΔS≥0",
+          "q": "400 J 从 500 K 传到 400 K，总熵变是多少 J/K？"
+        },
+        {
+          "title": "卡诺循环与热机效率",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "η卡=1−Tc/Th；Qc/Qh=Tc/Th",
+          "q": "Th=600 K、Tc=300 K 时效率是多少？"
+        },
+        {
+          "title": "热力学势与麦克斯韦关系",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "F=U−TS；dF=−S dT−p dV；(∂S/∂V)T=(∂p/∂T)V",
+          "q": "1 mol 理想气体等温体积翻倍，熵变是多少 J/K？（R=8.31）"
+        },
+        {
+          "title": "玻色统计与光子气体",
+          "file": "07.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "n̄(ε)=1/(e^(β(ε−μ))−1)",
+          "q": "若某能级 βε=ln5（μ=0），平均占据数是多少？"
+        },
+        {
+          "title": "自由能与相变的最简模型",
+          "file": "08.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "F(m)=am²/2+bm⁴/4；b>0",
@@ -324,8 +420,40 @@
           "q": "取 c=3×10⁸ m/s，E₀=600 V/m，B₀ 多少 μT？"
         },
         {
-          "title": "导体边界与镜像法",
+          "title": "高斯定律与对称分布的电场",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "∮E·dA=q内/ε₀",
+          "q": "距离加倍到 0.2 m，场强是多少 N/C？"
+        },
+        {
+          "title": "电势、电容与电场能",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "V=−∫E·dl；C=Q/V；平行板 C=ε₀A/d",
+          "q": "板距减半后电容是多少 μF？"
+        },
+        {
+          "title": "稳恒磁场与安培定律",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "∮B·dl=μ₀I内；长直导线 B=μ₀I/(2πr)",
+          "q": "电流加倍且距离也加倍，B 变为原值的几倍？"
+        },
+        {
+          "title": "法拉第感应与楞次定律",
+          "file": "07.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "ε=−dΦ/dt；Φ=∫B·dA",
+          "q": "匝数加倍、其他不变，电动势是多少 V？"
+        },
+        {
+          "title": "导体边界与镜像法",
+          "file": "08.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "V=(q/4πε₀)(1/r实−1/r像)",
@@ -539,8 +667,56 @@
           "q": "ℏ=1，Δx=2，Δp 的最小下界是多少？"
         },
         {
-          "title": "微扰论：怎样估计能级修正",
+          "title": "薛定谔方程与时间演化",
           "file": "04.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "iℏ ∂ψ/∂t=Ĥψ；定态 ψ∝e^(−iEt/ℏ)",
+          "q": "ΔE=2 eV 时振荡频率是多少（单位 10¹⁴ Hz）？"
+        },
+        {
+          "title": "一维谐振子",
+          "file": "05.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "Eₙ=(n+½)ℏω",
+          "q": "从 n=1 到 n=3 需要多少 eV？"
+        },
+        {
+          "title": "氢原子与能级公式",
+          "file": "06.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "Eₙ=−13.6 eV/n²",
+          "q": "n=3→1 跃迁的光子能量是多少 eV？"
+        },
+        {
+          "title": "角动量与自旋",
+          "file": "07.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "L²→ℏ²ℓ(ℓ+1)；Lz→mℏ；电子 S=½",
+          "q": "ℓ=2 时 |L| 是多少 ℏ？"
+        },
+        {
+          "title": "全同粒子与泡利原理",
+          "file": "08.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "费米子：交换两粒子 → 波函数乘 −1",
+          "q": "两个电子占据同一轨道时，总自旋 z 分量最大是多少 ℏ？"
+        },
+        {
+          "title": "散射与截面",
+          "file": "09.html",
+          "stage": "本科核心",
+          "kind": "lesson",
+          "formula": "dσ/dΩ=|f(θ)|²；σ=∫(dσ/dΩ)dΩ",
+          "q": "R 加倍，几何截面变为几倍？"
+        },
+        {
+          "title": "微扰论：怎样估计能级修正",
+          "file": "10.html",
           "stage": "高阶选题",
           "kind": "lesson",
           "formula": "H=H₀+λV；Eₙ≈Eₙ⁽⁰⁾+λ〈n|V|n〉",
