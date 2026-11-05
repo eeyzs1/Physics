@@ -1,6 +1,6 @@
 # 教材检查记录
 
-检查日期：2026-11-01。运行命令：`python tools/check_course.py`。
+检查日期：2026-11-05。运行命令：`python tools/check_course.py`。
 
 - 144 个 HTML 页面本地链接全部有效：90 节正文、25 项研究训练、26 个领域入口，以及首页/分类树/路线。
 - Chromium 在离线模式下逐页加载，无 JavaScript 异常。

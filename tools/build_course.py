@@ -37,27 +37,6 @@ SOURCES = {
 }
 def source_key(n):
  return 'cern' if n==11 else 'nasa' if n==13 else 'v2' if n in [3,4,12] else 'v3' if n in [5,6,7,8,9,10,15] else 'v1' if n<3 or n==14 else 'mit'
-GUIDES = '''
-把常用量转换成 SI 单位并做量纲检查|用分量合成向量，从图像读取斜率与面积|先补函数与三角，再用导数描述变化率、用积分累加|比较测量值与模型预测，区分随机误差和系统偏差
-从位置、速度与加速度建立运动描述|用受力图求加速度，检查参考系是否惯性|从力矩与转动惯量解释角加速度|从质量守恒走向压强、黏性和流动方程|用拉格朗日量组织约束系统，理解广义坐标|从单摆的线性近似走向相空间、稳定性和混沌
-用回复力建立简谐方程，再研究能量交换|比较自由振动和受迫振动，辨认共振峰与阻尼|从局部耦合建立波动方程，区分横波与纵波|把压强扰动、声强与分贝联系起来|检查线性叠加何时失效，再认识孤立波与激波
-分别使用能量守恒和熵增判断过程能否发生|用速度分布和碰撞解释压强、温度|理解微观态权重，再从配分函数计算宏观量|用自由能和序参量描述相的稳定性|从平衡分布走向输运、涨落和耗散
-用电荷分布求场与电势，比较高斯定律的适用技巧|从电荷守恒与能量守恒建立回路方程|先求电流产生的磁场，再分析磁力|用磁通量变化和楞次定律判断感应方向|将电场和磁场组织为相互耦合的场方程|推导真空波动方程，再研究能流与偏振
-用光线追迹解释成像并检查近轴条件|从相位差计算条纹与分辨极限|分解电场方向，理解偏振片与相位延迟|从受激辐射、粒子数反转与腔反馈理解激光|区分强光下的非线性响应与单光子统计
-从洛伦兹变换重新理解同时性与时间间隔|用四动量检查碰撞与能量守恒|先补张量和几何，再学习测地线与场方程|认识时空扰动、干涉仪信号与波形推断
-从归一化和概率振幅建立态的描述|把可观测量写成算符，比较期望值与单次测量|用边界条件解简单势阱，再计算隧穿概率|区分轨道角动量和内禀自旋，学习量子数|从张量积、纠缠和统计走向多体系统与量子信息
-从氢原子能级走向多电子原子近似|区分转动、振动和电子光谱，识别选择定则|用两能级模型理解吸收、发射与拉比振荡|理解激光冷却与俘获的基本机制|从谱线频率、线宽与系统误差认识精密测量
-从晶格与倒格子解释衍射|用能带、费米能级和载流子解释输运|从磁矩和交换耦合理解磁有序|比较零电阻、迈斯纳效应与临界参数|从聚合物、胶体与液晶认识热涨落和结构|从能带几何与边界态理解拓扑分类
-用核半径、能级和壳层认识核结构|用衰变常数、活度与分支比描述放射性|同时检查能量、动量、电荷和核子数等守恒|比较结合能与反应条件，解释裂变和聚变|连接核反应率、恒星演化与元素起源
-辨认夸克、轻子、规范玻色子和希格斯场|用截面、亮度与探测效率解释事件数|从守恒量认识连续与离散对称性|先理解场的自由度，再学习量子化与相互作用|用味态与质量态的区别认识中微子振荡|区分实验异常、理论候选与已经确认的事实
-从电荷重排与德拜长度判断集体响应尺度|从电子和离子的扰动认识振荡与波|在连续介质近似下连接流体与电磁场|用回旋、漂移和不稳定性理解约束难点|连接太阳风、磁层和空间粒子输运
-用静力平衡、核反应与辐射理解恒星|结合运动学和光谱推断星系质量与组成|从简并压和强引力认识白矮星、中子星与黑洞|从膨胀模型、距离和红移建立宇宙学框架|把背景辐射与密度涨落联系到结构生长
-利用不同波型的到时和路径反演内部结构|从地磁场观测认识发电机机制和场变化|用密度、热流和物态约束地球内部|从流体、转动和能量收支研究环流|从太阳风与磁层相互作用解释空间天气
-比较扩散、受驱运动与能量消耗|用膜电容、离子梯度和电导建立电信号模型|把应力应变和黏弹性用于组织与运动|比较 X 射线、MRI、超声的信号来源与重建|区分活度、吸收剂量与生物效应相关量
-用初值和边界条件选择微分方程的物理解|把时空信号分解成频率成分并检查采样|用解析性、留数等工具处理积分与波动问题|用坐标无关的对象表达几何与物理规律|用群、表示和对称性组织守恒量与量子态
-比较积分算法的误差阶、稳定性和守恒性质|用随机采样估计积分与统计量并报告误差|从相互作用势推进粒子轨迹，检查平衡与采样|比较网格、边界条件、离散误差和稳定性|用观测约束参数，同时检查可辨识性与过拟合
-建立仪器响应和量值之间的校准关系|传播不确定度，区分偏差、方差与置信范围|理解分辨率、效率、噪声和信噪比|设计控制条件与重复实验，明确可检验假设|检查拟合残差、参数误差与模型选择
-'''.strip().splitlines()
 def link(label, url): return f'<a href="{E(url,quote=True)}">{E(label)}</a>'
 def page(title, body, depth=1):
  p='../' if depth else ''
@@ -65,74 +44,20 @@ def page(title, body, depth=1):
 rows=[]
 for line in DATA.strip().splitlines():
  a=line.split('|'); assert len(a)==20,(len(a),a[0]); rows.append(a)
-cards=[]; table=[]
 for a in rows:
  ident,name,group,pre,subs=a[:5]; n=int(ident); folder=f'{ident}-{name}'; dest=ROOT/folder; dest.mkdir(exist_ok=True)
- topics=subs.split('；'); sk=source_key(n); st,su=SOURCES[sk]
- lessonlinks=[]
+ sk=source_key(n); st,su=SOURCES[sk]
  for j in range(2):
   title,concept,formula,example,q,answer,pitfall=a[5+j*7:12+j*7]
-  filename=f'{j+1:02d}.html'; lessonlinks.append(link(title,filename))
+  filename=f'{j+1:02d}.html'
   demo=''
   if j==0:
    mode={0:'units',5:'refraction',8:'spectrum',12:'screening',15:'diffusion',16:'ode'}.get(n,a[-1])
    demo=f'''<section class="lab" data-demo="{mode}"><h2>动手观察 · 先预测，再拖动</h2><p class="lab-intro"></p><label>调节参数 <input type="range" min="1" max="10" value="4" step="0.1"><output></output></label><svg viewBox="0 0 640 230" role="img" aria-label="交互模型示意图"></svg><p class="lab-result" aria-live="polite"></p><p class="lab-limit"></p></section>'''
-  content=f'''<nav>{link('全部分支','../index.html')} / {link(name,'index.html')} / 第 {j+1} 课</nav><p class="eyebrow">{E(group)} · 约 15–25 分钟</p><h1>{E(title)}</h1><p class="lead">本课目标：能用自己的话解释“{E(title)}”，并独立完成下面的计算与适用条件判断。</p><aside>先修：{E(pre)}。如果公式暂时看不懂，先读例子，再回到 {link('学习准备','../00-学习准备/index.html')}。</aside><section><h2>先想一个问题</h2><p>{E(q)}先记下直觉答案；读完后比较你改变了哪一步想法。</p><h2>理解模型</h2><p>{E(concept)}</p><div class="formula">{E(formula)}</div><p>使用顺序：确认研究对象与条件 → 将单位统一 → 列式 → 代入 → 检查结果的单位和数量级。变量的具体意义与约定见下方例题。</p></section><section><h2>带着推理看例题</h2><p>{E(example)}</p><h3>检查边界</h3><p>{E(pitfall)}</p><p>回看例题：说出至少一个被忽略的因素，并解释它在什么情况下可能影响结果。改变一个条件后，原公式是否仍然适用？</p></section>{demo}<section class="quiz" data-answer="{answer}"><h2>现在闭卷试一试</h2><label for="answer">{E(q)}（只填数值）</label><div class="answer-row"><input id="answer" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>查看答案与解题提示</summary><p>答案：{E(answer)}。找到本课公式，先写出已知量与未知量，再统一单位代入。若是比例题，固定其他变量，仅比较被改变的那一项。</p><p>本课例题的逐步推理：{E(example)}</p></details><h3>迁移练习</h3><p>将自测题的一个已知条件加倍，先判断答案会增大、减小还是不变，再用公式验证。向我解释你的推导，我可以继续帮你检查。</p></section><section><h2>课后复述与复习</h2><ol><li>合上页面，用两句话说出本课模型描述什么。</li><li>不看公式重做自测，并说出适用条件。</li><li>第 1、3、7 天重做；答错时记录错因，不只记录答案。</li></ol><details><summary>延伸阅读与本课定位</summary><p>参考教材入口：{link(st,su)}。这是概念入门小课；该分支的后续专题与先修顺序见分支首页。解释和例题为原创编写，外链阅读需要联网。</p></details><label><input type="checkbox" class="complete" data-key="{ident}-{j}"> 我能独立解释并做对本课自测</label><p class="storage-note"></p></section><nav class="bottom-nav">{link('上一课' if j else '返回分支', '01.html' if j else 'index.html')}{link('下一课' if j==0 else '返回分支','02.html' if j==0 else 'index.html')}</nav>'''
+  content=f'''<nav>{link('全部分支','../index.html')} / {link(name,'index.html')} / 第 {j+1} 课</nav><p class="eyebrow">{E(group)} · 约 15–25 分钟</p><h1>{E(title)}</h1><p class="lead">本课目标：能用自己的话解释“{E(title)}”，并独立完成下面的计算与适用条件判断。</p><aside>先修：{E(pre)}。如果公式暂时看不懂，先读例子，再回到 {link('学习准备','../00-学习准备/index.html')}。</aside><section><h2>先想一个问题</h2><p>{E(q)}先记下直觉答案；读完后比较你改变了哪一步想法。</p><h2>理解模型</h2><p>{E(concept)}</p><div class="formula">{E(formula)}</div><p>使用顺序：确认研究对象与条件 → 将单位统一 → 列式 → 代入 → 检查结果的单位和数量级。变量的具体意义与约定见下方例题。</p></section><section><h2>带着推理看例题</h2><p>{E(example)}</p><h3>检查边界</h3><p>{E(pitfall)}</p><p>回看例题：说出至少一个被忽略的因素，并解释它在什么情况下可能影响结果。改变一个条件后，原公式是否仍然适用？</p></section>{demo}<section class="quiz" data-answer="{E(answer)}"><h2>现在闭卷试一试</h2><label for="answer">{E(q)}（只填数值）</label><div class="answer-row"><input id="answer" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>查看答案与解题提示</summary><p>答案：{E(answer)}。找到本课公式，先写出已知量与未知量，再统一单位代入。若是比例题，固定其他变量，仅比较被改变的那一项。</p><p>本课例题的逐步推理：{E(example)}</p></details><h3>迁移练习</h3><p>将自测题的一个已知条件加倍，先判断答案会增大、减小还是不变，再用公式验证。向我解释你的推导，我可以继续帮你检查。</p></section><section><h2>课后复述与复习</h2><ol><li>合上页面，用两句话说出本课模型描述什么。</li><li>不看公式重做自测，并说出适用条件。</li><li>第 1、3、7 天重做；答错时记录错因，不只记录答案。</li></ol><details><summary>延伸阅读与本课定位</summary><p>参考教材入口：{link(st,su)}。这是概念入门小课；该分支的后续专题与先修顺序见分支首页。解释和例题为原创编写，外链阅读需要联网。</p></details><label><input type="checkbox" class="complete" data-key="{ident}-{j}"> 我能独立解释并做对本课自测</label><p class="storage-note"></p></section><nav class="bottom-nav">{link('上一课' if j else '返回分支', '01.html' if j else 'index.html')}{link('下一课' if j==0 else '返回分支','02.html' if j==0 else 'index.html')}</nav>'''
   (dest/filename).write_text(page(title,content),encoding='utf-8')
- guides=GUIDES[n].split('|'); assert len(guides)==len(topics),(n,topics)
- overview=f'''<nav>{link('全部分支','../index.html')}</nav><p class="eyebrow">{ident} / {E(group)}</p><h1>{E(name)}</h1><p class="lead">先修：{E(pre)}。本分支从两个具体模型切入，再沿下面的专题路线深入。</p><h2>入门课程 · 已编写</h2><ol class="lesson-list">{''.join('<li>'+x+'</li>' for x in lessonlinks)}</ol><h2>子方向与后续路线</h2><p>以下是进阶课程规划，当前交付为上面的两节入门课；这些专题不表示已经完成完整教材。</p><ol>{''.join('<li><strong>'+E(t)+'</strong>：'+E(g)+'。</li>' for t,g in zip(topics,guides))}</ol><h2>如何继续</h2><p>完成入门课后，先补齐先修知识，按专题顺序阅读教材对应章节。每个专题至少完成一次推导、三道计算题与一次模型检验。研究方向之间有交叉，可回到总览选择关联分支。</p><h2>教材入口</h2><p>{link(st,su)}；{link(*SOURCES['flp'])}。</p>'''
- (dest/'index.html').write_text(page(name,overview),encoding='utf-8')
- cards.append(f'<a class="card" href="{E(folder)}/index.html"><span>{ident} / {E(group)}</span><h2>{E(name)}</h2><p>{E(subs)}</p><small>2 节入门课 → 专题路线</small></a>')
- table.append(f'| {ident} | [{name}]({folder}/index.html) | {group} | {subs} |')
 
-body='''<p class="eyebrow">从日常现象走向物理规律</p><h1>建立你的<br>物理学地图。</h1><p class="lead">不急着背完所有公式。先知道每个分支在问什么，再用一个模型、一条例题和一次验证建立理解。</p><div class="stats"><span><strong>18</strong>主要分支与方法领域</span><span><strong>38</strong>入门小课（含准备课）</span><span><strong>19</strong>可调参数演示</span></div><section><h2>从哪里开始</h2><p>默认按高中数学起步。零基础先学 00 → 01 → 02，再学 03、04、05；进入 06、07 后，按兴趣选择 08–15。16–18 是贯穿整个过程的数学、计算和实验方法。</p><p>一课约 15–25 分钟。先做预测，再读解释、看例题、调参数，最后闭卷练习。无需安装软件，双击本页即可；外部教材链接需要联网。</p><p>分类说明：物理学没有唯一且互斥的“所有主分支”名单。这份地图覆盖常见基础理论、研究领域和交叉方法；流体力学归入经典力学，声学归入波动，宇宙学与天体物理合列。化学物理、环境物理、量子信息等也可独立组织，此处分别关联原子分子、地球生物与量子方向。</p></section><h2>选择一个分支</h2><div class="grid">'''+''.join(cards)+'''</div><section><h2>记住什么才算学会</h2><p>你能说明公式中每个量的含义、列出近似条件、独立完成例题变式，并描述一个会让模型失效的场景。页面勾选只记录自评，不能替代这些能力。</p><p>学习进度尽量保存在当前浏览器；某些浏览器限制本地文件存储，换浏览器或清理数据后记录可能消失。正文、自测和演示不依赖保存进度。</p></section>'''
-(ROOT/'index.html').write_text(page('物理学地图',body,0),encoding='utf-8')
-(ROOT/'README.md').write_text('''# 物理学学习手册
 
-从 [HTML 学习首页](index.html) 开始，双击即可在浏览器离线阅读。中文正文、公式、图示、自测与交互均在本地；外部参考资料需要联网。
-
-## 分类范围
-
-物理学不存在唯一、互斥且穷尽的主分支分类。本项目按学习需要整理 **18 个主要理论、研究和方法领域**，另设学习准备。相邻分支会交叉，表中的子方向是常见方向而非穷尽目录。理论物理与实验物理也可以作为贯穿全部分支的另一种划分。
-
-| 编号 | 分支及教程 | 类型 | 常见子方向 |
-|---|---|---|---|
-'''+ '\n'.join(table)+'''
-
-## 推荐顺序
-
-1. 学习准备 → 经典力学 → 振动、波动与声学。
-2. 热力学与统计物理、电磁学 → 光学。
-3. 狭义相对论与量子入门；同时补微积分、复数和线性代数。
-4. 按兴趣进入原子分子、凝聚态、核、粒子、等离子体、天体等方向。进阶相对论需要张量与几何。
-5. 数学物理、计算物理和实验测量贯穿全程。交叉领域也可先读概念课，再回来补先修。
-
-## 已完成的内容与深度
-
-19 个目录（18 个分支加学习准备），每个目录含分支首页与两节原创入门课，共 38 课。每课有目标、概念、适用条件、例题、数值自测与反馈、迁移练习和参考入口；每个目录第一课有可调参数图示。图示均为教学模型，具体假设标在演示下方。
-
-这是覆盖各主要领域的入门教材，不等于每个子方向的完整大学课程。分支首页明确区分已编写小课与后续专题路线。高级专题需要相应数学基础。
-
-## 学习方法
-
-每次 15–25 分钟：预测 → 理解 → 例题 → 操作图示 → 闭卷作答 → 解释适用条件。第 1、3、7 天复习；能独立解释和解变式才勾选完成。进度为浏览器本地自评记录，存储不可用时仍可使用教材。
-
-教材编排参考 [teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md) 的小课时、检索练习和间隔复习方法。用户已经说明学习目标，故不因该 skill 的泛用访谈流程阻塞教材编写。未全局安装第三方 skill，也未执行其中的脚本。
-
-## 文件与维护
-
-- `index.html`：总览入口；每个编号目录的 `index.html`：分支路线。
-- `assets/`：共用样式、自测和 SVG 交互，无 CDN 或在线字体。
-- [RESOURCES.md](RESOURCES.md)：参考教材和教学方法来源。
-- [MISSION.md](MISSION.md)：学习目标；[NOTES.md](NOTES.md)：当前教学假设。
-- `tools/build_course.py`：教材内容和生成器；修改内容后运行 `python tools/build_course.py` 重建。
-- `python tools/check_course.py`：检查结构、链接、数量与演示类型；浏览器验证另见检查记录。
-
-不自动生成“已经学会”的学习记录；后续根据你的实际作答调整课时与难度。
-''',encoding='utf-8')
-(ROOT/'RESOURCES.md').write_text('# 教材与方法来源\n\n查阅日期：2026-11-01。正文和习题为原创编写；以下为核对、延伸阅读入口，不整段复制教材。\n\n'+ '\n'.join(f'- [{title}]({url})' for title,url in SOURCES.values())+'\n\n教学方法：[teach SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md)。使用短课、目标、反馈、检索与间隔复习；不要求安装该 skill。技能目录检索入口：[skills.sh](https://skills.sh/)。\n\nOpenStax 适合作为主教材；费曼讲义用于第二遍理解，难度更高；CERN 与 NASA 用于研究对象与领域概览。涉及高级方向时，先修与后续路线比急于背公式更重要。\n',encoding='utf-8')
-(ROOT/'MISSION.md').write_text('# 学习目标\n\n用户希望系统学习物理学，先建立主分支与子方向地图，再通过中文 HTML 教辅理解概念，借助动画和图片表达抽象内容。\n\n当前目标：能识别各分支的问题、掌握一个入门模型并解释它的适用条件。尚未设定考试或职业目标。\n',encoding='utf-8')
-(ROOT/'NOTES.md').write_text('# 教学假设与偏好\n\n- 用户偏好中文 HTML，适合概念时使用交互和图示。\n- 未提供年级或数学水平；暂按高中代数起步，进阶课标出数学先修。\n- 未获得任何实际作答，不推断已经掌握。后续按反馈补充专题和推导。\n- 首轮为每分支两节实质入门课；子方向完整课程仍属后续规划。\n',encoding='utf-8')
 print(f'Built {len(rows)} directories, {len(rows)*2} lessons.')
 from extend_course import extend
-extend(ROOT, rows, page, link, SOURCES, GUIDES)
+extend(ROOT, rows, page, link, SOURCES)

@@ -1,7 +1,8 @@
 'use strict';
 const topicSearch=document.querySelector('#topic-search');
-if(topicSearch) topicSearch.addEventListener('input',()=>{let count=0;const term=topicSearch.value.trim().toLocaleLowerCase();document.querySelectorAll('.taxonomy-field').forEach(section=>{const heading=section.querySelector('h2').textContent.toLocaleLowerCase();let found=heading.includes(term);section.querySelectorAll('li').forEach(li=>{li.hidden=!!term&&!heading.includes(term)&&!li.textContent.toLocaleLowerCase().includes(term);if(!li.hidden)found=true;});section.hidden=!found;if(found)count++;});document.querySelector('#topic-status').textContent=`显示 ${count} 个领域${term?'的匹配方向':''}`;});
+if(topicSearch) topicSearch.addEventListener('input',()=>{let count=0;const term=topicSearch.value.trim().toLocaleLowerCase();document.querySelectorAll('.taxonomy-field').forEach(section=>{const heading=section.querySelector('h2').textContent.toLocaleLowerCase();const headingMatch=heading.includes(term);let found=headingMatch;section.querySelectorAll('li').forEach(li=>{li.hidden=!!term&&!headingMatch&&!li.textContent.toLocaleLowerCase().includes(term);if(!li.hidden)found=true;});section.hidden=!found;if(found)count++;});document.querySelector('#topic-status').textContent=`显示 ${count} 个领域${term?'的匹配方向':''}`;});
 // No network requests: all illustrations are authored SVG primitives.
+// SVG helpers interpolate internal constants only; never route external or user text through them unescaped.
 const svgLine=(x1,y1,x2,y2,color='#146a60',width=3)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="${width}"/>`;
 const svgText=(x,y,t)=>`<text x="${x}" y="${y}">${t}</text>`;
 const svgCircle=(x,y,r=6,color='#146a60')=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${color}"/>`;

@@ -32,7 +32,7 @@ def parse(text, count):
   a=line.split('\t' if '\t' in line else '|');assert len(a)==count,(len(a),a[:2]);out.append(a)
  return out
 
-def extend(root, base_rows, page, link, sources, guides):
+def extend(root, base_rows, page, link, sources):
  fields={int(a[0]):{'id':a[0],'name':a[1],'group':a[2],'pre':a[3],'topics':a[4].split('；')} for a in base_rows}
  for a in parse(FIELDS,5):fields[int(a[0])]={'id':a[0],'name':a[1],'group':a[2],'pre':a[3],'topics':a[4].split('；')}
  for n,f in fields.items():f['folder']=f"{f['id']}-{f['name']}";f['lessons']=[]
@@ -87,7 +87,7 @@ def extend(root, base_rows, page, link, sources, guides):
   readme_table.append(f'| {f["id"]} | [{f["name"]}]({folder}/index.html) | {f["group"]} | {count} | '+('1' if project_count else '—')+' |')
  total=sum(len(f['lessons']) for f in fields.values()); topic_count=sum(len(f['all_topics']) for f in fields.values())
  source_note=f'''<p>分类参考：{link('APS PhySH','https://physh.org/')} 和 {link('arXiv Category Taxonomy','https://arxiv.org/category_taxonomy')}（核对日期 2026-11-01）。这里是为学习重新组织的中文导航，不是对官方分类的逐项翻译或完整镜像；研究领域、物理系统、技术和相关学科是不同维度，会相互交叉。</p>'''
- taxonomy_body=f'''<nav>{link('学习首页','index.html')} / {link('分级路线','learning-path.html')}</nav><p class="eyebrow">分类地图与覆盖边界</p><h1>分支不能只用一张<br>互斥名单装下。</h1><p class="lead">本地导航含 25 个学习领域和共同准备，合计 {topic_count} 个方向条目（跨领域名称可重复）。这是较广的学习地图，仍不声称囊括物理学全部分类。</p><section><h2>同时使用四种视角</h2><ol><li>基础理论：经典力学、电磁学、热力学统计、量子与相对论。</li><li>研究对象与尺度：原子、核、粒子、凝聚态、等离子体、地球与宇宙。</li><li>研究方法：理论、数学、计算、实验、观测、数据分析；这些方法贯穿各分支。</li><li>应用与相关学科：医学、化学、能源、信息、历史与教育；它们不全是与基础理论并列的“主分支”。</li></ol>{source_note}<p>相同主题可能有多个归属：量子光学连接光学与原子物理；磁重联连接空间与等离子体；主动软物质连接凝聚态与生物物理。这里用多个入口表达这种关系。</p></section><label for="topic-search">按方向名称搜索</label><input id="topic-search" type="search" placeholder="例如：超导、湍流、量子引力" aria-describedby="topic-status"><p id="topic-status" role="status">显示全部领域</p>'''+''.join(taxonomy)+'''<section><h2>还有哪些不能声称已经覆盖</h2><p>细分技术、具体材料、特定天体、不断出现的交叉方向，无法靠固定目录穷尽。弦论、量子引力和超出标准模型的某些方案是候选理论，不与实验已确认结论混写。前沿分类更新时应重新核查官方主题体系。</p></section>'''
+ taxonomy_body=f'''<nav>{link('学习首页','index.html')} / {link('分级路线','learning-path.html')}</nav><p class="eyebrow">分类地图与覆盖边界</p><h1>分支不能只用一张<br>互斥名单装下。</h1><p class="lead">本地导航含 {len(fields)-1} 个学习领域和共同准备，合计 {topic_count} 个方向条目（跨领域名称可重复）。这是较广的学习地图，仍不声称囊括物理学全部分类。</p><section><h2>同时使用四种视角</h2><ol><li>基础理论：经典力学、电磁学、热力学统计、量子与相对论。</li><li>研究对象与尺度：原子、核、粒子、凝聚态、等离子体、地球与宇宙。</li><li>研究方法：理论、数学、计算、实验、观测、数据分析；这些方法贯穿各分支。</li><li>应用与相关学科：医学、化学、能源、信息、历史与教育；它们不全是与基础理论并列的“主分支”。</li></ol>{source_note}<p>相同主题可能有多个归属：量子光学连接光学与原子物理；磁重联连接空间与等离子体；主动软物质连接凝聚态与生物物理。这里用多个入口表达这种关系。</p></section><label for="topic-search">按方向名称搜索</label><input id="topic-search" type="search" placeholder="例如：超导、湍流、量子引力" aria-describedby="topic-status"><p id="topic-status" role="status">显示全部领域</p>'''+''.join(taxonomy)+'''<section><h2>还有哪些不能声称已经覆盖</h2><p>细分技术、具体材料、特定天体、不断出现的交叉方向，无法靠固定目录穷尽。弦论、量子引力和超出标准模型的某些方案是候选理论，不与实验已确认结论混写。前沿分类更新时应重新核查官方主题体系。</p></section>'''
  (root/'taxonomy.html').write_text(page('分类树与覆盖范围',taxonomy_body,0),encoding='utf-8')
  official=json.loads((root/'classification-reference.json').read_text(encoding='utf-8'))
  official_rows=''.join('<tr><td>'+E(item['code'])+'</td><td>'+'、'.join(link(fields[n]['name'],fields[n]['folder']+'/index.html') for n in item['local_fields'])+'</td></tr>' for item in official['categories'])
@@ -96,9 +96,9 @@ def extend(root, base_rows, page, link, sources, guides):
  (root/'taxonomy.html').write_text(page('分类树与覆盖范围',taxonomy_body,0),encoding='utf-8')
  path_body=f'''<nav>{link('首页','index.html')} / {link('分类树','taxonomy.html')}</nav><p class="eyebrow">从学习知识走向独立判断</p><h1>入门 → 核心 → 高阶<br>→ 研究训练。</h1><p class="lead">“大师”不是一个可以凭读完文件授予的等级。这里把目标拆成可以检查的能力，按先修前进，而不是按网页数量估计水平。</p><section><h2>阶段 0：准备</h2><p>学习代数、三角函数、单位和图像；继续补微积分、复数、线性代数、概率。对应 {link('学习准备','00-学习准备/index.html')}。通过条件：能给物理式检查量纲、解释导数和积分、解二阶线性方程与简单本征值题。</p><h2>阶段 1：基础物理</h2><p>顺序为经典力学 → 振动波动 → 热学、电磁学 → 光学 → 狭义相对论与量子入门。先学现象与实验依据，再建立模型。通过条件：能独立画受力图、做能量账本、用场解释相互作用、用概率解释量子测量。</p><h2>阶段 2：本科核心</h2><p>系统补分析力学、矢量电磁学、热力学与统计、量子力学；并行学习数学方法、实验测量和计算。当前各分支第 03 课是选题切入，不足以替代完整学期。应读主教材对应章节，完成章后题并接受批改。</p><h2>阶段 3：高阶专门化</h2><p>选择 1–2 个方向深入：例如凝聚态需要多体与统计；粒子需要相对论量子理论和场论；引力需要微分几何；流体需要 PDE 与稳定性。当前第 04 课只示范部分高阶方法，其他主题在分类树中仍为待补。</p><h2>阶段 4：研究训练与独立工作</h2><p>先复现已知结果，再比较模型与数据，阅读综述和论文，逐步形成可检验的新问题。通过条件应包括导师或同行评议、可复现材料和对局限的准确判断。原创研究没有统一保证完成的年限。</p></section><section><h2>按学习目标安排训练</h2><ol><li>概念兴趣：先遍历入门课，找到想深入的两三个问题。</li><li>大学基础：围绕四大理论安排连续学期，不能只做本项目的短自测。</li><li>研究准备：锁定具体方向，补先修、完成复现项目，并获得外部反馈。</li></ol><p>每周可采用：2 次概念与推导、2 次独立习题、1 次实验或计算、1 次闭卷复习。时长按你的基础调整，当前没有虚构个人测评结果。</p></section><section><h2>系统课程与开放资料</h2><ul><li>{link('OpenStax 大学物理','https://openstax.org/subjects/science')}：基础教材与章后题。</li><li>{link('MIT OCW 8.01SC','https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/')}：完整力学课程的例题和练习组织。</li><li>{link('David Tong 讲义目录','https://davidtong.org/teaching/')}：本科到研究生的理论物理讲义，按每门课先修阅读。</li><li>{link('arXiv 学科目录','https://arxiv.org/category_taxonomy')}：找论文主题入口；预印本需独立核对论证与后续评议。</li></ul><p>外链需要联网；当前中文小课和训练说明均可离线阅读。</p></section><h2>逐领域课程与项目</h2><div class="grid">'''+''.join(cards)+'</div>'
  (root/'learning-path.html').write_text(page('分级学习路线',path_body,0),encoding='utf-8')
- intro=f'''<p class="eyebrow">中文离线物理教材 · 范围与完成度公开</p><h1>看清物理全景，<br>逐步学会做研究。</h1><p class="lead">从基础概念、控制方程和推导，走向计算、实验与论文复现。每一阶段都用可检查的证据检验学习。</p><div class="stats"><span><strong>25</strong>学习领域 + 共同准备</span><span><strong>{total}</strong>已编写正文课</span><span><strong>25</strong>研究训练任务</span><span><strong>19</strong>交互图示</span></div><section><h2>先看两张地图</h2><p>{link('分类树：所有本地列出的方向与覆盖边界','taxonomy.html')} → {link('分级路线：先修、阶段与考核','learning-path.html')}。</p><p>当前共有 {total} 节正文课与 25 项复现训练说明；这是扩展后的选题教材。未完成全部子方向的系统教材，也不把读完页面等同于精通。分类覆盖与课程完成度是两件事。</p><p>零基础先 00 → 01 → 02，再学 03、04、05，之后进入相对论、量子和感兴趣的专门方向。高级课程必须另外补齐数学先修。</p></section><h2>课程目录</h2><div class="grid">'''+''.join(cards)+f'''</div><section><h2>本地使用</h2><p>双击 index.html 即可离线学习；参考书与论文外链需联网。完成标记保存在当前浏览器，可能受本地文件存储限制，不等于能力认证。</p>{source_note}</section>'''
+ intro=f'''<p class="eyebrow">中文离线物理教材 · 范围与完成度公开</p><h1>看清物理全景，<br>逐步学会做研究。</h1><p class="lead">从基础概念、控制方程和推导，走向计算、实验与论文复现。每一阶段都用可检查的证据检验学习。</p><div class="stats"><span><strong>{len(fields)-1}</strong>学习领域 + 共同准备</span><span><strong>{total}</strong>已编写正文课</span><span><strong>{len(project_rows)}</strong>研究训练任务</span><span><strong>{len(base_rows)}</strong>交互图示</span></div><section><h2>先看两张地图</h2><p>{link('分类树：所有本地列出的方向与覆盖边界','taxonomy.html')} → {link('分级路线：先修、阶段与考核','learning-path.html')}。</p><p>当前共有 {total} 节正文课与 {len(project_rows)} 项复现训练说明；这是扩展后的选题教材。未完成全部子方向的系统教材，也不把读完页面等同于精通。分类覆盖与课程完成度是两件事。</p><p>零基础先 00 → 01 → 02，再学 03、04、05，之后进入相对论、量子和感兴趣的专门方向。高级课程必须另外补齐数学先修。</p></section><h2>课程目录</h2><div class="grid">'''+''.join(cards)+f'''</div><section><h2>本地使用</h2><p>双击 index.html 即可离线学习；参考书与论文外链需联网。完成标记保存在当前浏览器，可能受本地文件存储限制，不等于能力认证。</p>{source_note}</section>'''
  (root/'index.html').write_text(page('物理学学习手册',intro,0),encoding='utf-8')
- manifest={'lesson_count':total,'project_count':25,'topic_entry_count':topic_count,'fields':list(fields.values())}
+ manifest={'lesson_count':total,'project_count':len(project_rows),'topic_entry_count':topic_count,'demo_count':len(base_rows),'fields':list(fields.values())}
  (root/'course-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
  md='''# 物理学学习手册
 
@@ -114,7 +114,7 @@ def extend(root, base_rows, page, link, sources, guides):
 
 ## 当前实际交付
 
-'''+f'- **{total} 节正文课**：原 38 节入门课、38 节数学/核心/高阶选题、14 节新增领域课程。\n- **25 项研究复现训练**：都有实施方法、已知结果检查、交付要求、误判提醒与扩展问题。\n- **{topic_count} 个方向条目**（跨领域名称可重复）：分类树列出导航，不将每条名称算作已完成教程。\n- **19 个交互图示**；全部正文、图示和自测可离线使用。\n'+'''
+'''+f'- **{total} 节正文课**：原 38 节入门课、38 节数学/核心/高阶选题、14 节新增领域课程。\n- **{len(project_rows)} 项研究复现训练**：都有实施方法、已知结果检查、交付要求、误判提醒与扩展问题。\n- **{topic_count} 个方向条目**（跨领域名称可重复）：分类树列出导航，不将每条名称算作已完成教程。\n- **{len(base_rows)} 个交互图示**；全部正文、图示和自测可离线使用。\n'+'''
 ## 已有课程目录
 
 | 编号 | 学习领域 | 类型 | 正文课 | 研究训练 |
@@ -144,6 +144,7 @@ def extend(root, base_rows, page, link, sources, guides):
 
 - 内容：`tools/build_course.py` 保留原课，`advanced_content.py`、`expanded_fields.py` 存新增内容，`extend_course.py` 生成扩展页面。
 - 重建：`python tools/build_course.py`。每次都会从内容源生成当前版本。
+- 依赖：Python 3.10+；验证工具需先 `pip install -r requirements.txt`，再运行 `python -m playwright install chromium` 安装浏览器。
 - 验证：`python tools/check_course.py`。检查链接、离线加载、答题、进度与手机布局；不把功能检查等同于物理专家审校。
 - 清单：`course-manifest.json`；检查记录：`verification/REPORT.md`。
 - 教学方法沿用 [teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md) 的小课时、检索练习与间隔复习；未全局安装第三方 skill。
@@ -153,7 +154,8 @@ def extend(root, base_rows, page, link, sources, guides):
  with (root/'README.md').open('a',encoding='utf-8') as out:
   out.write('\n## 详细子方向清单\n\n以下是本地学习导航；列出名称不等于已完成该专题教程。跨领域主题允许重复，不能用条目总数衡量学科覆盖率。\n')
   for f in fields.values():out.write('\n### '+f['id']+' '+f['name']+'\n\n'+'；'.join(f['all_topics'])+'。\n')
- with (root/'RESOURCES.md').open('a',encoding='utf-8') as out:out.write('\n## 扩展版补充参考\n\n- [APS PhySH](https://physh.org/)：分类维度核对。\n- [arXiv 学科目录](https://arxiv.org/category_taxonomy)：论文方向导航。\n- [David Tong 讲义目录](https://davidtong.org/teaching/)：分级理论课程入口。\n- [MIT OCW 8.01SC](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/)：系统力学课程。\n\n新增内容为原创推导与训练设计；入口链接不代表每一页已获得领域专家逐条审校。前沿项目实施时需重新核对具体文献。\n')
+ resources='# 教材与方法来源\n\n查阅日期：2026-11-01。正文和习题为原创编写；以下为核对、延伸阅读入口，不整段复制教材。\n\n'+ '\n'.join(f'- [{title}]({url})' for title,url in sources.values())+'\n\n教学方法：[teach SKILL.md](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md)。使用短课、目标、反馈、检索与间隔复习；不要求安装该 skill。技能目录检索入口：[skills.sh](https://skills.sh/)。\n\nOpenStax 适合作为主教材；费曼讲义用于第二遍理解，难度更高；CERN 与 NASA 用于研究对象与领域概览。涉及高级方向时，先修与后续路线比急于背公式更重要。\n\n## 扩展版补充参考\n\n- [APS PhySH](https://physh.org/)：分类维度核对。\n- [arXiv 学科目录](https://arxiv.org/category_taxonomy)：论文方向导航。\n- [David Tong 讲义目录](https://davidtong.org/teaching/)：分级理论课程入口。\n- [MIT OCW 8.01SC](https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/)：系统力学课程。\n\n新增内容为原创推导与训练设计；入口链接不代表每一页已获得领域专家逐条审校。前沿项目实施时需重新核对具体文献。\n'
+ (root/'RESOURCES.md').write_text(resources,encoding='utf-8')
  (root/'MISSION.md').write_text('# 学习目标\n\n用户希望建立覆盖物理学各方向的中文 HTML 教材，并从入门逐步达到独立研究水平。目录、课程正文与研究训练的完成度必须区分。\n\n当前执行：扩充分支与分级选题课，补研究复现训练；不把“大师”当作仅靠阅读可授予的阶段。\n',encoding='utf-8')
  (root/'NOTES.md').write_text('# 教学偏好与状态\n\n中文、离线 HTML、概念可视化。暂按高中数学起步，高阶先修明确列出。用户尚未作答，不推断掌握程度。用户要求继续扩展至研究级，不再局限于两节入门课。分类树比正文覆盖范围更广，未写出的专题明确标出。\n',encoding='utf-8')
- print(f'Expanded: {len(fields)} entrances; {total} lessons; 25 projects; {topic_count} topic entries.')
+ print(f'Expanded: {len(fields)} entrances; {total} lessons; {len(project_rows)} projects; {topic_count} topic entries.')

@@ -71,6 +71,7 @@
 
 - 内容：`tools/build_course.py` 保留原课，`advanced_content.py`、`expanded_fields.py` 存新增内容，`extend_course.py` 生成扩展页面。
 - 重建：`python tools/build_course.py`。每次都会从内容源生成当前版本。
+- 依赖：Python 3.10+；验证工具需先 `pip install -r requirements.txt`，再运行 `python -m playwright install chromium` 安装浏览器。
 - 验证：`python tools/check_course.py`。检查链接、离线加载、答题、进度与手机布局；不把功能检查等同于物理专家审校。
 - 清单：`course-manifest.json`；检查记录：`verification/REPORT.md`。
 - 教学方法沿用 [teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md) 的小课时、检索练习与间隔复习；未全局安装第三方 skill。
