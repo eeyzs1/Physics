@@ -1,6 +1,7 @@
 from pathlib import Path
 from html import escape as E
 import json
+import hashlib
 from advanced_content import lessons
 from expanded_fields import FIELDS, EXTRA, PROJECTS
 from core_expansion import CORE
@@ -30,7 +31,9 @@ MORE_TOPICS = '''
 def parse(text, count):
  out=[]
  for line in text.strip().splitlines():
-  a=line.split('\t' if '\t' in line else '|');assert len(a)==count,(len(a),a[:2]);out.append(a)
+  a=line.split('\t' if '\t' in line else '|')
+  assert len(a) in (count,count+1,count+2),(len(a),a[:2])  # optional trailing columns: derivation detail, advanced quiz
+  out.append(a)
  return out
 
 def extend(root, base_rows, page, link, sources):
@@ -40,7 +43,7 @@ def extend(root, base_rows, page, link, sources):
  # Original 38 lessons are preserved, with their existing progress keys.
  for n in range(19):
   a=base_rows[n]
-  for i in range(2): fields[n]['lessons'].append({'title':a[5+i*7],'file':f'{i+1:02d}.html','stage':'入门','kind':'lesson','formula':a[7+i*7],'q':a[9+i*7]})
+  for i in range(2): fields[n]['lessons'].append({'title':a[5+i*7],'file':f'{i+1:02d}.html','stage':'入门','kind':'lesson','formula':a[7+i*7],'q':a[9+i*7],'key':f"{a[0]}-{i}"})
  refs={
   0:('MIT：单变量微积分','https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/'),
   1:('David Tong：Classical Dynamics','https://davidtong.org/teaching/classical-dynamics/'),
@@ -48,6 +51,7 @@ def extend(root, base_rows, page, link, sources):
   11:('David Tong：Quantum Field Theory','https://davidtong.org/teaching/quantum-field-theory/'),
  }
  default_ref=('David Tong：分级物理讲义目录','https://davidtong.org/teaching/')
+ REF_OVERRIDES={'线性代数：本征向量为什么重要':('MIT OCW 18.06：Linear Algebra','https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/')}
  def reference(n):
   if n in refs:return refs[n]
   topic_refs={4:'electromagnetism',6:'general-relativity',7:'quantum-mechanics',8:'topics-in-quantum-mechanics',9:'solid-state-physics',12:'electromagnetism',13:'cosmology',15:'mathematical-biology',19:'fluid-mechanics',21:'topics-in-quantum-mechanics',22:'topics-in-quantum-mechanics'}
@@ -65,13 +69,25 @@ def extend(root, base_rows, page, link, sources):
  stage_order={'入门':0,'数学准备':0,'本科核心':1,'高阶选题':2}
  staged.sort(key=lambda s:(int(s[1][0]),stage_order[s[0]]))
  for stage,a in staged:
-  ident,title,pre,concept,formula,derivation,example,q,answer,solution,limit,transfer,transfer_solution=a
+  ident,title,pre,concept,formula,derivation,example,q,answer,solution,limit,transfer,transfer_solution=a[:13]
+  detail=a[13] if len(a)>13 else ''
+  adv=a[14] if len(a)>14 else ''
   n=int(ident);f=fields[n];i=len(f['lessons'])+1;filename=f'{i:02d}.html'
   ref_title,ref_url=reference(n)
+  ref_title,ref_url=REF_OVERRIDES.get(title,(ref_title,ref_url))
   steps=derivation.split('；')
-  body=f'''<nav>{link('总览','../index.html')} / {link(f['name'],'index.html')} / 第 {i} 课</nav><p class="eyebrow">{E(stage)} · 约 30–60 分钟</p><h1>{E(title)}</h1><p class="lead">目标：跟随推导建立模型，独立计算一个新情形，并指出近似何时失效。</p><aside>先修：{E(pre)}。先修不熟时先回到 {link('数学准备','../00-学习准备/index.html')}。同一分支的两节入门课不等于满足所有高阶先修。</aside><section><h2>问题与物理图像</h2><p>{E(concept)}</p><div class="formula">{E(formula)}</div><h2>从假设走到结果</h2><ol>{''.join('<li>'+E(s).rstrip('。')+'。</li>' for s in steps)}</ol><p>请在纸上补出中间代数步骤。不能复现时，先指出卡住的等式，再向我提问。</p></section><section><h2>例题与核对</h2><p>{E(example)}</p><h3>适用边界</h3><p>{E(limit)}</p></section><section class="quiz" data-answer="{E(answer)}"><h2>独立计算</h2><label for="answer">{E(q)}（只填数值）</label><div class="answer-row"><input id="answer" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>展开本题解答</summary><p>{E(solution)}</p></details><h3>迁移与反例</h3><p>{E(transfer)}</p><details><summary>对照迁移题解答</summary><p>{E(transfer_solution)}</p></details></section><section><h2>进入下一阶段前</h2><ol><li>不看正文，重新写出本课推导并解释每个符号。</li><li>从适用边界选一个被忽略因素，说明如何修改模型。</li><li>隔 1、3、7 天重做两道题，并把不懂的步骤发给我。</li></ol><p>参考入口：{link(ref_title,ref_url)}。这些入口用于继续系统学习，不表示本小课已覆盖整门大学课程；具体课程和文献见 {link('分级学习路线','../learning-path.html')}。</p><label><input type="checkbox" class="complete" data-key="{ident}-deep-{i}"> 我能独立推导并解释近似条件</label><p class="storage-note"></p></section><nav class="bottom-nav">{link('上一课',f'{i-1:02d}.html' if i>1 else 'index.html')}{link('返回分支与下一步','index.html')}</nav>'''
+  detail_html=''
+  if detail:detail_html='<details class="steps-detail"><summary>卡住了？展开关键中间步骤</summary><ol>'+''.join('<li>'+E(s).rstrip('。')+'。</li>' for s in detail.split('；'))+'</ol><p>仍卡住时，把具体等式记下来再讨论，比反复重读有效。</p></details>'
+  quiz2_html=''
+  if adv:
+   q2,a2,s2=adv.split('::')
+   quiz2_html=f'<section class="quiz" data-answer="{E(a2)}"><h2>进阶自测</h2><p>比上一题多一步或需要换单位；第 1、3、7 天复习时换做本题，避免背答案。</p><label for="answer2">{E(q2)}（只填数值）</label><div class="answer-row"><input id="answer2" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>展开本题解答</summary><p>{E(s2)}</p></details></section>'
+  skey=f"{ident}-{hashlib.sha1(title.encode('utf-8')).hexdigest()[:8]}"
+  reviews=[['不看正文，重新写出本课推导并解释每个符号。','从适用边界选一个被忽略因素，说明如何修改模型。','隔 1、3、7 天重做两道题，并把不懂的步骤发给我。'],['合上页面，向想象中的同学讲清本课模型的假设、推导与结论。','找一个适用边界之外的情形，判断公式中哪一项最先失效。','两天内不看解答重做两道自测，错哪一步就回到对应小节。'],['把本课公式代入一个自己编的数值情形，先估算量级再精确计算。','说明若去掉推导中最强的一个假设，结论会怎样变化。','下次复习先做进阶题再做基础题，对比两次的用时与错因。']]
+  review_html=''.join('<li>'+E(s)+'</li>' for s in reviews[int(skey[-2:],16)%3])
+  body=f'''<nav>{link('总览','../index.html')} / {link(f['name'],'index.html')} / 第 {i} 课</nav><p class="eyebrow">{E(stage)} · 约 30–60 分钟</p><h1>{E(title)}</h1><p class="lead">目标：跟随推导建立模型，独立计算一个新情形，并指出近似何时失效。</p><aside>先修：{E(pre)}。先修不熟时先回到 {link('数学准备','../00-学习准备/index.html')}。同一分支的两节入门课不等于满足所有高阶先修。</aside><section><h2>问题与物理图像</h2><p>{E(concept)}</p><div class="formula">{E(formula)}</div><h2>从假设走到结果</h2><ol>{''.join('<li>'+E(s).rstrip('。')+'。</li>' for s in steps)}</ol><p>请在纸上补出中间代数步骤。不能复现时，先指出卡住的等式，再向我提问。</p>{detail_html}</section><section><h2>例题与核对</h2><p>{E(example)}</p><h3>适用边界</h3><p>{E(limit)}</p></section><section class="quiz" data-answer="{E(answer)}"><h2>独立计算</h2><label for="answer">{E(q)}（只填数值）</label><div class="answer-row"><input id="answer" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>展开本题解答</summary><p>{E(solution)}</p></details><h3>迁移与反例</h3><p>{E(transfer)}</p><details><summary>对照迁移题解答</summary><p>{E(transfer_solution)}</p></details></section>{quiz2_html}<section><h2>进入下一阶段前</h2><ol>{review_html}</ol><p>参考入口：{link(ref_title,ref_url)}。这些入口用于继续系统学习，不表示本小课已覆盖整门大学课程；具体课程和文献见 {link('分级学习路线','../learning-path.html')}。</p><label><input type="checkbox" class="complete" data-key="{skey}"> 我能独立推导并解释近似条件</label><p class="storage-note"></p></section><nav class="bottom-nav">{link('上一课',f'{i-1:02d}.html' if i>1 else 'index.html')}{link('返回分支与下一步','index.html')}</nav>'''
   folder=root/f['folder'];folder.mkdir(exist_ok=True);(folder/filename).write_text(page(title,body),encoding='utf-8')
-  f['lessons'].append({'title':title,'file':filename,'stage':stage,'kind':'lesson','formula':formula,'q':q})
+  f['lessons'].append({'title':title,'file':filename,'stage':stage,'kind':'lesson','formula':formula,'q':q,'key':skey})
  # Research preparation pages have explicit deliverables and known-result checks.
  project_rows=parse(PROJECTS,7)
  for ident,title,method,checks,deliverables,failures,extension in project_rows:
@@ -93,8 +109,8 @@ def extend(root, base_rows, page, link, sources):
   cards.append(f'<a class="card" href="{E(folder)}/index.html"><span>{f["id"]} / {E(f["group"])}</span><h2>{E(f["name"])}</h2><p>{E("；".join(topics[:6]))}</p><small>{count} 节正文课'+(' + 1 项研究训练' if project_count else '')+'</small></a>')
   taxonomy.append(f'<section id="field-{n}" class="taxonomy-field"><h2>{f["id"]} · {link(f["name"],folder+"/index.html")}</h2><p>{E(f["group"])} · 已有 {count} 节选题教程'+('与研究训练任务' if project_count else '')+'；细分方向未全部写成课程。</p><ul>'+''.join('<li>'+E(t)+'</li>' for t in topics)+'</ul></section>')
   readme_table.append(f'| {f["id"]} | [{f["name"]}]({folder}/index.html) | {f["group"]} | {count} | '+('1' if project_count else '—')+' |')
-  cl_items=''.join(f'<li><label><input type="checkbox" class="complete" data-key="cl-{f["id"]}-{i}"> <strong>{E(l["stage"])}</strong> · {link(l["title"],f["folder"]+"/"+l["file"])}</label><p>{E(l["formula"])}｜闭卷自测：{E(l["q"])}</p></li>' for i,l in enumerate(f['lessons']))
-  if 'project' in f:cl_items+=f'<li><label><input type="checkbox" class="complete" data-key="cl-{f["id"]}-research"> <strong>研究训练</strong> · {link(f["project"]["title"],f["folder"]+"/research.html")}</label><p>完成复现与误差分析，并经他人复核后再勾选。</p></li>'
+  cl_items=''.join(f'<li><label><input type="checkbox" class="complete" data-key="{l["key"]}"> <strong>{E(l["stage"])}</strong> · {link(l["title"],f["folder"]+"/"+l["file"])}</label><p>{E(l["formula"])}｜闭卷自测：{E(l["q"])}</p></li>' for l in f['lessons'])
+  if 'project' in f:cl_items+=f'<li><label><input type="checkbox" class="complete" data-key="{f["id"]}-research"> <strong>研究训练</strong> · {link(f["project"]["title"],f["folder"]+"/research.html")}</label><p>完成复现与误差分析，并经他人复核后再勾选。</p></li>'
   cl.append(f'<section><h2>{f["id"]} · {link(f["name"],folder+"/index.html")}</h2><ol>{cl_items}</ol><p class="storage-note"></p></section>')
  total=sum(len(f['lessons']) for f in fields.values()); topic_count=sum(len(f['all_topics']) for f in fields.values())
  source_note=f'''<p>分类参考：{link('APS PhySH','https://physh.org/')} 和 {link('arXiv Category Taxonomy','https://arxiv.org/category_taxonomy')}（核对日期 2026-11-01）。这里是为学习重新组织的中文导航，不是对官方分类的逐项翻译或完整镜像；研究领域、物理系统、技术和相关学科是不同维度，会相互交叉。</p>'''
@@ -127,7 +143,7 @@ def extend(root, base_rows, page, link, sources):
 
 ## 当前实际交付
 
-'''+f'- **{total} 节正文课**：入门课、数学准备、本科核心与高阶选题课分层编写，逐领域分布见下表。\n- **{len(project_rows)} 项研究复现训练**：都有实施方法、已知结果检查、交付要求、误判提醒与扩展问题。\n- **{topic_count} 个方向条目**（跨领域名称可重复）：分类树列出导航，不将每条名称算作已完成教程。\n- **{len(base_rows)} 个交互图示**；全部正文、图示和自测可离线使用。\n'+'''
+'''+f'- **{total} 节正文课**：入门课、数学准备、本科核心与高阶选题课分层编写，逐领域分布见下表。\n- **{len(project_rows)} 项研究复现训练**：都有实施方法、已知结果检查、交付要求、误判提醒与扩展问题。\n- **{topic_count} 个方向条目**（跨领域名称可重复；为 26 个领域方向列表之和，不含分类树顶部 4 条方法学要点）：分类树列出导航，不将每条名称算作已完成教程。\n- **{len(base_rows)} 个交互图示**；全部正文、图示和自测可离线使用。\n'+'''
 ## 已有课程目录
 
 | 编号 | 学习领域 | 类型 | 正文课 | 研究训练 |

@@ -42,12 +42,13 @@ with sync_playwright() as p:
   assert page.locator('h1').count()==1,file
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),file
   if file in lessons:
-   quiz=page.locator('.quiz');answer=quiz.get_attribute('data-answer')
-   quiz.locator('button').click();assert '请先' in quiz.locator('.feedback').inner_text()
-   quiz.locator('input').fill(str(float(answer)+12345));quiz.locator('button').click()
-   assert '再试' in quiz.locator('.feedback').inner_text(),file
-   quiz.locator('input').fill(answer);quiz.locator('input').press('Enter')
-   assert '正确' in quiz.locator('.feedback').inner_text(),file
+   for quiz in page.locator('.quiz').all():
+    answer=quiz.get_attribute('data-answer')
+    quiz.locator('button').click();assert '请先' in quiz.locator('.feedback').inner_text()
+    quiz.locator('input').fill(str(abs(float(answer))*3+123));quiz.locator('button').click()
+    assert '再试' in quiz.locator('.feedback').inner_text(),file
+    quiz.locator('input').fill(answer);quiz.locator('input').press('Enter')
+    assert '正确' in quiz.locator('.feedback').inner_text(),file
   if page.locator('.complete').count():
    box=page.locator('.complete').first;box.check();page.reload();assert box.is_checked(),file
    box.uncheck()

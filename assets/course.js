@@ -38,7 +38,7 @@ document.querySelectorAll('.lab').forEach(el=>{
 });
 document.querySelectorAll('.quiz').forEach(el=>{
  const input=el.querySelector('input'),feedback=el.querySelector('.feedback');
- const check=()=>{if(input.value.trim()===''||!Number.isFinite(Number(input.value))){feedback.textContent='请先填入一个数值。';return;}const expected=Number(el.dataset.answer),ok=Math.abs(Number(input.value)-expected)<=Math.max(1e-6,Math.abs(expected)*0.001);feedback.textContent=ok?'数值正确。再说出单位和适用条件，然后尝试迁移练习。':'再试一次：检查单位、正负方向和比例关系；可以展开提示并对照例题。';};
+ const check=()=>{if(input.value.trim()===''||!Number.isFinite(Number(input.value))){feedback.textContent='请先填入一个数值。';return;}const expected=Number(el.dataset.answer),ok=Math.abs(Number(input.value)-expected)<=Math.max(0.01,Math.abs(expected)*0.02);feedback.textContent=ok?'数值正确（2% 容差内）。再说出单位和适用条件，然后尝试迁移练习。':'再试一次：检查单位、正负方向和比例关系；可以展开提示并对照例题。';};
  el.querySelector('button').addEventListener('click',check);input.addEventListener('keydown',e=>{if(e.key==='Enter')check();});
 });
 document.querySelectorAll('.complete').forEach(el=>{const note=el.closest('section').querySelector('.storage-note'),key='physics-course-'+el.dataset.key;try{el.checked=localStorage.getItem(key)==='true';note.textContent='完成标记保存在当前浏览器，仅表示你的自评。';}catch{note.textContent='此浏览器未开放本地存储，完成标记本次有效。';}el.addEventListener('change',()=>{try{localStorage.setItem(key,String(el.checked));}catch{note.textContent='无法保存完成标记，你仍可正常学习。';}});});

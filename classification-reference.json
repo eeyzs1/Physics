@@ -113,7 +113,8 @@
     {
       "code": "hep-lat",
       "local_fields": [
-        11
+        11,
+        17
       ]
     },
     {
@@ -161,6 +162,8 @@
     {
       "code": "nlin.SI",
       "local_fields": [
+        2,
+        16,
         20
       ]
     },
@@ -224,6 +227,7 @@
       "local_fields": [
         1,
         2,
+        3,
         4
       ]
     },
@@ -248,13 +252,15 @@
     {
       "code": "physics.flu-dyn",
       "local_fields": [
+        14,
         19
       ]
     },
     {
       "code": "physics.gen-ph",
       "local_fields": [
-        0
+        0,
+        25
       ]
     },
     {
