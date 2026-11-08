@@ -42,3 +42,28 @@ document.querySelectorAll('.quiz').forEach(el=>{
  el.querySelector('button').addEventListener('click',check);input.addEventListener('keydown',e=>{if(e.key==='Enter')check();});
 });
 document.querySelectorAll('.complete').forEach(el=>{const note=el.closest('section').querySelector('.storage-note'),key='physics-course-'+el.dataset.key;try{el.checked=localStorage.getItem(key)==='true';note.textContent='完成标记保存在当前浏览器，仅表示你的自评。';}catch{note.textContent='此浏览器未开放本地存储，完成标记本次有效。';}el.addEventListener('change',()=>{try{localStorage.setItem(key,String(el.checked));}catch{note.textContent='无法保存完成标记，你仍可正常学习。';}});});
+
+// Language switch: link every page to its counterpart in the other language tree.
+const LANG_MAP=[["00-学习准备","00-learning-preparation"],["01-经典力学","01-classical-mechanics"],["02-振动、波动与声学","02-vibrations-waves-and-acoustics"],["03-热力学与统计物理","03-thermodynamics-and-statistical-physics"],["04-电磁学","04-electromagnetism"],["05-光学与光子学","05-optics-and-photonics"],["06-相对论与引力","06-relativity-and-gravitation"],["07-量子力学","07-quantum-mechanics"],["08-原子、分子与光物理","08-atomic-molecular-and-optical-physics"],["09-凝聚态与材料物理","09-condensed-matter-and-materials-physics"],["10-原子核物理","10-nuclear-physics"],["11-粒子物理与量子场论","11-particle-physics-and-quantum-field-theory"],["12-等离子体物理","12-plasma-physics"],["13-天体物理与宇宙学","13-astrophysics-and-cosmology"],["14-地球物理与空间物理","14-geophysics-and-space-physics"],["15-生物物理与医学物理","15-biophysics-and-medical-physics"],["16-数学物理","16-mathematical-physics"],["17-计算物理","17-computational-physics"],["18-实验物理与测量","18-experimental-physics-and-measurement"],["19-流体与连续介质物理","19-fluid-and-continuum-physics"],["20-非线性与复杂系统","20-nonlinear-and-complex-systems"],["21-量子信息与量子技术","21-quantum-information-and-quantum-technologies"],["22-化学物理与分子反应","22-chemical-physics-and-molecular-reactions"],["23-加速器与束流物理","23-accelerator-and-beam-physics"],["24-应用物理与能源","24-applied-physics-and-energy"],["25-物理基础、历史与教育","25-foundations-history-and-education-of-physics"]];
+(function(){
+ const segs=decodeURIComponent(location.pathname).split('/').filter(Boolean);
+ const file=segs.length&&/\.html$/.test(segs[segs.length-1])?segs.pop():'index.html';
+ const dir=segs.length?segs[segs.length-1]:'';
+ const sheet=document.querySelector('link[rel="stylesheet"]');
+ const rootPrefix=sheet?(sheet.getAttribute('href')||'').replace('assets/course.css',''):'';
+ const pair=LANG_MAP.find(p=>p[0]===dir||p[1]===dir);
+ let href=null,label='';
+ const inEn=(segs.length&&segs[segs.length-1]==='en')||(pair&&pair[1]===dir);
+ if(inEn){
+  href=rootPrefix+(pair?pair[0]+'/':'')+file;
+  label='中文';
+ }else if(pair||['index.html','taxonomy.html','learning-path.html','checklist.html'].indexOf(file)>=0){
+  href=rootPrefix+'en/'+(pair?pair[1]+'/':'')+file;
+  label='English';
+ }
+ if(!href)return;
+ const a=document.createElement('a');
+ a.className='lang';a.href=encodeURI(href);a.textContent=label;
+ const header=document.querySelector('header');
+ if(header)header.appendChild(a);
+})();

@@ -1,0 +1,3882 @@
+{
+  "lesson_count": 319,
+  "project_count": 25,
+  "topic_entry_count": 369,
+  "demo_count": 19,
+  "fields": [
+    {
+      "id": "00",
+      "name": "Learning Preparation",
+      "group": "Common foundations",
+      "pre": "No physics background required",
+      "topics": [
+        "Units and dimensions",
+        "Vectors and graphs",
+        "Algebra, trigonometry, and calculus",
+        "Models and error"
+      ],
+      "folder": "00-learning-preparation",
+      "lessons": [
+        {
+          "title": "From Measurement to Model",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "v = Δx / Δt",
+          "q": "A displacement of 20 m takes 5 s; what is the average velocity in m/s?",
+          "key": "00-0"
+        },
+        {
+          "title": "Graphs and Rates of Change",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "Δx = v Δt (constant velocity)",
+          "q": "A velocity of −3 m/s is maintained for 2 s; what is the displacement in m?",
+          "key": "00-1"
+        },
+        {
+          "title": "How Derivatives and Integrals Connect Motion",
+          "file": "03.html",
+          "stage": "Mathematics preparation",
+          "kind": "lesson",
+          "formula": "v=dx/dt; x(t)=x₀+∫₀ᵗv(s)ds",
+          "q": "With x₀=2 m and v(t)=4t m/s, what is the position in m at t=2 s?",
+          "key": "00-91e345bf"
+        },
+        {
+          "title": "Linear Algebra: Why Eigenvectors Matter",
+          "file": "04.html",
+          "stage": "Mathematics preparation",
+          "kind": "lesson",
+          "formula": "Av=λv; det(A−λI)=0",
+          "q": "When the matrix above acts on (1,−1), what is the corresponding eigenvalue?",
+          "key": "00-c7a8719a"
+        },
+        {
+          "title": "Vector Calculus: Gradient, Divergence, and Curl",
+          "file": "05.html",
+          "stage": "Mathematics preparation",
+          "kind": "lesson",
+          "formula": "∇f; ∇·F=∂Fx/∂x+∂Fy/∂y+∂Fz/∂z; ∇×F",
+          "q": "What is the divergence of F=(3x,0,0)?",
+          "key": "00-ebd7d2a8"
+        },
+        {
+          "title": "Complex Numbers, Phase, and the Representation of Oscillations",
+          "file": "06.html",
+          "stage": "Mathematics preparation",
+          "kind": "lesson",
+          "formula": "e^iθ=cosθ+i sinθ; A e^i(ωt+φ)",
+          "q": "Two oscillations of equal amplitude differ in phase by 2π/3; how many times the single amplitude is the resultant amplitude?",
+          "key": "00-28f60f9e"
+        },
+        {
+          "title": "Probability, Expectation, and Fluctuations",
+          "file": "07.html",
+          "stage": "Mathematics preparation",
+          "kind": "lesson",
+          "formula": "〈X〉=ΣxP(x); σ²=〈X²〉−〈X〉²; Poisson: σ²=〈N〉",
+          "q": "A Poisson count has mean 400; what is the standard deviation?",
+          "key": "00-4f8145ef"
+        },
+        {
+          "title": "Taylor Expansion and Order-of-Magnitude Estimates",
+          "file": "08.html",
+          "stage": "Mathematics preparation",
+          "kind": "lesson",
+          "formula": "f(x+δ)=f(x)+f′δ+½f″δ²+…",
+          "q": "Using cosθ≈1−θ²/2, what is the approximate value at θ=0.1 rad?",
+          "key": "00-32a3faa7"
+        },
+        {
+          "title": "Trigonometric Identities, Complex Exponentials, and Series Sums",
+          "file": "09.html",
+          "stage": "Mathematics preparation",
+          "kind": "lesson",
+          "formula": "e^(iθ) representation; sin(A±B), double- and half-angle formulas",
+          "q": "What is sin75° approximately (three decimal places)?",
+          "key": "00-30381870"
+        },
+        {
+          "title": "Introduction to Ordinary Differential Equations: Separation of Variables, First-Order Linear, and Second-Order Constant Coefficients",
+          "file": "10.html",
+          "stage": "Mathematics preparation",
+          "kind": "lesson",
+          "formula": "dx/dt=−kx → x=x₀e^(−kt); second-order constant coefficients: aλ²+bλ+c=0",
+          "q": "What is the angular frequency of the solutions of ẍ+4x=0 in rad/s?",
+          "key": "00-2dafe1d7"
+        }
+      ],
+      "all_topics": [
+        "Units and dimensions",
+        "Vectors and graphs",
+        "Algebra, trigonometry, and calculus",
+        "Models and error",
+        "Scientific notation",
+        "Significant figures",
+        "Systems of units",
+        "Scalars and vectors",
+        "Complex numbers",
+        "Calculus",
+        "Probability",
+        "Linear algebra"
+      ]
+    },
+    {
+      "id": "01",
+      "name": "Classical Mechanics",
+      "group": "Foundational theory",
+      "pre": "Learning preparation; advanced study requires calculus",
+      "topics": [
+        "kinematics",
+        "Newtonian mechanics",
+        "rigid bodies and rotation",
+        "fluids and continuum",
+        "analytical mechanics",
+        "nonlinear dynamics"
+      ],
+      "folder": "01-classical-mechanics",
+      "lessons": [
+        {
+          "title": "How Forces Change Motion",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "ΣF = ma",
+          "q": "A 3 kg mass with a 12 N net force: what is the acceleration in m/s²?",
+          "key": "01-0"
+        },
+        {
+          "title": "Energy and Fluid Continuity",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "K = mv²/2; A₁v₁ = A₂v₂",
+          "q": "The inlet cross-sectional area is 3 times the outlet's, and the inlet flow speed is 2 m/s. What is the outlet speed in m/s?",
+          "key": "01-1"
+        },
+        {
+          "title": "Deriving the Pendulum Equation from the Action",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "L=T−V; d/dt(∂L/∂θ̇)−∂L/∂θ=0",
+          "q": "With ℓ=4 m and g=10 m/s², what is C in s⁻² in the small-angle equation θ̈=−Cθ?",
+          "key": "01-b789ec3f"
+        },
+        {
+          "title": "Momentum Conservation and Collisions",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Σp conserved (ΣF_ext=0); elastic collisions also conserve kinetic energy",
+          "q": "With the same initial conditions but an elastic collision, what is the final speed of the 1 kg object in m/s?",
+          "key": "01-1ad81d9f"
+        },
+        {
+          "title": "Rigid-Body Rotation and Angular Momentum",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "τ=Iα; L=Iω; I=Σmr²",
+          "q": "What is the moment of inertia of the same rod about its center in kg·m²?",
+          "key": "01-8f6205ff"
+        },
+        {
+          "title": "Central Forces and the Kepler Problem",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "L=mr²ω conserved; circular orbit T²=4π²r³/(GM)",
+          "q": "If the orbital radius becomes 4 times its original value, by what factor does the period change?",
+          "key": "01-649b2856"
+        },
+        {
+          "title": "Calculus of Variations and the Euler–Lagrange Equation",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "d/dt(∂L/∂q̇)−∂L/∂q=0",
+          "q": "With m=2 kg and k=8 N/m, what is the oscillator's angular frequency in rad/s?",
+          "key": "01-a487fe84"
+        },
+        {
+          "title": "Non-Inertial Frames and Inertial Forces",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Rotating frame: F_inertial=−m[2Ω×v′+Ω×(Ω×r′)]",
+          "q": "At latitude 45°, what is the Coriolis parameter f=2Ω sin45° (in 10⁻⁴ s⁻¹)?",
+          "key": "01-a606f657"
+        },
+        {
+          "title": "Two-Body Problem and Reduced Mass",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "μ=m₁m₂/(m₁+m₂); μ r̈=F(r)",
+          "q": "Two bodies each of mass m: what is the reduced mass (in units of m)?",
+          "key": "01-6f7a23b4"
+        },
+        {
+          "title": "Inertia Tensor and Rotation in Three Dimensions: Principal Axes, Euler's Equations, and Precession",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "L_z=I_zzω_z (principal axis); Euler's equations I₁ω̇₁=(I₂−I₃)ω₂ω₃ (cyclic)",
+          "q": "What fraction of mR² is the moment of inertia of a uniform solid sphere about a diameter (enter as a decimal)?",
+          "key": "01-185ce15f"
+        },
+        {
+          "title": "Small Oscillations and Normal Coordinates: The Common Language of Coupled Systems",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "det(K−ω²M)=0; each mode oscillates independently",
+          "q": "For a two-oscillator system with m=1, k=4, κ=2, what is ω² of the out-of-phase mode in s⁻²?",
+          "key": "01-7591bdc8"
+        },
+        {
+          "title": "Elastic Continuum: Stress, Strain, and Elastic Waves",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "σ=Eε (one-dimensional); c_L=√((K+4G/3)/ρ), c_T=√(G/ρ)",
+          "q": "In the same solid, which is faster, the transverse wave or the longitudinal wave (transverse=1, longitudinal=2)?",
+          "key": "01-72b2193e"
+        },
+        {
+          "title": "Hamilton's Equations and Phase Space",
+          "file": "13.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "p=∂L/∂q̇; H=pq̇−L; q̇=∂H/∂p, ṗ=−∂H/∂q",
+          "q": "For m=2, k=8, and q=0.25, what is ṗ in N?",
+          "key": "01-f50b8d91"
+        },
+        {
+          "title": "Canonical Transformations and Generating Functions",
+          "file": "14.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "{Q,P}=1 preserved; dF/dt gives the transformation",
+          "q": "What structure does a canonical transformation preserve (Poisson brackets=1, volume preservation=2, both=3)?",
+          "key": "01-152126c4"
+        }
+      ],
+      "project": {
+        "title": "Comparing a Real Pendulum with the Small-Angle Model",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "kinematics",
+        "Newtonian mechanics",
+        "rigid bodies and rotation",
+        "fluids and continuum",
+        "analytical mechanics",
+        "nonlinear dynamics",
+        "systems of particles",
+        "impulse and collisions",
+        "central force",
+        "Kepler problem",
+        "constraints and generalized coordinates",
+        "Euler's equations for rigid-body rotation",
+        "Lagrangian mechanics",
+        "Hamiltonian mechanics",
+        "canonical transformation",
+        "classical fields",
+        "elasticity"
+      ]
+    },
+    {
+      "id": "02",
+      "name": "Vibrations, Waves and Acoustics",
+      "group": "Foundations and specialty",
+      "pre": "Classical mechanics; trigonometric functions",
+      "topics": [
+        "Simple harmonic motion",
+        "Damping and resonance",
+        "Mechanical waves",
+        "Acoustics",
+        "Nonlinear waves"
+      ],
+      "folder": "02-vibrations-waves-and-acoustics",
+      "lessons": [
+        {
+          "title": "Understanding vibration through a spring",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "T = 2π√(m/k)",
+          "q": "If the mass becomes 9 times its original value, by what factor does the period change?",
+          "key": "02-0"
+        },
+        {
+          "title": "The wave moves on — how does the medium move",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "v = fλ",
+          "q": "A wave speed of 300 m/s and a frequency of 150 Hz — what is the wavelength in m?",
+          "key": "02-1"
+        },
+        {
+          "title": "Damping, driving, and resonance peaks",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "mẍ+bẋ+kx=F₀cosωt；A=F₀/√[(k−mω²)²+(bω)²]",
+          "q": "For the same system at ω=0, what is the displacement amplitude in m?",
+          "key": "02-616b4509"
+        },
+        {
+          "title": "Sound intensity, decibels, and the Doppler effect",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "β=10 log₁₀(I/I₀)，I₀=10⁻¹² W/m²；f′=f(v∓v₀)/(v∓v_s)",
+          "q": "The sound intensity increases from 10⁻⁶ to 10⁻⁴ W/m² — by how many decibels does the level increase?",
+          "key": "02-674d4e8e"
+        },
+        {
+          "title": "Standing waves, boundaries, and the normal-mode frequencies of a string",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "fₙ=n v/(2L)；v=√(T/μ)",
+          "q": "For a string fixed at both ends, the n=3 harmonic is how many times the fundamental?",
+          "key": "02-0d542587"
+        },
+        {
+          "title": "From forces on a string to the wave equation: wave speed, dispersion, and group velocity",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "∂²y/∂t²=v²·∂²y/∂x²，v=√(T/μ)；v_g=dω/dk",
+          "q": "For deep-water gravity waves, the phase velocity is how many times the group velocity?",
+          "key": "02-94d90868"
+        },
+        {
+          "title": "Sound radiation, ultrasound, and nonlinear acoustics",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Radiation efficiency: monopole>dipole>quadrupole",
+          "q": "The upper limit of human hearing is about 20 kHz — above how many kHz is ultrasound defined?",
+          "key": "02-4e6d6cc9"
+        },
+        {
+          "title": "Normal modes: how two pendulums share energy",
+          "file": "08.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "mẍ₁=−(k+κ)x₁+κx₂；ω_in²=k/m，ω_out²=(k+2κ)/m",
+          "q": "If m=1, k=4, κ=6, what is the out-of-phase angular frequency in rad/s?",
+          "key": "02-08fe1bc8"
+        }
+      ],
+      "project": {
+        "title": "Measure or simulate beats in coupled oscillators",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Simple harmonic motion",
+        "Damping and resonance",
+        "Mechanical waves",
+        "Acoustics",
+        "Nonlinear waves",
+        "Forced oscillation",
+        "Beats and normal modes",
+        "Wave equation",
+        "Dispersion",
+        "Group velocity",
+        "Sound radiation",
+        "Ultrasound",
+        "Phonon",
+        "Shock wave",
+        "Solitary wave",
+        "Acoustic metamaterials"
+      ]
+    },
+    {
+      "id": "03",
+      "name": "Thermodynamics and Statistical Physics",
+      "group": "Foundational theory",
+      "pre": "classical mechanics; probability, with calculus needed for the advanced parts",
+      "topics": [
+        "laws of thermodynamics",
+        "kinetic theory of gases",
+        "statistical ensembles",
+        "phase transitions",
+        "nonequilibrium statistical mechanics"
+      ],
+      "folder": "03-thermodynamics-and-statistical-physics",
+      "lessons": [
+        {
+          "title": "How Energy Enters and Leaves a System",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "ΔU = Q − W",
+          "q": "A system absorbs 80 J of heat and does 20 J of work on its surroundings; by how many joules does its internal energy increase?",
+          "key": "03-0"
+        },
+        {
+          "title": "From Particles to Pressure",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "pV = nRT",
+          "q": "An ideal gas held at constant volume is heated from 200 K to 600 K; by what factor does its pressure change?",
+          "key": "03-1"
+        },
+        {
+          "title": "Computing a Two-Level System from the Partition Function",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Z=Σe^(−βEᵢ); pᵢ=e^(−βEᵢ)/Z; ⟨E⟩=−∂lnZ/∂β; F=−kBT·lnZ",
+          "q": "When ε/(kBT)=ln4, what is the excitation probability?",
+          "key": "03-e23709fd"
+        },
+        {
+          "title": "Entropy and the Second Law",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "dS=δQ_rev/T; isolated system ΔS≥0",
+          "q": "400 J of heat is transferred from 500 K to 400 K; what is the total entropy change in J/K?",
+          "key": "03-f32ceea0"
+        },
+        {
+          "title": "The Carnot Cycle and Heat Engine Efficiency",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "η_Carnot=1−Tc/Th; Qc/Qh=Tc/Th",
+          "q": "What is the efficiency when Th=600 K and Tc=300 K?",
+          "key": "03-28f4b57f"
+        },
+        {
+          "title": "Thermodynamic Potentials and Maxwell Relations",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "F=U−TS; dF=−S dT−p dV; (∂S/∂V)T=(∂p/∂T)V",
+          "q": "1 mol of an ideal gas doubles its volume isothermally; what is the entropy change in J/K? (R=8.31)",
+          "key": "03-178bd1d5"
+        },
+        {
+          "title": "The Skeleton of Statistical Mechanics: Microstates, Entropy, and the Three Ensembles",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "S=k_B·lnΩ; Z=Σe^(−βE); Ξ=Σ_N z^N·Z_N, z=e^(βμ)",
+          "q": "For a two-state system with βε=ln3, what is the excitation probability?",
+          "key": "03-bf60c755"
+        },
+        {
+          "title": "Maxwell–Boltzmann Velocity Distribution",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "f(v)∝v²·e^(−mv²/2k_BT); v_p=√(2k_BT/m); v_rms=√(3k_BT/m)",
+          "q": "If the temperature rises by a factor of 4, by what factor does the most probable speed change?",
+          "key": "03-60006b84"
+        },
+        {
+          "title": "Bose Statistics and the Photon Gas",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "n̄(ε)=1/(e^(β(ε−μ))−1)",
+          "q": "For a level with βε=ln5 (μ=0), what is the mean occupation number?",
+          "key": "03-588203d8"
+        },
+        {
+          "title": "Transport and Diffusion: The Kinetic Theory of Molecules",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "λ=1/(√2 nσ); D≈½ v̄ λ (order-of-magnitude estimate)",
+          "q": "If the number density doubles (everything else unchanged), what fraction of the original mean free path remains?",
+          "key": "03-0429eab3"
+        },
+        {
+          "title": "Phase Transitions and Critical Exponents: The Ising Model",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "H=−J Σ⟨ij⟩ sᵢsⱼ; mean-field Tc=zJ/kB",
+          "q": "Within mean field, as T→Tc⁻ the magnetization goes to zero as a power of (Tc−T) — which power?",
+          "key": "03-6c664eea"
+        },
+        {
+          "title": "Free Energy and the Simplest Model of Phase Transitions",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "F(m)=am²/2+bm⁴/4; b>0",
+          "q": "With a=−9 and b=1, what is the positive stable order parameter?",
+          "key": "03-115bf859"
+        },
+        {
+          "title": "The Molecular Partition Function and the Heat-Capacity Staircase",
+          "file": "13.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Z≈Z_trans·Z_rot·Z_vib; C_V staircase 3/2R→5/2R→7/2R",
+          "q": "For a diatomic gas at 300 K (vibration frozen out), the molar heat capacity at constant volume is about how many R (enter a decimal)?",
+          "key": "03-4789d135"
+        },
+        {
+          "title": "Equipartition of Energy and the Virial Theorem",
+          "file": "14.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "each quadratic term ½k_BT; 2⟨T⟩=⟨ΣF·r⟩",
+          "q": "What is the total mean energy of a one-dimensional classical harmonic oscillator, in k_BT?",
+          "key": "03-bc72781d"
+        },
+        {
+          "title": "The Langevin Equation and Brownian Motion",
+          "file": "15.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "m v̇=−γv+ξ(t); ⟨ξ(t)ξ(t′)⟩=2γk_BT·δ(t−t′)",
+          "q": "In the overdamped limit D=k_BT/γ: if T doubles with γ unchanged, by what factor does D change?",
+          "key": "03-02a6381a"
+        },
+        {
+          "title": "The Third Law, Absolute Entropy, and Negative Temperature",
+          "file": "16.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "S(T→0)→S₀; negative-temperature condition ∂S/∂E<0",
+          "q": "A negative-temperature system contacts a positive-temperature system; which way does the heat flow (toward positive temperature=1, toward negative temperature=2)?",
+          "key": "03-b470f91f"
+        }
+      ],
+      "project": {
+        "title": "The Heat-Capacity Peak of a Two-Level System",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "laws of thermodynamics",
+        "kinetic theory of gases",
+        "statistical ensembles",
+        "phase transitions",
+        "nonequilibrium statistical mechanics",
+        "heat engines and refrigeration",
+        "chemical potential",
+        "Maxwell relations",
+        "Boltzmann distribution",
+        "Fermi gas",
+        "Bose gas",
+        "critical phenomena",
+        "renormalization group",
+        "Boltzmann equation",
+        "transport theory",
+        "stochastic processes",
+        "stochastic thermodynamics"
+      ]
+    },
+    {
+      "id": "04",
+      "name": "Electromagnetism",
+      "group": "Foundational theory",
+      "pre": "vectors; classical mechanics; the advanced parts require vector calculus",
+      "topics": [
+        "Electrostatic fields",
+        "Circuits",
+        "Magnetic fields",
+        "Electromagnetic induction",
+        "Maxwell's theory",
+        "Electromagnetic waves"
+      ],
+      "folder": "04-electromagnetism",
+      "lessons": [
+        {
+          "title": "Describing interactions with fields",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "F = qE",
+          "q": "A charge of 0.02 C in a 100 N/C electric field: what is the magnitude of the force in N?",
+          "key": "04-0"
+        },
+        {
+          "title": "Circuits are channels for energy",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "I = U/R; P = UI",
+          "q": "A 20 V potential difference across a 10 Ω resistor: how much current in A?",
+          "key": "04-1"
+        },
+        {
+          "title": "Electromagnetic waves from Maxwell's equations",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "∇×E=−∂B/∂t; ∇×B=μ₀ε₀∂E/∂t; c=1/√(μ₀ε₀)",
+          "q": "Take c=3×10⁸ m/s and E₀=600 V/m; what is B₀ in μT?",
+          "key": "04-14996007"
+        },
+        {
+          "title": "Gauss's law and symmetric electric fields",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "∮E·dA=q_enc/ε₀",
+          "q": "With the distance doubled to 0.2 m, what is the field strength in N/C?",
+          "key": "04-52130e6b"
+        },
+        {
+          "title": "Electric potential, capacitance, and electric field energy",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "V=−∫E·dl; C=Q/V; parallel plates C=ε₀A/d",
+          "q": "With the plate separation halved, what is the capacitance in μF?",
+          "key": "04-f35d7332"
+        },
+        {
+          "title": "Steady magnetic fields and Ampère's law",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "∮B·dl=μ₀I_enc; long straight wire B=μ₀I/(2πr)",
+          "q": "If the current doubles and the distance also doubles, B becomes how many times its original value?",
+          "key": "04-f5f67e7f"
+        },
+        {
+          "title": "Faraday induction and Lenz's law",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ε=−dΦ/dt; Φ=∫B·dA",
+          "q": "With the number of turns doubled and everything else unchanged, what is the EMF in V?",
+          "key": "04-c3aab443"
+        },
+        {
+          "title": "Maxwell's equations and the displacement current",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "∇·E=ρ/ε₀; ∇·B=0; ∇×E=−∂B/∂t; ∇×B=μ₀J+μ₀ε₀∂E/∂t",
+          "q": "From c=1/√(μ₀ε₀), what is the vacuum speed of light (in units of 10⁸ m/s)?",
+          "key": "04-fcd350cf"
+        },
+        {
+          "title": "Poynting's theorem and electromagnetic energy flow",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "S=(1/μ₀)E×B; u=½(ε₀E²+B²/μ₀)",
+          "q": "For a plane wave in vacuum, what is S/u (in units of 10⁸ m/s)?",
+          "key": "04-76682ca6"
+        },
+        {
+          "title": "Magnetic vector potential and gauge",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "B=∇×A; E=−∇φ−∂A/∂t",
+          "q": "What is B outside an infinitely long current-carrying solenoid, in T?",
+          "key": "04-1ed1e6ee"
+        },
+        {
+          "title": "Electromagnetic momentum and radiation pressure",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "g=S/c²; p=I/c (absorbing), 2I/c (perfectly reflecting)",
+          "q": "What is the radiation pressure of normally incident I=3000 W/m² on a perfectly absorbing surface, in μPa?",
+          "key": "04-4ebbaa78"
+        },
+        {
+          "title": "Polarization and magnetization: Maxwell's equations in media",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "D=ε₀E+P; H=B/μ₀−M; n·(D₂−D₁)=σ_f; n×(H₂−H₁)=K_f",
+          "q": "A capacitor with vacuum capacitance 2 pF is filled with a medium of ε_r=5; what is the capacitance in pF?",
+          "key": "04-191b2907"
+        },
+        {
+          "title": "Inductance, LC oscillations, and AC impedance",
+          "file": "13.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "V_L=L·dI/dt; ω₀=1/√(LC); Z=R+iωL+1/(iωC)",
+          "q": "What is the oscillation angular frequency of an ideal LC loop with L=2 H and C=0.5 F, in rad/s?",
+          "key": "04-b273716d"
+        },
+        {
+          "title": "Conductor boundaries and the method of images",
+          "file": "14.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "V=(q/4πε₀)(1/r_real−1/r_image)",
+          "q": "With the real charge doubled and a fixed, the attractive force becomes how many times its original value?",
+          "key": "04-6545f25f"
+        },
+        {
+          "title": "The uniqueness theorem and spherical images",
+          "file": "15.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "grounded-sphere image: q′=−qR/d, located R²/d from the center",
+          "q": "What is the magnitude |q′| of the grounded sphere's image charge (q=1 nC, R=5 cm, d=10 cm), in nC?",
+          "key": "04-444c5db2"
+        }
+      ],
+      "project": {
+        "title": "Image solution versus numerical solution for a grounded plane",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Electrostatic fields",
+        "Circuits",
+        "Magnetic fields",
+        "Electromagnetic induction",
+        "Maxwell's theory",
+        "Electromagnetic waves",
+        "Boundary-value problems",
+        "Multipole expansion",
+        "Dielectrics",
+        "Magnetic media",
+        "Electromagnetic potentials and gauge",
+        "Radiation",
+        "Antennas",
+        "Waveguides",
+        "Plasma electromagnetic response",
+        "Relativistic electrodynamics"
+      ]
+    },
+    {
+      "id": "05",
+      "name": "Optics and Photonics",
+      "group": "Specialty field",
+      "pre": "waves; electromagnetism; trigonometric functions",
+      "topics": [
+        "Geometric optics",
+        "Interference and diffraction",
+        "Polarization",
+        "Lasers",
+        "Nonlinear and quantum optics"
+      ],
+      "folder": "05-optics-and-photonics",
+      "lessons": [
+        {
+          "title": "Why light refracts",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "n₁sinθ₁ = n₂sinθ₂",
+          "q": "At normal incidence the angle of incidence is 0°; what is the angle of refraction, in degrees?",
+          "key": "05-0"
+        },
+        {
+          "title": "How two beams of light add",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "Δy ≈ λL/d",
+          "q": "With everything else held fixed, if the wavelength is doubled, by what factor does the fringe spacing change?",
+          "key": "05-1"
+        },
+        {
+          "title": "Diffraction and imaging resolution",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Single-slit intensity I=I₀(sinβ/β)², β=πa·sinθ/λ; circular-aperture Rayleigh criterion θ_R≈1.22λ/D",
+          "q": "With the wavelength fixed and the aperture enlarged by a factor of 2, by what number is the original angular resolution divided?",
+          "key": "05-970dfcd5"
+        },
+        {
+          "title": "Polarization and Malus's law",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "I=I₀cos²θ",
+          "q": "At θ=45°, what fraction of I₀ is the transmitted intensity?",
+          "key": "05-55fe988d"
+        },
+        {
+          "title": "Coherence length and Fourier optics",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "L_c≈c/Δν; Δν·τ_c≈1",
+          "q": "A coherence time of 2 ns corresponds to a coherence length of about how many cm?",
+          "key": "05-f069bf22"
+        },
+        {
+          "title": "Michelson and Fabry–Pérot interferometers",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "One fringe shifts per ΔL=λ/2; FP line width δν=FSR/ℱ",
+          "q": "A Michelson moving mirror shifts by 0.15 μm (λ=600 nm); how many fringes are swept?",
+          "key": "05-03c07c14"
+        },
+        {
+          "title": "Birefringence and wave plates",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Δφ=2πΔn·d/λ; λ/4 plate Δn·d=λ/4",
+          "q": "For a λ/2 wave plate (optic axis at 45° to the incident polarization), through how many degrees is the output linear-polarization direction rotated?",
+          "key": "05-ef7e8c1b"
+        },
+        {
+          "title": "Gratings and thin-film interference: two ways to split light",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "d·sinθ=mλ (principal maxima); 2nt·cosθ′=(m−½)λ (destructive reflection near normal incidence → anti-reflection)",
+          "q": "For a 1200 lines/mm grating, what is sinθ for first-order diffraction of 500 nm light?",
+          "key": "05-c90e1d4c"
+        },
+        {
+          "title": "Optical cavities and Gaussian beams: the optical half of a laser",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Stability condition 0≤g₁g₂≤1, g_i=1−L/R_i; w(z)=w₀√(1+(z/z_R)²), z_R=πw₀²/λ",
+          "q": "For a confocal cavity with L=0.5 m and λ=500 nm, w₀=√(λL/2π) is about how many mm (one decimal place)?",
+          "key": "05-f30d80da"
+        },
+        {
+          "title": "A rate-equation model of the laser threshold",
+          "file": "10.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "dn/dt=(G−κ)n+S",
+          "q": "With G=8 and κ=5, ignoring S, what is the exponential growth rate in s⁻¹?",
+          "key": "05-8475ed2e"
+        },
+        {
+          "title": "Fermat's principle, prisms, and aberrations",
+          "file": "11.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "Stationary optical path; n=sin[(A+δ_m)/2]/sin(A/2)",
+          "q": "For a prism with apex angle 60° and n=1.5, about how many degrees is the angle of minimum deviation (rounded to the nearest integer)?",
+          "key": "05-03ea511c"
+        }
+      ],
+      "project": {
+        "title": "Diffraction patterns of a finite aperture",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Geometric optics",
+        "Interference and diffraction",
+        "Polarization",
+        "Lasers",
+        "Nonlinear and quantum optics",
+        "Fourier optics",
+        "Imaging and aberrations",
+        "Coherence theory",
+        "Optical fibers",
+        "Integrated photonics",
+        "Ultrafast optics",
+        "Nanophotonics",
+        "Near-field optics",
+        "Laser spectroscopy",
+        "Holography",
+        "Optomechanics",
+        "Quantum optics"
+      ]
+    },
+    {
+      "id": "06",
+      "name": "Relativity and Gravitation",
+      "group": "Foundational theory",
+      "pre": "classical mechanics; algebra; general relativity requires tensors and differential geometry",
+      "topics": [
+        "special relativity",
+        "relativistic dynamics",
+        "general relativity",
+        "gravitational waves"
+      ],
+      "folder": "06-relativity-and-gravitation",
+      "lessons": [
+        {
+          "title": "Comparing Moving Clocks",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "Δt = γΔτ；γ = 1/√(1−v²/c²)",
+          "q": "What is γ when v = 0?",
+          "key": "06-0"
+        },
+        {
+          "title": "Mass, Energy, and Gravity",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "E₀ = mc²；E² = p²c² + m²c⁴",
+          "q": "If the rest mass doubles, by what factor does the rest energy change?",
+          "key": "06-1"
+        },
+        {
+          "title": "Four-Momentum and Collision Invariants",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "M²c⁴=E_total²−p_total²c²",
+          "q": "Two photon beams of 3 GeV each meet head-on; what is the system’s Mc² in GeV?",
+          "key": "06-88820bb1"
+        },
+        {
+          "title": "Lorentz Transformations and Spacetime Diagrams: Relativity of Simultaneity and Length Contraction",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "x′=γ(x−vt)；t′=γ(t−vx/c²)；γ=1/√(1−β²)",
+          "q": "A spaceship 100 m long at rest flies at 0.6c; what length in m does the ground frame measure?",
+          "key": "06-2bce336a"
+        },
+        {
+          "title": "Introduction to Differential Geometry: Metric and Geodesics",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ds²=g_μν dx^μ dx^ν；geodesic equation d²x^μ/dτ²+Γ^μ_αβ (dx^α/dτ)(dx^β/dτ)=0",
+          "q": "Near the ground, for every 1 m of altitude gained, what is the approximate Δf/f by which the clock runs relatively faster (in units of 10⁻¹⁶)?",
+          "key": "06-deeacb1e"
+        },
+        {
+          "title": "The Einstein Equation: Matter Curves Spacetime",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "G_μν+Λg_μν=(8πG/c⁴)·T_μν",
+          "q": "Does the vacuum Einstein equation (T=0, Λ=0) have nontrivial solutions (yes=1, no=2)?",
+          "key": "06-c3077646"
+        },
+        {
+          "title": "Kerr Black Holes and Gravitational-Wave Detection",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Kerr a=J/(Mc)；r₊=M+√(M²−a²) (geometric units)",
+          "q": "GW150914’s peak gravitational-wave luminosity is about 10 to what power in watts?",
+          "key": "06-93829b3b"
+        },
+        {
+          "title": "Gravitational Lensing: Light Rays Bent into Images",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Einstein radius θ_E=√(4GM·D_LS/(c²·D_L·D_S))",
+          "q": "With a point lens and a perfectly aligned source (β=0) a ring forms; the ring’s angular radius is how many times θ_E?",
+          "key": "06-9555f689"
+        },
+        {
+          "title": "The Classical Tests of General Relativity",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Deflection α=4GM/(c²b)；precession Δφ=6πGM/[c²a(1−e²)]",
+          "q": "What is the approximate deflection of light at the solar limb predicted by GR, in arcseconds?",
+          "key": "06-fa1ac7d0"
+        },
+        {
+          "title": "Understanding Gravitational Time Dilation from the Metric",
+          "file": "10.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "dτ=√(1−r_s/r)dt；r_s=2GM/c²",
+          "q": "When r=4r_s, what is (dτ/dt)²?",
+          "key": "06-344354a4"
+        }
+      ],
+      "project": {
+        "title": "Comparing Fixed-Target and Collider Collisions with Four-Momentum",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "special relativity",
+        "relativistic dynamics",
+        "general relativity",
+        "gravitational waves",
+        "four-vectors",
+        "relativistic collisions",
+        "equivalence principle",
+        "differential geometry",
+        "Schwarzschild spacetime",
+        "rotating black holes",
+        "gravitational lensing",
+        "numerical relativity",
+        "gravitational experiments",
+        "gravitational-wave detection",
+        "candidate theories of quantum gravity"
+      ]
+    },
+    {
+      "id": "07",
+      "name": "Quantum Mechanics",
+      "group": "Foundational theory",
+      "pre": "Waves; probability; the advanced lessons require complex numbers, linear algebra, and calculus",
+      "topics": [
+        "Wave functions",
+        "Measurement and operators",
+        "Potential wells and tunneling",
+        "Angular momentum and spin",
+        "Many-body systems and quantum information"
+      ],
+      "folder": "07-quantum-mechanics",
+      "lessons": [
+        {
+          "title": "Start with probability amplitudes",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "Pᵢ = ∣aᵢ∣²; ΣPᵢ = 1",
+          "q": "Two outcomes have probabilities 0.3 and P. What is P?",
+          "key": "07-0"
+        },
+        {
+          "title": "Why binding produces energy levels",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "Eₙ = n²h²/(8mL²), n = 1,2,…",
+          "q": "What is the ratio of the energy of the third level to the first?",
+          "key": "07-1"
+        },
+        {
+          "title": "Operators, commutation relations, and uncertainty",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ΔAΔB≥|〈[A,B]〉|/2; [x,p]=iℏ",
+          "q": "With ℏ=1 and Δx=2, what is the tightest lower bound on Δp?",
+          "key": "07-5a95a2b6"
+        },
+        {
+          "title": "The Schrödinger equation and time evolution",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "iℏ ∂ψ/∂t=Ĥψ; stationary state ψ∝e^(−iEt/ℏ)",
+          "q": "With ΔE=2 eV, what is the oscillation frequency (in units of 10¹⁴ Hz)?",
+          "key": "07-e7e5d40e"
+        },
+        {
+          "title": "The one-dimensional harmonic oscillator",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Eₙ=(n+½)ℏω",
+          "q": "How many eV are needed to go from n=1 to n=3?",
+          "key": "07-de3f6700"
+        },
+        {
+          "title": "The hydrogen atom and the energy-level formula",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Eₙ=−13.6 eV/n²",
+          "q": "What is the photon energy of the n=3→1 transition in eV?",
+          "key": "07-480d0254"
+        },
+        {
+          "title": "Angular momentum and spin",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "L²→ℏ²ℓ(ℓ+1); Lz→mℏ; electron S=½",
+          "q": "For ℓ=2, what is |L| in units of ℏ?",
+          "key": "07-2309b04b"
+        },
+        {
+          "title": "Identical particles and the Pauli principle",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Fermions: swapping two particles → wave function multiplied by −1",
+          "q": "When two electrons occupy the same orbital, what is the maximum of the total spin z component in units of ℏ?",
+          "key": "07-6f31d965"
+        },
+        {
+          "title": "Scattering and cross sections",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "dσ/dΩ=|f(θ)|²; σ=∫(dσ/dΩ)dΩ",
+          "q": "If R doubles, the geometric cross section becomes how many times larger?",
+          "key": "07-035cd777"
+        },
+        {
+          "title": "The variational method: from the helium ground state to the chemical bond",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "E[ψ_trial]≥E₀; minimizing approaches the ground state",
+          "q": "Is the ground-state energy given by the variational method higher or lower than the true value (higher=1, lower=2)?",
+          "key": "07-e5f53714"
+        },
+        {
+          "title": "The WKB semiclassical approximation",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ψ∝exp(±i∫p dx/ℏ)/√p; T≈e^(−2∫|p|dx/ℏ)",
+          "q": "In the WKB bound-state quantization ∮p dx=(n+δ)h, what is δ for the harmonic oscillator?",
+          "key": "07-0f0a6a0f"
+        },
+        {
+          "title": "Angular momentum coupling and Clebsch–Gordan coefficients",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "|jm⟩=ΣC(j₁j₂j;m₁m₂m)|j₁m₁⟩|j₂m₂⟩",
+          "q": "After coupling ℓ=1 with s=½, how many m components does the j=3/2 state have?",
+          "key": "07-a895519a"
+        },
+        {
+          "title": "The density matrix and composite systems",
+          "file": "13.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ρ=Σpᵢ|ψᵢ⟩⟨ψᵢ|; ⟨A⟩=Tr(ρA); Tr ρ²≤1",
+          "q": "What is Tr ρ² for a maximally mixed single qubit?",
+          "key": "07-0a357117"
+        },
+        {
+          "title": "Perturbation theory: how to estimate energy-level corrections",
+          "file": "14.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "H=H₀+λV; Eₙ≈Eₙ⁽⁰⁾+λ〈n|V|n〉",
+          "q": "With E₀=3, λ=0.2, and 〈V〉=−2, what is the first-order approximate energy?",
+          "key": "07-fee28bc4"
+        },
+        {
+          "title": "Time-dependent perturbation theory and Fermi's golden rule: how atoms emit and absorb light",
+          "file": "15.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Γ_(i→f)=(2π/ℏ)|〈f|V|i〉|²·ρ(E_f)",
+          "q": "If the density of final states ρ doubles while the matrix element is unchanged, the transition rate becomes how many times larger?",
+          "key": "07-4037487a"
+        },
+        {
+          "title": "Barrier tunneling and finite potential wells",
+          "file": "16.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "T≈16E(V₀−E)/V₀²·e^(−2κa), κ=√(2m(V₀−E))/ℏ",
+          "q": "If the barrier width doubles (everything else fixed), the decay exponent |−2κa| becomes how many times larger?",
+          "key": "07-c354e563"
+        },
+        {
+          "title": "A first look at path integrals",
+          "file": "17.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "K(b,a)=∫D[x(t)] e^(iS[x]/ℏ)",
+          "q": "By how many ℏ must the actions of two paths differ for the phase difference to reach π?",
+          "key": "07-c596743e"
+        },
+        {
+          "title": "Many-body identical particles: Slater determinants and exchange energy",
+          "file": "18.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "Ψ=(N!)^(−1/2)·det[φᵢ(xⱼ)]",
+          "q": "What is the value of a Slater determinant with two electrons in exactly the same spin-orbital state?",
+          "key": "07-8ae33ce5"
+        },
+        {
+          "title": "The Ehrenfest theorem and wave-packet motion",
+          "file": "19.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "d⟨A⟩/dt=(i/ℏ)⟨[H,A]⟩; free Gaussian σₓ(t)=σₓ₀√(1+(ℏt/2mσₓ₀²)²)",
+          "q": "How does the width of a free Gaussian wave packet change with time (spreads=1, constant=2, contracts=3)?",
+          "key": "07-51338966"
+        }
+      ],
+      "project": {
+        "title": "Finite-difference computation of quantum well spectra",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Wave functions",
+        "Measurement and operators",
+        "Potential wells and tunneling",
+        "Angular momentum and spin",
+        "Many-body systems and quantum information",
+        "Schrödinger equation",
+        "Harmonic oscillator",
+        "Hydrogen atom",
+        "Density matrix",
+        "Angular momentum coupling",
+        "Identical particles",
+        "Variational method",
+        "Perturbation theory",
+        "Scattering theory",
+        "Path integral",
+        "Open quantum systems",
+        "Quantum measurement theory"
+      ]
+    },
+    {
+      "id": "08",
+      "name": "Atomic, Molecular and Optical Physics",
+      "group": "Research field",
+      "pre": "quantum mechanics; optics",
+      "topics": [
+        "atomic structure",
+        "molecular spectroscopy",
+        "atom–light interactions",
+        "cold atoms",
+        "precision spectroscopy"
+      ],
+      "folder": "08-atomic-molecular-and-optical-physics",
+      "lessons": [
+        {
+          "title": "Why Do Spectra Have Lines",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "ΔE = hf = hc/λ",
+          "q": "An energy-level difference of 4 eV corresponds to a wavelength of roughly how many nm?",
+          "key": "08-0"
+        },
+        {
+          "title": "Molecules Have More Energy Scales",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "ω = √(k/μ)；μ = m₁m₂/(m₁+m₂)",
+          "q": "Two atoms each have a mass of 4 mass units; what is the reduced mass in units?",
+          "key": "08-1"
+        },
+        {
+          "title": "Rabi Oscillations of a Two-Level Atom",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "P_e(t)=sin²(Ωt/2)",
+          "q": "What is the excitation probability when Ωt=π/2?",
+          "key": "08-6fc988de"
+        },
+        {
+          "title": "Atomic Shells and the Periodic Table",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Principal-shell capacity 2n²; the ground state fills from low to high energy",
+          "q": "How many electrons can the n=2 shell hold at most?",
+          "key": "08-5d51b74c"
+        },
+        {
+          "title": "Laser Cooling and Cold Atoms",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Doppler limit T_D=ℏΓ/(2k_B)",
+          "q": "For the rubidium D2 line (Γ/2π=6 MHz), what is the Doppler limit, roughly, in μK?",
+          "key": "08-f6060a22"
+        },
+        {
+          "title": "The Stark Effect: Atomic Energy Levels in an Electric Field",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Hydrogen n=2, linear ΔE=3ea₀E; second order ΔE=−½αE²",
+          "q": "In the linear Stark effect, if the electric field doubles, by what factor does the splitting change?",
+          "key": "08-25d78c68"
+        },
+        {
+          "title": "Rovibrational Spectra of Molecules: The P and R Branches",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Ē_J=ℏ²J(J+1)/(2I); R branch ν=ν₀+2B(J+1)",
+          "q": "What is the spacing of adjacent lines in the R branch (in units of B)?",
+          "key": "08-8fa2a893"
+        },
+        {
+          "title": "Sub-Doppler Cooling and the Magneto-Optical Trap",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Recoil limit T_rec=ℏ²k²/(2mk_B); MOT restoring force F=−κr",
+          "q": "What is the recoil temperature of cesium (λ=852 nm), roughly, in μK (order of magnitude)?",
+          "key": "08-b77f72fc"
+        },
+        {
+          "title": "Three Sources of Spectral-Line Broadening and the Voigt Profile",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Δν_D=(ν₀/c)·√(8k_BT·ln2/m); Voigt=Lorentzian⊗Gaussian",
+          "q": "What is the Doppler broadening of the Na D line at 589 nm and 500 K, roughly, in GHz?",
+          "key": "08-7ae3579c"
+        },
+        {
+          "title": "Fine Structure, the Zeeman Effect, and the 21 cm Line",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Fine structure ∼E_n·α²; normal Zeeman ΔE=μ_B·m_ℓB; hydrogen hyperfine ν=1420.4 MHz",
+          "q": "In a 1 T magnetic field, what is the spacing of adjacent levels in the normal Zeeman effect, in eV (in units of 10⁻⁵)?",
+          "key": "08-c54b696d"
+        },
+        {
+          "title": "Spectral Linewidth and Lifetime",
+          "file": "11.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "Δν_FWHM=1/(2πτ) (lifetime limit)",
+          "q": "If the lifetime becomes 4 times as long, by what factor is the original lifetime-limited linewidth divided?",
+          "key": "08-ebb652a7"
+        },
+        {
+          "title": "Optical Pumping and the Principle of Atomic Clocks",
+          "file": "12.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "Second definition ν(Cs)=9192631770 Hz",
+          "q": "What are the middle three digits of the cesium hyperfine frequency 9.192 631 770 GHz?",
+          "key": "08-98e4142a"
+        }
+      ],
+      "project": {
+        "title": "From Ideal Rabi Oscillations to Decoherence",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "atomic structure",
+        "molecular spectroscopy",
+        "atom–light interactions",
+        "cold atoms",
+        "precision spectroscopy",
+        "atomic collisions",
+        "hyperfine structure",
+        "molecular rotation",
+        "molecular vibration",
+        "selection rules",
+        "laser cooling",
+        "Bose–Einstein condensation",
+        "optical lattices",
+        "Rydberg atoms",
+        "atomic clocks",
+        "strong-field atomic physics",
+        "clusters"
+      ]
+    },
+    {
+      "id": "09",
+      "name": "Condensed Matter and Materials Physics",
+      "group": "Research field",
+      "pre": "quantum mechanics; statistical physics; electromagnetism",
+      "topics": [
+        "Crystal",
+        "Energy bands and semiconductors",
+        "Magnetism",
+        "Superconductivity",
+        "Soft matter",
+        "Topological states of matter"
+      ],
+      "folder": "09-condensed-matter-and-materials-physics",
+      "lessons": [
+        {
+          "title": "How Large Numbers of Atoms Form a Material",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "E_photon ≥ E_bandgap (simplified interband absorption threshold)",
+          "q": "With a band gap of 3 eV, how many eV short of the gap is a 2 eV photon?",
+          "key": "09-0"
+        },
+        {
+          "title": "Phase Transitions and Collective Phenomena",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "M = total magnetic moment / volume",
+          "q": "At the same magnetization, if the volume increases to 3 times, by what factor does the total magnetic moment change?",
+          "key": "09-1"
+        },
+        {
+          "title": "The One-Dimensional Tight-Binding Model and Energy Bands",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "E(k)=ε₀−2t cos(ka)",
+          "q": "With t=2 eV, what is the bandwidth of this model in eV?",
+          "key": "09-8dcb6f7f"
+        },
+        {
+          "title": "Superconductivity and the Meissner Effect",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "B=0 in the bulk (Meissner); first London equation m(dJ/dt)=n_se²E; second London equation ∇×J_s=−n_se²B/m",
+          "q": "Once the Meissner state is reached, what is B deep inside the superconductor in T?",
+          "key": "09-493ce282"
+        },
+        {
+          "title": "The Quantum Hall Effect",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "R_H=h/(e²ν), ν=1,2,…",
+          "q": "What is the Hall resistance at the ν=2 plateau in kΩ?",
+          "key": "09-8c3673df"
+        },
+        {
+          "title": "Bloch’s Theorem, the Reciprocal Lattice, and Diffraction: The Crystal’s Dictionary",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ψ=e^(ikx)·u_k(x) (u has the lattice period); |G|=2π/a",
+          "q": "With lattice constant a=0.3 nm, about how large is the first reciprocal-lattice vector in nm⁻¹ (two decimal places)?",
+          "key": "09-af86e7ea"
+        },
+        {
+          "title": "Magnetic Order: The Weiss Molecular Field, Curie–Weiss, and Hysteresis",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Curie–Weiss χ=C/(T−T_C); self-consistent m=tanh(m·T_C/T)",
+          "q": "Rounded to the nearest thousand, about what is iron’s Curie temperature in K?",
+          "key": "09-dee99f9d"
+        },
+        {
+          "title": "Superfluid Helium and the Two-Fluid Model",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ρ=ρ_n+ρ_s; fountain pressure Δp=ρs·ΔT",
+          "q": "About what temperature is the He-4 superfluid transition (λ point) in K (two decimal places)?",
+          "key": "09-374e07b7"
+        },
+        {
+          "title": "The Qualitative Picture of BCS Theory: Cooper Pairs and the Energy Gap",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "2Δ(0)≈3.52k_BT_c; Δ(T→T_c)∝√(T_c−T)",
+          "q": "About how many k_BT_c is the BCS zero-temperature gap 2Δ (one decimal place)?",
+          "key": "09-a9ec51f2"
+        },
+        {
+          "title": "The Classical Hall Effect and the Sign of the Carriers",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "R_H=E_H/(jB)=1/(nq)",
+          "q": "A positive Hall coefficient indicates the carriers are (electrons=1, holes=2)?",
+          "key": "09-8f574645"
+        },
+        {
+          "title": "Effective Mass and Holes",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "m*=ℏ²/(d²E/dk²); band top m*<0 ⇔ hole",
+          "q": "About what is the effective mass of a conduction electron in GaAs, in m_e (two decimal places)?",
+          "key": "09-2d745747"
+        },
+        {
+          "title": "Soft Matter in Depth: Liquid Crystals, Polymers, Glass, and Active Matter",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "nematic order S=〈(3cos²θ−1)/2〉; R_N∼N^ν",
+          "q": "The order parameter of a nematic liquid crystal ranges from what value to 1 (enter the lower limit 0)?",
+          "key": "09-e5233434"
+        },
+        {
+          "title": "Phonons and the Specific Heat of Solids: From Einstein to Debye",
+          "file": "13.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Debye low-T: C≈(12π⁴/5)Nk_B(T/θ_D)³",
+          "q": "Far below θ_D, when the temperature rises from T to 2T, the lattice specific heat becomes how many times larger?",
+          "key": "09-5618fbe3"
+        },
+        {
+          "title": "The Fermi Distribution and Thermal Broadening",
+          "file": "14.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "f(E)=1/[exp((E−μ)/(kBT))+1]",
+          "q": "When (E−μ)/(kBT)=ln9, what is the occupation probability?",
+          "key": "09-4bbb506f"
+        },
+        {
+          "title": "The Free-Electron Gas and the pn Junction: From the Fermi Energy to the Diode",
+          "file": "15.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "E_F=ℏ²(3π²n)^(2/3)/(2m); I=I₀(e^(qV/k_BT)−1)",
+          "q": "At room temperature k_BT≈0.025 eV; a forward bias of 0.1 V corresponds to a rectification factor e^(qV/k_BT) of e to what power?",
+          "key": "09-c0107469"
+        }
+      ],
+      "project": {
+        "title": "How the Spectrum of a Finite Chain Approaches a Band",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Crystal",
+        "Energy bands and semiconductors",
+        "Magnetism",
+        "Superconductivity",
+        "Soft matter",
+        "Topological states of matter",
+        "Lattices and the reciprocal lattice",
+        "Phonons",
+        "Electron transport",
+        "Semiconductors",
+        "Magnetic order",
+        "Strong correlations",
+        "Superconductivity and superfluidity",
+        "Quantum Hall effect",
+        "Topological materials",
+        "Low-dimensional materials",
+        "Disorder and localization",
+        "Liquid crystals",
+        "Glass",
+        "Granular matter",
+        "Active condensed matter"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Nuclear Physics",
+      "group": "Research field",
+      "pre": "quantum mechanics; basics of relativity",
+      "topics": [
+        "Nuclear structure",
+        "Radioactive decay",
+        "Nuclear reactions",
+        "Fission and fusion",
+        "Nuclear astrophysics"
+      ],
+      "folder": "10-nuclear-physics",
+      "lessons": [
+        {
+          "title": "Half-life is a statistical law",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "N(t) = N₀·2^(−t/T)",
+          "q": "Starting from 1000 nuclei, how many are expected to remain after 2 half-lives?",
+          "key": "10-0"
+        },
+        {
+          "title": "Binding energy and nuclear reactions",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "B = Δmc²; Q = (m_i−m_f)c²",
+          "q": "If the mass difference doubles, how many times larger is the released energy?",
+          "key": "10-1"
+        },
+        {
+          "title": "The Coulomb barrier and nuclear tunneling",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "T≈exp[−2∫κ(x)dx]; κ=√[2m(V−E)]/ℏ",
+          "q": "When κa increases from 2 to 3, the ratio of T in the exponential approximation is e to what power?",
+          "key": "10-6437d917"
+        },
+        {
+          "title": "The chart of nuclides and the liquid-drop model",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "B=a_V A−a_S A^(2/3)−a_C Z(Z−1)/A^(1/3)−a_A(A−2Z)²/A±δ",
+          "q": "Near which element does the peak of the binding energy per nucleon curve occur (atomic number)?",
+          "key": "10-21d6eec8"
+        },
+        {
+          "title": "Magic numbers and the shell model",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Magic numbers 2, 8, 20, 28, 50, 82, 126",
+          "q": "What is the third magic number?",
+          "key": "10-7feae5ea"
+        },
+        {
+          "title": "Rutherford scattering and the discovery of the nucleus",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "dσ/dΩ=(Z₁Z₂e²/16πε₀E)²·1/sin⁴(θ/2)",
+          "q": "What is the ratio of the Rutherford cross section at θ=90° to that at θ=30°?",
+          "key": "10-b94593c5"
+        },
+        {
+          "title": "Nuclear size and density saturation",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "R=1.2·A^(1/3) fm; ρ₀≈0.16 fm⁻³",
+          "q": "About how large is the nuclear radius of lead-208, in fm (one decimal place)?",
+          "key": "10-4c87c493"
+        },
+        {
+          "title": "Neutron moderation and resonance absorption",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Logarithmic energy loss per collision ξ≈2/(A+2/3); thermal-region σ_f(²³⁵U)≈585 b",
+          "q": "About how many collisions are needed to moderate from 2 MeV to thermal energy in water (round to the nearest ten)?",
+          "key": "10-de3d2cf4"
+        },
+        {
+          "title": "Nuclear astrophysics: from the pp chain to the s and r processes",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "pp-chain net reaction 4p→⁴He+2e⁺+2ν (26.7 MeV)",
+          "q": "How many protons does the net pp-chain reaction turn into one helium nucleus?",
+          "key": "10-515b87d8"
+        },
+        {
+          "title": "The β-decay continuous spectrum and the neutrino: a complete map of the three decays",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "β⁻: n→p+e⁻+ν̄_e; Q=(M_parent−M_daughter−m_e)c²",
+          "q": "In three-body β decay, the upper limit of the electron kinetic energy is about how many times Q?",
+          "key": "10-96998943"
+        },
+        {
+          "title": "Nuclear reaction thresholds and momentum conservation",
+          "file": "11.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "E_a,th=[M_f²−m_a²−m_b²]c²/(2m_b)",
+          "q": "What is the beam kinetic-energy threshold in the example above (in the same energy unit)?",
+          "key": "10-f9b338ea"
+        }
+      ],
+      "project": {
+        "title": "Inferring lifetimes from simulated decay data",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Nuclear structure",
+        "Radioactive decay",
+        "Nuclear reactions",
+        "Fission and fusion",
+        "Nuclear astrophysics",
+        "Nuclear shell model",
+        "Collective model",
+        "α, β, γ decay",
+        "Nuclear reaction cross section",
+        "Nuclear fission",
+        "Nuclear fusion",
+        "Heavy ions",
+        "Nuclear matter equation of state",
+        "Exotic nuclei",
+        "Nucleosynthesis",
+        "Probing nuclear structure"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Particle Physics and Quantum Field Theory",
+      "group": "Research field",
+      "pre": "quantum mechanics; relativity; field theory needed for the advanced parts",
+      "topics": [
+        "Standard Model",
+        "scattering",
+        "symmetry",
+        "quantum fields",
+        "neutrinos",
+        "beyond the Standard Model"
+      ],
+      "folder": "11-particle-physics-and-quantum-field-theory",
+      "lessons": [
+        {
+          "title": "What Is Matter Made Of",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "Q_proton = 2Qᵤ + Q_d",
+          "q": "In units of e, what is the total charge of two up quarks plus one down quark?",
+          "key": "11-0"
+        },
+        {
+          "title": "How Collisions Reveal Structure",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "N ≈ σ L_int ε",
+          "q": "If 200 events are produced and the efficiency is 0.5, how many do you expect to record?",
+          "key": "11-1"
+        },
+        {
+          "title": "Simple Harmonic Modes of a Field and Particle Number",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "H=Σ_kℏω_k(n_k+1/2)",
+          "q": "With ℏω=2 as the unit scale, adding 4 quanta raises the energy by how much?",
+          "key": "11-431e1226"
+        },
+        {
+          "title": "Running Couplings and Grand Unification",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "dg/d ln μ=β(g)；α_s(μ)∝1/ln μ",
+          "q": "Does the QCD coupling get stronger or weaker at high energy (stronger=1, weaker=2)?",
+          "key": "11-e080b78b"
+        },
+        {
+          "title": "Neutrino Oscillation",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "P(ν_e→ν_μ)=sin²2θ·sin²(Δm²L/4E)",
+          "q": "The Δm² of atmospheric neutrino oscillation is about 2.5×10⁻³ eV² — to what negative power of 10 does that correspond?",
+          "key": "11-223480d7"
+        },
+        {
+          "title": "The Standard Model Particle Spectrum and an Introduction to Feynman Diagrams",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "vertex ∝ coupling (e.g. e⁻γ vertex ∝√(4πα)); cross section ∝|M|²×phase space",
+          "q": "In the high-energy limit σ∝1/s: if √s is doubled, the cross section becomes what fraction?",
+          "key": "11-42f0525a"
+        },
+        {
+          "title": "Effective Field Theory and Energy-Scale Expansion",
+          "file": "07.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "correction scale ∼ c(E/Λ)^p",
+          "q": "With E/Λ=0.2, p=2, and coefficient 1, what is the relative correction?",
+          "key": "11-1b8a8876"
+        },
+        {
+          "title": "Lattice Gauge Theory",
+          "file": "08.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "lattice spacing a→0 limit keeps g²(a)N fixed; Wilson loop criterion",
+          "q": "With a lattice spacing of 0.1 fm, roughly what momentum cutoff π/a does that correspond to in GeV? (ℏc=0.197 GeV·fm)",
+          "key": "11-1e6cc230"
+        },
+        {
+          "title": "The Holographic Principle and AdS/CFT",
+          "file": "09.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "S_BH=kA/(4l_p²); AdS₅/CFT₄ duality",
+          "q": "Black-hole entropy scales with horizon area to what power?",
+          "key": "11-40a3c149"
+        }
+      ],
+      "project": {
+        "title": "Likelihood Inference of Scattering Counts",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Standard Model",
+        "scattering",
+        "symmetries",
+        "quantum fields",
+        "neutrinos",
+        "physics beyond the Standard Model",
+        "quantum electrodynamics",
+        "quantum chromodynamics",
+        "electroweak theory",
+        "Higgs mechanism",
+        "flavor physics",
+        "collider phenomenology",
+        "lattice field theory",
+        "effective field theory",
+        "gauge theories",
+        "renormalization",
+        "symmetries and anomalies",
+        "dark-matter candidates",
+        "string theory and quantum-gravity candidates"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Plasma Physics",
+      "group": "Research field",
+      "pre": "electromagnetism; fluids; statistical physics",
+      "topics": [
+        "Debye shielding",
+        "Plasma waves",
+        "Magnetohydrodynamics",
+        "Magnetic confinement",
+        "Space plasma"
+      ],
+      "folder": "12-plasma-physics",
+      "lessons": [
+        {
+          "title": "Collective response of a charged gas",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "λ_D = √(ε₀k_BTₑ/(nₑe²))",
+          "q": "If the electron density increases by a factor of 9, by what number do you divide the original Debye length to get the new one?",
+          "key": "12-0"
+        },
+        {
+          "title": "Particles circling in a magnetic field",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "r_L = mv⊥/(∣q∣B)",
+          "q": "With the other quantities unchanged, if the magnetic field increases by a factor of 4, by what number is the original radius divided?",
+          "key": "12-1"
+        },
+        {
+          "title": "Electron plasma oscillations",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ω_p=√(nₑe²/(mₑε₀))",
+          "q": "If the density becomes 25 times larger, by what factor does the plasma angular frequency change?",
+          "key": "12-de6e9f87"
+        },
+        {
+          "title": "Plasma frequency and wave propagation",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ω_p=√(n_e e²/(ε₀ m_e)); dispersion ω²=ω_p²+c²k²",
+          "q": "With an electron density of 10²⁰ m⁻³, roughly how many GHz is the plasma frequency?",
+          "key": "12-8d68994a"
+        },
+        {
+          "title": "Drift motion of charged particles: E×B, gradient, and curvature",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "v_E=E×B/B²; v_∇B=(v⊥²/2ω_c)·B×∇B/B² (with the sign of the charge)",
+          "q": "Does the E×B drift velocity depend on the particle's charge (no=0, yes=1)?",
+          "key": "12-f5aa8b0c"
+        },
+        {
+          "title": "Magnetic pressure and plasma β: the key to magnetic-confinement equilibrium",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "p_B=B²/(2μ₀); β=2μ₀p/B²",
+          "q": "If B doubles (p unchanged), what fraction of its original value does β become?",
+          "key": "12-c807a463"
+        },
+        {
+          "title": "Magnetic confinement and the tokamak configuration",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Fusion triple product nTτ_E≳3×10²¹ keV·s/m³ (D-T)",
+          "q": "Roughly what temperature does T=10 keV correspond to (in units of 10⁸ K)?",
+          "key": "12-ab6aea72"
+        },
+        {
+          "title": "Plasma diagnostics: probes, interferometry, and scattering",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Probe I–V characteristic; Δφ∝∫n_e dl",
+          "q": "The interferometric phase shift is proportional to the path integral of which quantity (density=1, temperature=2)?",
+          "key": "12-800b94d8"
+        },
+        {
+          "title": "The magnetic mirror: magnetic confinement by reflection at the open ends",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Magnetic moment μ=m v⊥²/(2B) conserved; sin²α₁=B₁/B₂",
+          "q": "With mirror ratio B_end/B_mid=2, what is the critical equatorial pitch angle in degrees?",
+          "key": "12-908ba9c8"
+        },
+        {
+          "title": "Alfvén waves in magnetohydrodynamics",
+          "file": "10.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "v_A=B₀/√(μ₀ρ)",
+          "q": "If the magnetic field becomes 3 times larger and the density 9 times larger, what multiple of the original value is the speed?",
+          "key": "12-db13e422"
+        },
+        {
+          "title": "Landau damping and an introduction to kinetics",
+          "file": "11.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "Resonance condition ω=k·v; γ_LD∝∂f/∂v|_(ω/k)",
+          "q": "If the wavenumber doubles (same frequency), the resonant velocity becomes (halved=1, doubled=2)?",
+          "key": "12-3a4f057c"
+        },
+        {
+          "title": "Wave heating and modes: whistler, O/X, and cyclotron resonance",
+          "file": "12.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "Resonance ω=ω_ce (ECRH); f_ce≈28 GHz/T",
+          "q": "For B=2 T, roughly how many GHz is the electron cyclotron frequency (28 GHz/T)?",
+          "key": "12-2d5c490c"
+        },
+        {
+          "title": "Magnetic reconnection: sudden change of magnetic-field topology",
+          "file": "13.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "Sweet–Parker outflow ejected at v_A; reconnection rate set by the diffusion region",
+          "q": "The Sweet–Parker reconnection outflow velocity is characterized by what (Alfvén speed=1, sound speed=2)?",
+          "key": "12-d5ff7ad4"
+        }
+      ],
+      "project": {
+        "title": "Fluid-model validation of electron oscillations",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Debye shielding",
+        "Plasma waves",
+        "Magnetohydrodynamics",
+        "Magnetic confinement",
+        "Space plasma",
+        "Kinetics",
+        "Instabilities",
+        "Magnetic reconnection",
+        "Inertial confinement",
+        "Low-temperature plasma",
+        "Dusty plasma",
+        "Strongly coupled plasma",
+        "High-energy-density physics",
+        "Plasma diagnostics"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Astrophysics and Cosmology",
+      "group": "Research field",
+      "pre": "mechanics; thermal physics; optics; the advanced topics require relativity",
+      "topics": [
+        "Stars",
+        "Galaxies",
+        "Compact objects",
+        "Cosmology",
+        "Cosmic backgrounds and structure formation"
+      ],
+      "folder": "13-astrophysics-and-cosmology",
+      "lessons": [
+        {
+          "title": "Inferring celestial objects from the light we receive",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "F = L/(4πd²)",
+          "q": "If the distance to a source of fixed luminosity triples, the flux becomes what fraction of the original?",
+          "key": "13-0"
+        },
+        {
+          "title": "An introductory model of the expanding Universe",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "v ≈ H₀d; z = (λobs−λem)/λem",
+          "q": "The emitted wavelength is 500 nm and the observed wavelength is 600 nm; what is the redshift z?",
+          "key": "13-1"
+        },
+        {
+          "title": "The virial theorem and estimating gravitational mass",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "2〈K〉+〈U〉=0; Mscale∼Rv²/G",
+          "q": "In a system of the same structure, R doubles and v triples; by what factor does the mass scale increase?",
+          "key": "13-694f4298"
+        },
+        {
+          "title": "Stellar structure and the main sequence",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Hydrostatics dP/dr=−Gm(r)ρ/r²; main-sequence L∝M^3.5 (approximate)",
+          "q": "A main-sequence star of 4 solar masses has a luminosity of about how many times the Sun's?",
+          "key": "13-73901723"
+        },
+        {
+          "title": "The cosmic microwave background and the early Universe",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "T(z)=T₀(1+z); photon decoupling redshift z≈1100",
+          "q": "At redshift z=1100, the background temperature is about how many K?",
+          "key": "13-65c8d1bf"
+        },
+        {
+          "title": "Magnitudes, the distance ladder, and telescopes: foundations of astronomical observation",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "m−M=5log₁₀(d/10pc); θ_R≈1.22λ/D",
+          "q": "A star with a parallax of 0.05 arcseconds is at what distance in pc?",
+          "key": "13-32402dce"
+        },
+        {
+          "title": "The chain of evidence for dark energy: supernovae, the CMB, and BAO",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Flatness ΣΩ=1; observed Ω_m≈0.3 → Ω_Λ≈0.7",
+          "q": "The CMB shows the Universe is flat with Ω_m≈0.3; about what fraction is dark energy?",
+          "key": "13-e224bd17"
+        },
+        {
+          "title": "Binary stars and mass determination",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "P²=4π²a³/[G(m₁+m₂)]",
+          "q": "For a circular orbit with total mass 2 M☉ and separation 1 AU, the period is about how many years (two decimal places)?",
+          "key": "13-d1eca68e"
+        },
+        {
+          "title": "Stellar pulsation and Cepheid variables",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Pulsation approximation P≈2π√(R³/GM) (acoustic scale); period–luminosity relation M≈−2.8logP−1.4",
+          "q": "If a Cepheid's period doubles, its luminosity increases by about what factor (two decimal places)?",
+          "key": "13-226ddc33"
+        },
+        {
+          "title": "Accretion and X-ray binaries",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "L=η·ṁc²; L_Edd=1.3×10³¹(M/M☉) W",
+          "q": "The Eddington luminosity of a 10 M☉ compact object is about 10 to what power in watts?",
+          "key": "13-bab07def"
+        },
+        {
+          "title": "Exoplanet detection: transits, radial velocities, and microlensing",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Transit depth ΔF=(R_p/R_★)²; radial-velocity amplitude K∝M_p sin i",
+          "q": "Earth's transit depth across the Sun is about how many ppm (take 84)?",
+          "key": "13-837ca982"
+        },
+        {
+          "title": "Multi-messenger astronomy: gravitational waves, neutrinos, and electromagnetic radiation",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "GW170817: the 1.7 s GRB delay constrains |c_g/c−1|<10⁻¹⁵",
+          "q": "In GW170817 the gravitational waves arrived how many seconds before the gamma-ray burst (take 1.7)?",
+          "key": "13-e9212aa7"
+        },
+        {
+          "title": "The life of a star: beyond the main sequence and compact remnants",
+          "file": "13.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "M_Ch≈1.4 M_☉; neutron-star radius about 10 km",
+          "q": "The upper mass limit for a white dwarf is about how many solar masses (one decimal place)?",
+          "key": "13-d9d53b4b"
+        },
+        {
+          "title": "The Friedmann equation and the contents of the Universe",
+          "file": "14.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "H²=(8πG/3)ρ−kc²/a²+Λc²/3",
+          "q": "If a triples, the matter density becomes what fraction of the original?",
+          "key": "13-b9a43c3c"
+        },
+        {
+          "title": "Inflation: solving the horizon and flatness problems",
+          "file": "15.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "a(t)∝e^(Ht); N≥60 e-folds; |Ω−1|∝e^(−2N)",
+          "q": "Inflation with N=60 dilutes the curvature deviation to 10 to what negative power?",
+          "key": "13-e957154c"
+        },
+        {
+          "title": "Linear structure growth and the power spectrum",
+          "file": "16.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "Linear growth δ∝a (matter dominated); P(k)=A·kⁿ·T²(k)",
+          "q": "In the matter-dominated era, from a=0.5 to 1, the linear density fluctuations grow by what factor?",
+          "key": "13-e0c51715"
+        }
+      ],
+      "project": {
+        "title": "Matter- and radiation-dominated expansion models",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Stars",
+        "Galaxies",
+        "Compact objects",
+        "Cosmology",
+        "Cosmic backgrounds and structure formation",
+        "Solar physics",
+        "Stellar structure and evolution",
+        "Exoplanets",
+        "Interstellar medium",
+        "Galactic dynamics",
+        "Galaxy formation",
+        "High-energy objects",
+        "Compact stars",
+        "Black holes",
+        "Cosmic microwave background",
+        "Large-scale structure",
+        "Dark matter observations",
+        "Dark energy",
+        "The early Universe",
+        "Multi-messenger astronomy"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Geophysics and Space Physics",
+      "group": "Interdisciplinary field",
+      "pre": "mechanics; waves; electromagnetism; thermal physics",
+      "topics": [
+        "Seismology",
+        "Geomagnetism",
+        "Earth's interior",
+        "Atmospheric and ocean physics",
+        "Magnetosphere and Sun–Earth relations"
+      ],
+      "folder": "14-geophysics-and-space-physics",
+      "lessons": [
+        {
+          "title": "Probing Invisible Interiors with Waves",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "t = d/v (straight-line path in a uniform medium)",
+          "q": "In a uniform medium the distance is 24 km and the wave speed is 6 km/s: how many s does the propagation take?",
+          "key": "14-0"
+        },
+        {
+          "title": "How Heat Is Transported Through Rock Strata",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "qₓ = −k·dT/dx",
+          "q": "With k = 2 and a temperature gradient of +0.04 K/m, what is qₓ in W/m²?",
+          "key": "14-1"
+        },
+        {
+          "title": "Inversion Is Not Unique: Seismic Travel-Time Models",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "tᵢ=Σ_jLᵢⱼs_j；s_j=1/v_j",
+          "q": "A 10 km path is traversed at 2 km/s and another 10 km at 5 km/s: what is the total travel time in s?",
+          "key": "14-0da12cf1"
+        },
+        {
+          "title": "Earth's Layered Structure and Seismic Imaging",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ray parameter p=r sinθ/v is conserved along the ray",
+          "q": "What is the speed of S waves in the liquid outer core, in km/s?",
+          "key": "14-ce2704f0"
+        },
+        {
+          "title": "Atmospheric Circulation and the Greenhouse Effect",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "effective temperature T_eff=[S(1−α)/(4σ)]^(1/4)",
+          "q": "What is the Earth's effective emitting temperature, approximately, in K?",
+          "key": "14-74855d7c"
+        },
+        {
+          "title": "Magnetosphere, Solar Wind, and Space Weather",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "magnetopause r≈10R_E (pressure balance); solar wind ~400 km/s",
+          "q": "What is the typical speed of the solar wind, approximately, in km/s?",
+          "key": "14-84729d2d"
+        },
+        {
+          "title": "Paleomagnetism and the Geodynamo",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "VADM≈8×10²² A·m²; mean reversal interval ~3×10⁵ years",
+          "q": "What is the order of magnitude, as a power of ten, of the mean interval between geomagnetic polarity reversals, in years?",
+          "key": "14-0822056b"
+        },
+        {
+          "title": "Magnitude, Energy, and Frequency Statistics",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "log₁₀E=1.5M+4.8 (joules); log₁₀N=a−bM (b≈1)",
+          "q": "By about what factor does the energy differ for a magnitude difference of 1 (take 32)?",
+          "key": "14-f87c3ae0"
+        },
+        {
+          "title": "Tides and the Earth's Rotation",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "tidal acceleration ≈2GMR/d³; length of day +2.3 ms/century",
+          "q": "What is the order of magnitude of the Moon's tidal acceleration at the Earth's surface, as a negative power of ten, in m/s²?",
+          "key": "14-82b30d10"
+        },
+        {
+          "title": "Post-Glacial Rebound and Mantle Viscosity",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "relaxation time τ≈η/(ρgL); η~10²¹ Pa·s",
+          "q": "What power of ten gives the order of magnitude of the mantle viscosity in Pa·s?",
+          "key": "14-a852a111"
+        },
+        {
+          "title": "Zero-Dimensional Energy-Balance Model and Climate Sensitivity",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ΔT=λ·ΔF; ΔF of 2×CO₂ ≈3.7 W/m²",
+          "q": "For 2×CO₂ with λ=0.8 K/(W/m²), what is ΔT, approximately, in K?",
+          "key": "14-6110f041"
+        },
+        {
+          "title": "Plate Tectonics and Geochronology",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "t=(1/λ)·ln(1+D/P) (when no initial daughter is present)",
+          "q": "What percentage of ¹⁴C remains after two half-lives?",
+          "key": "14-f8ee7886"
+        },
+        {
+          "title": "Coriolis Scales on the Rotating Earth",
+          "file": "13.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "f=2Ωsinφ；Ro=U/(fL)",
+          "q": "With U=2, f=10⁻⁴, and L=10⁵, what is Ro?",
+          "key": "14-83022db0"
+        }
+      ],
+      "project": {
+        "title": "Non-Uniqueness in Two-Layer Travel-Time Inversion",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Seismology",
+        "Geomagnetism",
+        "Earth's interior",
+        "Atmospheric and ocean physics",
+        "Magnetosphere and Sun–Earth relations",
+        "Gravimetry",
+        "Geothermal physics",
+        "Mineral physics",
+        "Planetary interiors",
+        "Atmospheric physics",
+        "Ocean physics",
+        "Climate physics",
+        "Ionosphere",
+        "Magnetosphere",
+        "Solar wind",
+        "Space weather",
+        "Cosmic-ray propagation"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Biophysics and Medical Physics",
+      "group": "Interdisciplinary field",
+      "pre": "Thermal physics; electromagnetism; probability",
+      "topics": [
+        "Diffusion and molecular motors",
+        "Membranes and neural electrical signaling",
+        "Biomechanics",
+        "Medical imaging",
+        "Radiation physics"
+      ],
+      "folder": "15-biophysics-and-medical-physics",
+      "lessons": [
+        {
+          "title": "How random motion produces diffusion",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "〈x²〉 = 2Dt (one-dimensional, starting from the origin)",
+          "q": "D = 1 μm²/s, t = 2 s: what is the root-mean-square displacement in μm?",
+          "key": "15-0"
+        },
+        {
+          "title": "Imaging measures signals",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "I = I₀e^(−μx)",
+          "q": "With initial intensity 100, what is the intensity after passing through two layers each transmitting half?",
+          "key": "15-1"
+        },
+        {
+          "title": "The RC model of the membrane potential",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "C dV/dt=I−g(V−E_L); τ=C/g",
+          "q": "For C=200 pF and g=10 nS, what is the time constant in ms?",
+          "key": "15-069e79a0"
+        },
+        {
+          "title": "Protein folding and the energy landscape",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Folding rate ∝ exp(−ΔG‡/k_BT)",
+          "q": "With a folding barrier ΔG‡=10 k_BT, what is the Boltzmann factor approximately (in units of 10⁻⁵)?",
+          "key": "15-55dc1b81"
+        },
+        {
+          "title": "Molecular motors and thermal ratchets",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Stokes drag F=6πηrv; energy scale k_BT≈4.1 pN·nm",
+          "q": "At room temperature, what is k_BT approximately, in pN·nm?",
+          "key": "15-c18c93f9"
+        },
+        {
+          "title": "X-ray diffraction and DNA: the physical foundations of structural biology",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Bragg: 2d·sinθ=mλ",
+          "q": "For X-rays with λ=0.154 nm, what is sinθ approximately for the m=1 Bragg reflection off the d=0.34 nm planes (two decimal places)?",
+          "key": "15-91dbd3e7"
+        },
+        {
+          "title": "Radiation dose and protection: Gy, Sv, and ALARA",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "1 Gy=1 J/kg; H=Σw_R·D; 1 Sv=1 J/kg (weighted)",
+          "q": "A single chest X-ray is about 0.02 mSv; about how many of them equal one year of natural background (take 2 mSv)?",
+          "key": "15-05574fb6"
+        },
+        {
+          "title": "Action potentials and Hodgkin–Huxley",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "HH equations for V_m; propagation speed ~1–100 m/s",
+          "q": "What conduction speed, in m/s, can myelinated motor fibers reach (order of magnitude)?",
+          "key": "15-2cdf3e67"
+        },
+        {
+          "title": "Optical tweezers and single-molecule mechanics",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Gradient-force trapping; stiffness κ~0.1 pN/nm",
+          "q": "In a trap of stiffness 0.1 pN/nm, what force in pN corresponds to a displacement of 100 nm?",
+          "key": "15-4735fe2c"
+        },
+        {
+          "title": "Fluorescence microscopy and super-resolution",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Abbe d=λ/(2NA); STED narrows the effective PSF",
+          "q": "With λ=500 nm and NA=1.4, what is the Abbe limit in nm (to the nearest ten)?",
+          "key": "15-b6f166a7"
+        },
+        {
+          "title": "CT and the Radon transform",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Radon: Fourier slice theorem for projections; HU=1000×(μ−μ_water)/μ_water",
+          "q": "What is the CT number of bone in HU approximately (take 1000)?",
+          "key": "15-b38e467c"
+        },
+        {
+          "title": "Michaelis–Menten enzyme kinetics and inhibitors",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "v=V_max[S]/(K_m+[S])",
+          "q": "At [S]=3K_m, what is v/V_max (as a decimal)?",
+          "key": "15-1de3fca7"
+        },
+        {
+          "title": "Osmotic pressure and biological electrostatics",
+          "file": "13.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "π≈cRT (van 't Hoff); ∇²φ=−ρ/ε (PB equation)",
+          "q": "What is the osmotic pressure of an ideal 0.1 mol/L solute at 300 K, in kPa (take 250)?",
+          "key": "15-b9d08ea3"
+        },
+        {
+          "title": "The physics of magnetic resonance imaging: spins, relaxation, and gradient encoding",
+          "file": "14.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ω=γB (for protons γ/2π≈42.58 MHz/T); M_z=M₀(1−e^(−t/T₁))",
+          "q": "In a 1.5 T static field, what is the Larmor frequency of water protons in MHz (one decimal place)?",
+          "key": "15-e22f51e3"
+        },
+        {
+          "title": "The diffusion equation and the Gaussian propagator",
+          "file": "15.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "∂p/∂t=D∂²p/∂x²; p=e^(−x²/4Dt)/√(4πDt)",
+          "q": "For D=2 and t=9, what is the variance (in units of length squared)?",
+          "key": "15-42280fc7"
+        }
+      ],
+      "project": {
+        "title": "Does a random walk reproduce the diffusion equation",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Diffusion and molecular motors",
+        "Membranes and neural electrical signaling",
+        "Biomechanics",
+        "Medical imaging",
+        "Radiation physics",
+        "Biomolecules",
+        "Protein folding",
+        "Membrane physics",
+        "Single-molecule mechanics",
+        "Molecular motors",
+        "Cell mechanics",
+        "Neurobiophysics",
+        "Population and ecological physics",
+        "X-ray imaging",
+        "Magnetic resonance",
+        "Ultrasound",
+        "Image reconstruction",
+        "Dosimetry"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Mathematical Physics",
+      "group": "Methods field",
+      "pre": "algebra; calculus; linear algebra",
+      "topics": [
+        "Differential equations",
+        "Fourier analysis",
+        "Functions of a complex variable",
+        "Tensors and geometry",
+        "Symmetry and group theory"
+      ],
+      "folder": "16-mathematical-physics",
+      "lessons": [
+        {
+          "title": "Equations need initial conditions",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "dx/dt = −kx；x(t) = x₀e^(−kt)",
+          "q": "When k = 0 with x₀ = 5, what is x at any time?",
+          "key": "16-0"
+        },
+        {
+          "title": "Breaking complex waveforms into simple waves",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "f(t) = Σ[aₙcos(nωt)+bₙsin(nωt)]",
+          "q": "To sample a band-limited signal whose highest frequency is 10 Hz without aliasing, what must the sampling rate be strictly greater than, in Hz?",
+          "key": "16-1"
+        },
+        {
+          "title": "Separation of variables and boundary eigenvalues",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "∂T/∂t=α∂²T/∂x²；T_n∝sin(nπx/L)e^(−α(nπ/L)²t)",
+          "q": "How many times larger is the decay rate of mode 3 than that of mode 1?",
+          "key": "16-3db3f50c"
+        },
+        {
+          "title": "Functions of a complex variable and the residue theorem",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "∮f(z)dz=2πi·ΣRes",
+          "q": "What is ∫dx/(x²+4) (from −∞ to ∞)?",
+          "key": "16-d5464761"
+        },
+        {
+          "title": "Tensors and covariance",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "T′^μ_ν=(∂x′^μ/∂x^α)(∂x^β/∂x′_ν) T^α_β",
+          "q": "After contracting the mixed tensor T^μ_ν (summing over μ=ν), how many free indices remain?",
+          "key": "16-c9479480"
+        },
+        {
+          "title": "Sturm–Liouville theory, orthogonality and completeness",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "(py′)′+[q+λw]y=0；∫yₙyₘ·w dx=0（n≠m）",
+          "q": "What is the weighted inner product of eigenfunctions belonging to different eigenvalues?",
+          "key": "16-4f2dd69e"
+        },
+        {
+          "title": "Introduction to group theory and representations: from symmetry to conservation",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "[Jᵢ,Jⱼ]=iℏεᵢⱼₖJₖ；SU(2) representation dimension 2j+1",
+          "q": "What is the dimension of the j=1 irreducible representation of SU(2)?",
+          "key": "16-12911edb"
+        },
+        {
+          "title": "The Laplace transform and linear response",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "F(s)=∫₀^∞f(t)e^(−st)dt；d/dt→s",
+          "q": "What is the real part of the pole corresponding to f(t)=e^(−3t) (include the sign)?",
+          "key": "16-4002174b"
+        },
+        {
+          "title": "The three classic equations: wave, heat conduction, and Laplace",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "∇²u=(1/c²)u_tt；u_t=α∇²u；∇²φ=0",
+          "q": "The heat-equation mode decay rate is ∝k²: if the wavenumber doubles, how many times faster is the decay?",
+          "key": "16-388e143a"
+        },
+        {
+          "title": "A trio of special functions: Legendre, Bessel, and Hermite",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "P_l(cosθ) and Y_lm；J_m(kr)；H_n(ξ)",
+          "q": "If the radius of a circular membrane doubles (everything else unchanged), the fundamental frequency becomes what fraction of the original?",
+          "key": "16-c5352e5a"
+        },
+        {
+          "title": "The Fourier transform, convolution, and the δ function",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "F(ω)=∫f(t)e^(−iωt)dt；(f*g)(t)=∫f(τ)g(t−τ)dτ；f*g ↔ F·G",
+          "q": "If the width of a Gaussian pulse in the time domain is halved, the spectral width becomes how many times larger?",
+          "key": "16-26e4357f"
+        },
+        {
+          "title": "Symmetry and Noether conserved quantities",
+          "file": "12.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "∂L/∂q=0 ⇒ d(∂L/∂q̇)/dt=0",
+          "q": "If the radius becomes 3 times as large, the original angular velocity is divided by what?",
+          "key": "16-8f074f5f"
+        }
+      ],
+      "project": {
+        "title": "Spectral expansion and numerical solution of the heat equation",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Differential equations",
+        "Fourier analysis",
+        "Functions of a complex variable",
+        "Tensors and geometry",
+        "Symmetry and group theory",
+        "Ordinary differential equations",
+        "Partial differential equations",
+        "Special functions",
+        "Complex analysis",
+        "Green's functions",
+        "Integral transforms",
+        "Tensors",
+        "Differential geometry",
+        "Groups and representations",
+        "Functional analysis",
+        "Calculus of variations",
+        "Topology",
+        "Integrable systems",
+        "Rigorous mathematical physics"
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Computational Physics",
+      "group": "Methods field",
+      "pre": "calculus; basic programming; classical mechanics",
+      "topics": [
+        "Numerical integration",
+        "Monte Carlo",
+        "Molecular dynamics",
+        "Solving PDEs",
+        "Data and inverse problems"
+      ],
+      "folder": "17-computational-physics",
+      "lessons": [
+        {
+          "title": "Approximating evolution with small time steps",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "xₙ₊₁ = xₙ + vₙΔt",
+          "q": "x = 1 m, v = 3 m/s, Δt = 0.2 s: what is x at the next step, in meters?",
+          "key": "17-0"
+        },
+        {
+          "title": "How to trust a simulation result",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "error ≈ C·Δt (first-order global error model)",
+          "q": "In a first-order method, reducing the step size to 1/4 shrinks the expected error to 1/n of its original value: what is n?",
+          "key": "17-1"
+        },
+        {
+          "title": "Why the symplectic Euler method suits oscillators better",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "p_(n+1)=p_n−kq_nΔt; q_(n+1)=q_n+p_(n+1)Δt/m",
+          "q": "With the same initial values and Δt=0.2, what is q₁?",
+          "key": "17-42a5559c"
+        },
+        {
+          "title": "Finite differences and the Poisson equation",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "∇²φ≈(φᵢ₊₁ⱼ+φᵢ₋₁ⱼ+φᵢⱼ₊₁+φᵢⱼ₋₁−4φᵢⱼ)/h²",
+          "q": "If the grid spacing is halved, the truncation error of a second-order difference scheme becomes approximately what fraction of its original value?",
+          "key": "17-18fa3cac"
+        },
+        {
+          "title": "Molecular dynamics and ensemble sampling",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Velocity-Verlet: x(t+Δt)=x+vΔt+FΔt²/(2m)",
+          "q": "10⁶ steps at 1 fs each correspond to how long a simulation time (ns)?",
+          "key": "17-d0caaa64"
+        },
+        {
+          "title": "Runge–Kutta and stiff equations: getting time evolution right",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "RK4 global error O(Δt⁴); stiff systems use implicit methods (backward Euler/A-stable)",
+          "q": "The global error of RK4 decreases with step size to what order?",
+          "key": "17-26723973"
+        },
+        {
+          "title": "Numerical eigenvalue problems: power iteration and QR",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "power iteration: v←Av/|Av|; QR: A=QR, A′=RQ",
+          "q": "The convergence rate of power iteration is set by |λ₂/λ₁|; when this ratio is 0.5, the error is multiplied by what at each step?",
+          "key": "17-9ad8b244"
+        },
+        {
+          "title": "Reproducible computational workflows: versioning, seeds, and environments",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "fixed seed → deterministic pseudorandom sequence; locked dependencies → consistent environment",
+          "q": "Running the same Monte Carlo program twice with the same seed: are the two pseudorandom sequences identical (yes = 1, no = 0)?",
+          "key": "17-550877ab"
+        },
+        {
+          "title": "Metropolis importance sampling",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "acceptance probability α=min(1, e^(−βΔE))",
+          "q": "What is the acceptance probability of a proposal that lowers the energy (ΔE<0)?",
+          "key": "17-e8c6a761"
+        },
+        {
+          "title": "Richardson extrapolation and convergence acceleration",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "A(h)=A₀+c·h²+O(h⁴); combination [4A(h/2)−A(h)]/3",
+          "q": "Richardson extrapolation lifts the effective error order of a second-order method to what order?",
+          "key": "17-9126fc8a"
+        },
+        {
+          "title": "Iterative solution of large linear systems: Jacobi, Gauss–Seidel, and multigrid",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "iterative convergence rate ρ; multigrid work O(N)",
+          "q": "If the number of grid points doubles, the total work of optimal multigrid grows by about what factor?",
+          "key": "17-8dbbf4d6"
+        },
+        {
+          "title": "Root finding and optimization: from bisection to Newton",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Newton: x_{n+1}=x_n−f/f′, error e_{n+1}≈C·e_n²",
+          "q": "What is the order of convergence of Newton's method near a simple root?",
+          "key": "17-61f71676"
+        },
+        {
+          "title": "Finite elements and spectral methods",
+          "file": "13.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "weak form + element basis functions; spectral convergence ∝ e^(−N)",
+          "q": "The convergence rate of spectral methods for smooth problems is which (exponential = 1, power law = 2)?",
+          "key": "17-9acb90e8"
+        },
+        {
+          "title": "FFT and numerical spectral analysis",
+          "file": "14.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "X_k=Σ_n x_n·e^(−2πikn/N); complexity O(N·log₂N)",
+          "q": "How many butterfly levels does an N=1024-point FFT have?",
+          "key": "17-b07fbecb"
+        },
+        {
+          "title": "Monte Carlo error and correlated samples",
+          "file": "15.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "SE≈s/√N; N_eff≈N/(1+2Σρ_k)",
+          "q": "With N=9000 and a correlation correction factor of 9, how many effective samples are there?",
+          "key": "17-c2d91625"
+        },
+        {
+          "title": "Quantum many-body computations: DMRG and QMC",
+          "file": "16.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "DMRG: matrix-product-state truncation; QMC: path integral/imaginary time",
+          "q": "In how many dimensions does DMRG work best (one dimension = 1, three dimensions = 2)?",
+          "key": "17-77468bae"
+        },
+        {
+          "title": "High-performance computing and scientific machine learning",
+          "file": "17.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "scalability: strong/weak; PINN: physics residual as loss",
+          "q": "The limit of strong scaling is described by which law (Amdahl = 1, Moore = 2)?",
+          "key": "17-06b1164e"
+        }
+      ],
+      "project": {
+        "title": "Benchmarking integrators for the harmonic oscillator",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "numerical integration",
+        "Monte Carlo",
+        "molecular dynamics",
+        "solving PDEs",
+        "data and inverse problems",
+        "numerical linear algebra",
+        "ODE algorithms",
+        "finite difference",
+        "finite element",
+        "spectral methods",
+        "quantum many-body computations",
+        "inverse problems",
+        "scientific machine learning",
+        "high-performance computing",
+        "reproducible workflows"
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Experimental Physics and Measurement",
+      "group": "Methods field",
+      "pre": "Learning Preparation; basics of probability and statistics",
+      "topics": [
+        "Instruments and calibration",
+        "Error analysis",
+        "Detection and signals",
+        "Experimental design",
+        "Data fitting"
+      ],
+      "folder": "18-experimental-physics-and-measurement",
+      "lessons": [
+        {
+          "title": "Every measurement has an uncertainty",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "u_mean = s/√N",
+          "q": "s = 3 mm, N = 9: about how many mm is the standard error of the mean?",
+          "key": "18-0"
+        },
+        {
+          "title": "Building evidence from data",
+          "file": "02.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "rᵢ = yᵢ − y_pred,i",
+          "q": "Measured value 8, predicted value 10: what is the residual?",
+          "key": "18-1"
+        },
+        {
+          "title": "Error propagation and covariance",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "u_f²≈∇fᵀΣ∇f",
+          "q": "x and y are independent, each with standard deviation 2: what is the variance of f=x+y?",
+          "key": "18-5f52fe05"
+        },
+        {
+          "title": "Noise, signal-to-noise ratio, and lock-in amplification",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "SNR∝signal/√B; single-pole RC output filter equivalent noise bandwidth B=1/(4τ)",
+          "q": "About how many Hz is the equivalent noise bandwidth of a lock-in amplifier with time constant τ=1 s?",
+          "key": "18-3d0396bd"
+        },
+        {
+          "title": "Metrology, traceability, and systematic errors",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "u_c=√(Σ(∂f/∂xᵢ)²uᵢ²+2Σ covariance terms); U=k·u_c",
+          "q": "The k=2 expanded uncertainty corresponds to a confidence level of about how many percent?",
+          "key": "18-41cb4468"
+        },
+        {
+          "title": "SI 2019: units defined by fundamental constants",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "the kilogram is defined via h (6.62607015×10⁻³⁴ J·s)",
+          "q": "The kilogram is now defined via the Planck constant: what is the unit of the fixed value h=6.62607015×10⁻³⁴ (J·s=1, J=2)?",
+          "key": "18-53c18ae6"
+        },
+        {
+          "title": "Quantifying thermal noise and shot noise",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Johnson: v_n=√(4kTR·Δf); shot: i_n=√(2eI·Δf)",
+          "q": "R=1 kΩ, 300 K, 10 kHz bandwidth: about how many μV is the thermal noise voltage (two decimal places)?",
+          "key": "18-19844178"
+        },
+        {
+          "title": "Small samples and the t distribution",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "t=(x̄−μ)/(s/√n), ν=n−1",
+          "q": "n=16, s=2, with x̄ off by 1: what is t?",
+          "key": "18-89c9f87d"
+        },
+        {
+          "title": "Poisson counting and chi-square goodness of fit",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "σ_N=√N; χ²=Σ(oᵢ−eᵢ)²/eᵢ; ν=N_data−N_parameters",
+          "q": "What is the statistical error on 900 counts? (numbers only)",
+          "key": "18-9dc63350"
+        },
+        {
+          "title": "Fitting, likelihood, and residual diagnostics",
+          "file": "10.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "χ²=Σ[(yᵢ−f(xᵢ;θ))/σᵢ]²",
+          "q": "With standardized residuals 1, 2, and −2, what is χ²?",
+          "key": "18-296a9332"
+        },
+        {
+          "title": "Bayesian inference and priors",
+          "file": "11.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "posterior P(θ|D)∝L(D|θ)·π(θ)",
+          "q": "Sensitivity 99%, specificity 95%, prior 1%: about what is the positive predictive value (two decimal places)?",
+          "key": "18-81bed812"
+        }
+      ],
+      "project": {
+        "title": "Measurement experiment with a shared calibration bias",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Instruments and calibration",
+        "Error analysis",
+        "Detection and signals",
+        "Experimental design",
+        "Data fitting",
+        "Metrology and calibration",
+        "Uncertainty",
+        "Bayesian inference",
+        "Detectors",
+        "Low-noise electronics",
+        "Signal processing",
+        "Vacuum technology",
+        "Cryogenics",
+        "Optical experiments",
+        "Data acquisition",
+        "Control systems",
+        "Statistical tests"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Fluid and Continuum Physics",
+      "group": "Research field",
+      "pre": "classical mechanics, partial differential equations",
+      "topics": [
+        "Hydrostatics",
+        "Viscous flow",
+        "Compressible flow",
+        "Turbulence",
+        "Elasticity and plasticity",
+        "Multiphase flow and interfaces",
+        "Microfluidics"
+      ],
+      "folder": "19-fluid-and-continuum-physics",
+      "lessons": [
+        {
+          "title": "The Reynolds number: first judge which effects matter",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "Re=ρUL/μ",
+          "q": "With ρ=1000, U=0.01, L=0.001, and μ=0.001, what is Re?",
+          "key": "19-59355cd3"
+        },
+        {
+          "title": "Poiseuille flow: from the local equation to the flow rate",
+          "file": "02.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Q=πR⁴Δp/(8μL)",
+          "q": "With the same pressure difference, viscosity, and length, by what factor does the flow rate increase when the radius triples?",
+          "key": "19-9d178071"
+        },
+        {
+          "title": "Turbulence and the energy cascade",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Re=vL/ν; inertial-range energy spectrum E(k)∝k^(−5/3)",
+          "q": "Water (ν=10⁻⁶ m²/s) flows at 1 m/s along a characteristic length of 1 m: what is Re?",
+          "key": "19-83851490"
+        },
+        {
+          "title": "Boundary layers and flow separation",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "δ≈(νx/U)^(1/2) (flat-plate laminar flow); separation point: zero wall shear stress",
+          "q": "If the distance traveled along the flat plate becomes 4 times as large, by what factor does the laminar boundary-layer thickness grow?",
+          "key": "19-bea30e3a"
+        },
+        {
+          "title": "Bernoulli's principle and flow energy",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "p+½ρv²+ρgz=constant (along a streamline)",
+          "q": "If the speed increases from v to 2v, by what factor does the dynamic pressure ½ρv² change?",
+          "key": "19-4fc54777"
+        },
+        {
+          "title": "Compressible flow and shock waves",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Mach number M=v/c; normal shock p₂/p₁=1+2γ/(γ+1)·(M²−1)",
+          "q": "For a normal shock with M=2 (γ=1.4), what is the pressure ratio p₂/p₁?",
+          "key": "19-95906177"
+        },
+        {
+          "title": "Deriving the Navier–Stokes equations: from forces to flow",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ρ(∂v/∂t+v·∇v)=−∇p+μ∇²v+ρg",
+          "q": "What dimensionless number is the ratio of the inertial to the viscous term in the NS equations?",
+          "key": "19-3e241e66"
+        },
+        {
+          "title": "Vorticity, circulation, and surface tension: the topology and surfaces of fluids",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Γ=∮v·dl; Kelvin: DΓ/Dt=0 (inviscid, barotropic); capillary rise h=2γcosθ/(ρgr)",
+          "q": "How far, in mm, does water (γ=0.072 N/m) rise in a fully wetting tube of radius 0.1 mm (take g=10, three significant figures)?",
+          "key": "19-a97f874a"
+        },
+        {
+          "title": "Low-Reynolds-number flow and microfluidics",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Re=ρvL/μ≪1; Stokes drag F=6πηav",
+          "q": "The Reynolds number of a swimming bacterium is of order 10 to what negative power?",
+          "key": "19-10056f64"
+        },
+        {
+          "title": "Multiphase flow and interfacial instabilities",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "RT growth rate σ=√(A·gk); KH set by the competition of shear and surface tension",
+          "q": "In which configuration does the RT instability occur (heavy fluid on top=1, light fluid on top=2)?",
+          "key": "19-996d18cd"
+        }
+      ],
+      "project": {
+        "title": "Verifying the fourth-power law for laminar pipe flow",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Hydrostatics",
+        "Viscous flow",
+        "Compressible flow",
+        "Turbulence",
+        "Elasticity and plasticity",
+        "Multiphase flow and interfaces",
+        "Microfluidics"
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Nonlinear and Complex Systems",
+      "group": "Research field",
+      "pre": "differential equations, probability, and linear algebra",
+      "topics": [
+        "Dynamical systems",
+        "Chaos",
+        "Bifurcations",
+        "Solitons and integrable systems",
+        "Pattern formation",
+        "Complex networks",
+        "Self-organization and active systems"
+      ],
+      "folder": "20-nonlinear-and-complex-systems",
+      "lessons": [
+        {
+          "title": "The logistic map and stability",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "x_(n+1)=rx_n(1−x_n); stability requires |f′(x*)|<1",
+          "q": "For r=2.5, what is the nonzero fixed point x*?",
+          "key": "20-623a1ebe"
+        },
+        {
+          "title": "Lyapunov exponents and predictability",
+          "file": "02.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "λ≈(1/N)Σln|f′(x_n)|; δ_n≈δ₀e^(λn)",
+          "q": "With λ=ln2, by what factor is the error amplified after 3 steps?",
+          "key": "20-d3ae2b69"
+        },
+        {
+          "title": "Bifurcations and the period-doubling route to chaos",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "x_{n+1}=r x_n(1−x_n); bifurcation spacing ratio→4.669…",
+          "q": "For r=2.8, what is the stable fixed point x*?",
+          "key": "20-4297ec5f"
+        },
+        {
+          "title": "Phase space, fixed points, and stability",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ẋ=f(x): near a fixed point ẋ≈Df(x*)(x−x*)",
+          "q": "Along the direction with linearized eigenvalue λ=+2 (s⁻¹), by what factor is a small perturbation amplified after 1 s (e²≈7.4)?",
+          "key": "20-2c5145d0"
+        },
+        {
+          "title": "Limit cycles and self-sustained oscillations",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "van der Pol: ẍ−μ(1−x²)ẋ+x=0",
+          "q": "A limit cycle in the two-dimensional phase plane is a closed curve of what dimension?",
+          "key": "20-bd6c41d3"
+        },
+        {
+          "title": "Solitons and integrable systems",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "KdV: u_t+6uu_x+u_xxx=0; soliton u=2κ²sech²[κ(x−4κ²t)]",
+          "q": "The KdV soliton speed grows as which power of the amplitude parameter κ?",
+          "key": "20-5457b92a"
+        },
+        {
+          "title": "A taxonomy of bifurcations: saddle-node, transcritical, pitchfork, and Hopf",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ẋ=r−x² (saddle-node); ẋ=rx−x² (transcritical); ż=(r+i)z−|z|²z (Hopf)",
+          "q": "What is the direct product of a Hopf bifurcation (limit cycle = 1, fixed point disappears = 2; enter 1 or 2)?",
+          "key": "20-f27299a2"
+        },
+        {
+          "title": "Fractal dimension and the characterization of strange attractors",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "D=−d lnN/d lnε; Kaplan–Yorke D_KY=j+Σλᵢ/|λ_(j+1)|",
+          "q": "What is the fractal dimension of the Lorenz attractor, approximately (two decimal places)?",
+          "key": "20-efd95f76"
+        },
+        {
+          "title": "Hamiltonian chaos and the KAM theorem",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "KAM: nonresonant tori survive under small perturbations; Chirikov resonance-overlap criterion",
+          "q": "According to the KAM theorem, under small perturbations nonresonant tori (mostly survive = 1, all destroyed = 2)?",
+          "key": "20-53b99ad1"
+        },
+        {
+          "title": "Synchronization of coupled oscillators: the Kuramoto model",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "dθᵢ/dt=ωᵢ+(K/N)Σ sin(θⱼ−θᵢ); K_c=2σ (Lorentzian frequency spectrum)",
+          "q": "For Lorentzian frequency width σ=1, what is the Kuramoto synchronization threshold K_c?",
+          "key": "20-fa9b3d5a"
+        },
+        {
+          "title": "Complex networks: from random graphs to small worlds",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "mean degree ⟨k⟩; small world: high clustering + short paths",
+          "q": "At what mean degree does the ER random graph develop a giant component?",
+          "key": "20-e847b62b"
+        },
+        {
+          "title": "Pattern formation and the Turing instability",
+          "file": "12.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Turing condition: a band of unstable wavelengths",
+          "q": "Which diffusion ratio do Turing patterns require (activator slow / inhibitor fast = 1, equal = 2)?",
+          "key": "20-06f60a46"
+        },
+        {
+          "title": "The Lorenz equations and the strange attractor: from convection to chaos",
+          "file": "13.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ẋ=σ(y−x); ẏ=x(ρ−z)−y; ż=xy−βz",
+          "q": "How many coupled variables does the Lorenz system have?",
+          "key": "20-7472e05b"
+        },
+        {
+          "title": "The forced Duffing oscillator: from bistability to chaos",
+          "file": "14.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "ẍ+δẋ+βx+x³=F·cos ωt",
+          "q": "Under strong forcing, which long-term behavior can the Duffing oscillator reach (chaos = 1, purely periodic = 2)?",
+          "key": "20-712513bb"
+        }
+      ],
+      "project": {
+        "title": "Bifurcations and exponents of the logistic map",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Dynamical systems",
+        "Chaos",
+        "Bifurcations",
+        "Solitons and integrable systems",
+        "Pattern formation",
+        "Complex networks",
+        "Self-organization and active systems"
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Quantum Information and Quantum Technologies",
+      "group": "Interdisciplinary field",
+      "pre": "quantum mechanics, linear algebra, probability",
+      "topics": [
+        "qubit",
+        "entanglement",
+        "quantum measurement",
+        "quantum communication",
+        "quantum computing",
+        "quantum error correction",
+        "quantum sensing"
+      ],
+      "folder": "21-quantum-information-and-quantum-technologies",
+      "lessons": [
+        {
+          "title": "Qubits: from amplitudes to measurement",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "|ψ〉=α|0〉+β|1〉；|α|²+|β|²=1",
+          "q": "What is the probability of measuring 1 for |+〉 in the computational basis?",
+          "key": "21-1c3a63ab"
+        },
+        {
+          "title": "Entanglement, reduced states, and the limits of error correction",
+          "file": "02.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "|Φ+〉=(|00〉+|11〉)/√2；ρ_A=Tr_Bρ=I/2",
+          "q": "What is the probability of obtaining 01 when this state is measured in the computational basis?",
+          "key": "21-b9d7420b"
+        },
+        {
+          "title": "Quantum gates and the circuit model",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "H=2^(−1/2)[[1,1],[1,−1]]；{single-qubit gates, CNOT} universal",
+          "q": "What is the probability of obtaining 0 when measuring Z on (|0⟩+|1⟩)/√2?",
+          "key": "21-85719a55"
+        },
+        {
+          "title": "Decoherence and quantum noise channels",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ρ₀₁(t)=ρ₀₁(0)e^(−t/T₂)",
+          "q": "At t=2T₂ the off-diagonal element decays to what fraction of its original value?",
+          "key": "21-b8204450"
+        },
+        {
+          "title": "Quantum error correction codes",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "three-qubit bit-flip code：|0_L⟩=|000⟩，|1_L⟩=|111⟩",
+          "q": "How many physical-qubit errors can the three-qubit bit-flip code correct at once?",
+          "key": "21-4be8752b"
+        },
+        {
+          "title": "Quantum teleportation and the no-cloning theorem",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "teleportation：|ψ〉+Bell measurement+2 classical bits+X/Z correction",
+          "q": "How many classical bits must be transmitted in quantum teleportation?",
+          "key": "21-d193d251"
+        },
+        {
+          "title": "Quantum sensing and metrology",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "standard quantum limit Δφ=1/√N；Heisenberg limit 1/N",
+          "q": "What is the phase-measurement precision (standard quantum limit) for N=10⁴ independent photons?",
+          "key": "21-ec91babc"
+        },
+        {
+          "title": "Entanglement entropy and entanglement measures",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "S=−Tr(ρ_A ln ρ_A)；Bell state S=ln2",
+          "q": "What is the entanglement entropy S of a Bell state (three decimal places)?",
+          "key": "21-23255964"
+        },
+        {
+          "title": "Quantum key distribution and BB84",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "eavesdropping introduces a 25% error rate；security threshold about 11% (one-way error correction)",
+          "q": "An eavesdropper measures BB84 in a random basis: what error rate in percent is introduced?",
+          "key": "21-0c86c9cd"
+        },
+        {
+          "title": "The CHSH inequality: a quantitative test of quantum correlations",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "S=E(a,b)−E(a,b′)+E(a′,b)+E(a′,b′)；quantum upper bound 2√2",
+          "q": "For the singlet correlation E(a,b)=−cosθ, what is E at θ=60°?",
+          "key": "21-3c117040"
+        },
+        {
+          "title": "A first look at quantum algorithms: Deutsch–Jozsa and Grover",
+          "file": "11.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Grover：amplitude amplification per iteration ∝√(1/N)，number of iterations ~π√N/4",
+          "q": "About how many iterations does a Grover search over N=256 need (π√N/4, rounded)?",
+          "key": "21-0ecade4b"
+        },
+        {
+          "title": "Variational quantum algorithms and quantum tomography",
+          "file": "12.html",
+          "stage": "Advanced topic",
+          "kind": "lesson",
+          "formula": "VQE：E(θ)≥E₀ variational；tomography needs O(d²) measurements",
+          "q": "The energy expectation value of VQE relative to the true ground state is (upper bound=1, lower bound=2)?",
+          "key": "21-ff045cca"
+        }
+      ],
+      "project": {
+        "title": "Multi-basis measurements and noise for Bell states",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "qubit",
+        "entanglement",
+        "quantum measurement",
+        "quantum communication",
+        "quantum computing",
+        "quantum error correction",
+        "quantum sensing"
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Chemical Physics and Molecular Reactions",
+      "group": "Interdisciplinary field",
+      "pre": "quantum mechanics, thermodynamics, molecular physics",
+      "topics": [
+        "Electronic structure",
+        "Potential energy surfaces",
+        "Reaction dynamics",
+        "Surfaces and interfaces",
+        "Molecular collisions",
+        "Ultrafast processes",
+        "Clusters and nanoscale systems"
+      ],
+      "folder": "22-chemical-physics-and-molecular-reactions",
+      "lessons": [
+        {
+          "title": "Reaction Rates and the Activation Scale",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "k=Ae^(−E_a/RT)",
+          "q": "If ln(k₂/k₁)=ln5, what is the rate ratio?",
+          "key": "22-076a12d1"
+        },
+        {
+          "title": "Born–Oppenheimer Approximation and the Potential Energy Surface",
+          "file": "02.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "H_e(R)φ_n(r;R)=E_n(R)φ_n(r;R)",
+          "q": "With the same force constant, the reduced mass increases 4-fold: by what number is the original vibrational frequency divided?",
+          "key": "22-c4f37f62"
+        },
+        {
+          "title": "Transition-State Theory and Activation Rates",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "k≈(kBT/h)e^(−Ea/RT) (Eyring form)",
+          "q": "For Ea=50 kJ/mol, raising the temperature from 300 K to 310 K multiplies the rate by roughly what factor?",
+          "key": "22-f3fa188b"
+        },
+        {
+          "title": "Molecular Vibration and Infrared Spectroscopy",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ν̄=(1/2πc)√(k/μ)",
+          "q": "Approximately where, in cm⁻¹, is the C–H stretching absorption band?",
+          "key": "22-d99eaddb"
+        },
+        {
+          "title": "Chemical Bonding and Molecular Orbitals",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "bond order=(N_bonding−N_antibonding)/2",
+          "q": "What is the bond order of O₂?",
+          "key": "22-1f16879c"
+        },
+        {
+          "title": "Surface Catalysis and the Sabatier Principle",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "rate ∝θ(1−θ); θ=KP/(1+KP)",
+          "q": "At coverage θ=0.5, what is θ(1−θ)?",
+          "key": "22-811e0b0c"
+        },
+        {
+          "title": "From Hartree–Fock to DFT: The Two Main Methods of Electronic Structure",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "HF: variational over a Slater determinant; DFT: E=E[ρ] (HK theorem)",
+          "q": "The full wave function of 3 electrons depends on how many spatial coordinates, and the density on how many (the two numbers are 9 and 3; enter only the second)?",
+          "key": "22-b3778472"
+        },
+        {
+          "title": "Femtochemistry: Seeing the Transition State",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "pump–probe Δt scan; bond vibration period ~10⁻¹⁴ s",
+          "q": "What is the typical order of magnitude of a chemical bond vibration period in fs (take 30)?",
+          "key": "22-8adb4b25"
+        },
+        {
+          "title": "Intermolecular Forces: Dispersion, Dipoles, and Hydrogen Bonds",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "London dispersion ∝−C₆/R⁶; hydrogen bond 10–40 kJ/mol",
+          "q": "About how many eV is a typical hydrogen-bond energy (one decimal place)?",
+          "key": "22-70bf9925"
+        },
+        {
+          "title": "Statistical Mechanics of Chemical Equilibrium: From Partition Functions to K_eq",
+          "file": "10.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "ΔG°=−RT·ln K; K follows from a ratio of partition functions",
+          "q": "At 298 K with ΔG°=−5.7 kJ/mol, approximately what is the equilibrium constant K?",
+          "key": "22-a01ca61d"
+        }
+      ],
+      "project": {
+        "title": "Potential-Energy Curvature, Isotopes, and Vibrational Spectroscopy",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Electronic structure",
+        "Potential energy surfaces",
+        "Reaction dynamics",
+        "Surfaces and interfaces",
+        "Molecular collisions",
+        "Ultrafast processes",
+        "Clusters and nanoscale systems"
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Accelerator and Beam Physics",
+      "group": "Research field",
+      "pre": "Electromagnetism, relativity, differential equations",
+      "topics": [
+        "Charged-particle optics",
+        "Radio-frequency acceleration",
+        "Beam emittance",
+        "Collective effects",
+        "Synchrotron radiation",
+        "Free-electron laser",
+        "Advanced acceleration"
+      ],
+      "folder": "23-accelerator-and-beam-physics",
+      "lessons": [
+        {
+          "title": "Magnetic rigidity: how magnets select the beam orbit",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "Bρ=p/|q|",
+          "q": "The momentum triples while charge and radius are unchanged; by what factor does the magnetic field increase?",
+          "key": "23-ce2b79fa"
+        },
+        {
+          "title": "Beam matrices and phase-space emittance",
+          "file": "02.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Σ_out=MΣ_inMᵀ; ε=√detΣ",
+          "q": "With x=1 mm, x′=2 mrad, and drift L=1 m, what is the final position in mm?",
+          "key": "23-ae898ad5"
+        },
+        {
+          "title": "Synchrotron radiation and bending energy loss",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "U₀[eV]≈88.5·E[GeV]⁴/ρ[m] (electrons)",
+          "q": "If the electron energy doubles (bending radius unchanged), by what factor does the loss per turn change?",
+          "key": "23-4893cc3b"
+        },
+        {
+          "title": "Radio-frequency acceleration and the synchronism condition",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "f_rf=h·f_rev; energy gain qV cosφ_s",
+          "q": "With harmonic number 35640 and revolution frequency 11 kHz, what is the RF frequency in MHz, approximately?",
+          "key": "23-826f9d8f"
+        },
+        {
+          "title": "Collider luminosity and event rates",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "L=N₁N₂ f/(4πσ_x σ_y); R=Lσ",
+          "q": "With luminosity 2×10³⁴ cm⁻²s⁻¹ and cross section 50 pb, what is the production rate in Hz, approximately?",
+          "key": "23-47233b87"
+        },
+        {
+          "title": "Free-electron laser",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "λ_r=λ_u(1+K²/2)/(2γ²)",
+          "q": "If the electron energy doubles (K unchanged), what fraction of the original resonance wavelength remains?",
+          "key": "23-dfd3afbe"
+        },
+        {
+          "title": "Transverse dynamics and the β function: Courant–Snyder theory",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "σ(s)=√(β(s)·ε); stability condition |Tr(M)|≤2",
+          "q": "With β=10 m and geometric emittance 10⁻⁸ m·rad, what is the rms beam size in mm, approximately (one decimal place)?",
+          "key": "23-5e852152"
+        },
+        {
+          "title": "Synchrotron oscillations and longitudinal dynamics",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "synchrotron frequency Ω_s=hω₀√(qV|ηcosφ_s|/(2πE)); bucket height ΔE_max",
+          "q": "The order of magnitude of the LHC harmonic number (27 km ring, 400 MHz) is 10 to what power?",
+          "key": "23-435dabdd"
+        },
+        {
+          "title": "Collective effects: space charge and wakefields",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "coherent tune shift ΔQ∝N/ε; wakefield impedance Z∥",
+          "q": "When the beam intensity doubles, by what factor does the space-charge tune shift change?",
+          "key": "23-77734fef"
+        }
+      ],
+      "project": {
+        "title": "Matrix tracking of beam drift and focusing",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Charged-particle optics",
+        "Radio-frequency acceleration",
+        "Beam emittance",
+        "Collective effects",
+        "Synchrotron radiation",
+        "Free-electron laser",
+        "Advanced acceleration"
+      ]
+    },
+    {
+      "id": "24",
+      "name": "Applied Physics and Energy",
+      "group": "Interdisciplinary field",
+      "pre": "thermal physics, electromagnetism, materials physics",
+      "topics": [
+        "Electronic devices",
+        "Spintronics",
+        "Nanotechnology",
+        "Metamaterials",
+        "Optoelectronics and photovoltaics",
+        "Energy storage and thermal management",
+        "Nuclear and fusion applications"
+      ],
+      "folder": "24-applied-physics-and-energy",
+      "lessons": [
+        {
+          "title": "Heat Engine Efficiency and Energy Assessment",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "η=W/Q_h; η_C=1−T_c/T_h",
+          "q": "T_h=800 K, T_c=400 K — what is the Carnot efficiency?",
+          "key": "24-d16e5836"
+        },
+        {
+          "title": "Diffusion Length and Device Scale",
+          "file": "02.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "L_D=√(Dτ)",
+          "q": "If the lifetime increases by a factor of 9 while D is unchanged, by what factor does the diffusion length increase?",
+          "key": "24-15267d2b"
+        },
+        {
+          "title": "Photovoltaic Limits and Detailed Balance",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "single-junction η_SQ≈33.7% (band gap≈1.34 eV, AM1.5)",
+          "q": "About what percentage is the Shockley–Queisser limit efficiency of an ideal single-junction cell?",
+          "key": "24-bea103b3"
+        },
+        {
+          "title": "Heat Pumps, Refrigeration, and Energy Quality",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "COP_heating upper bound=T_h/(T_h−T_c)",
+          "q": "What is the reverse-Carnot heating COP upper bound for T_h=300 K and T_c=270 K?",
+          "key": "24-cb5bae81"
+        },
+        {
+          "title": "Batteries, Capacitors, and Energy Storage Density",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "E=½CV²; battery specific energy≈ΔG/active mass",
+          "q": "Gasoline has a specific energy of about 46 MJ/kg and lithium-ion batteries about 0.7 MJ/kg — by about what factor do they differ?",
+          "key": "24-e21112cc"
+        },
+        {
+          "title": "The Physical Picture of Nuclear and Fusion Energy",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "U-235 fission about 200 MeV/nucleus; D–T fusion 17.6 MeV/reaction",
+          "q": "What is the order of magnitude of the energy from complete fission of 1 g of U-235 (in units of 10¹⁰ J)?",
+          "key": "24-98efd458"
+        },
+        {
+          "title": "Convective and Radiative Heat Transfer: The Quantitative Puzzle of the Three Modes",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "Newton's law of cooling q=hAΔT; radiation P=εσA·T⁴",
+          "q": "If a blackbody's surface temperature doubles, by what factor does its total radiated power change?",
+          "key": "24-536648fc"
+        },
+        {
+          "title": "Semiconductor Device Physics: From Diodes to Transistors",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "subthreshold swing S=ln10·k_BT/q≈60 mV/dec",
+          "q": "About what is the subthreshold swing limit of a transistor at room temperature, in mV/dec?",
+          "key": "24-cec45474"
+        },
+        {
+          "title": "Spintronics and Metamaterials",
+          "file": "09.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "GMR: resistance varies with parallel/antiparallel magnetization; negative refraction requires ε<0 and μ<0",
+          "q": "Which kind of product was GMR technology first used in (hard-disk read head = 1; battery = 2)?",
+          "key": "24-64cd3193"
+        }
+      ],
+      "project": {
+        "title": "A Device Model of the Competition between Absorption and Collection",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Electronic devices",
+        "Spintronics",
+        "Nanotechnology",
+        "Metamaterials",
+        "Optoelectronics and photovoltaics",
+        "Energy storage and thermal management",
+        "Nuclear and fusion applications"
+      ]
+    },
+    {
+      "id": "25",
+      "name": "Foundations, History and Education of Physics",
+      "group": "Context and reflection field",
+      "pre": "Foundational physics, statistics, and scientific argumentation",
+      "topics": [
+        "Foundations of quantum theory",
+        "Spacetime and causality",
+        "History of physics",
+        "Philosophy of science",
+        "Physics education research",
+        "Science communication",
+        "Physics and society"
+      ],
+      "folder": "25-foundations-history-and-education-of-physics",
+      "lessons": [
+        {
+          "title": "How to distinguish models, explanations, and evidence",
+          "file": "01.html",
+          "stage": "Introductory",
+          "kind": "lesson",
+          "formula": "posterior odds = prior odds × likelihood ratio",
+          "q": "If the prior odds A:B = 2:1 and the likelihood ratio is 3, what is the numerical value of the posterior ratio A:B?",
+          "key": "25-fa4791dd"
+        },
+        {
+          "title": "How to test whether a teaching method works",
+          "file": "02.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "d=(mean_A−mean_B)/pooled standard deviation",
+          "q": "With a mean difference of 8 points and a pooled standard deviation of 16 points, what is d?",
+          "key": "25-513f78c5"
+        },
+        {
+          "title": "Galileo and the establishment of the experimental method",
+          "file": "03.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "s∝t² (kinematic signature of uniform acceleration)",
+          "q": "Starting from rest with uniform acceleration, how many times larger is the displacement in the 2nd second than in the 1st second?",
+          "key": "25-465c7fe8"
+        },
+        {
+          "title": "From the ether to relativity",
+          "file": "04.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "fringe shift Δm=2L(v²/c²)/λ",
+          "q": "About how many fringes of shift were expected in this experiment?",
+          "key": "25-0eccf780"
+        },
+        {
+          "title": "The debate over quantum interpretations and Bell's inequality",
+          "file": "05.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "CHSH combination |S|≤2 (local hidden variables); quantum upper bound 2√2",
+          "q": "What is the maximum CHSH correlation allowed by quantum mechanics (two decimal places)?",
+          "key": "25-8e525744"
+        },
+        {
+          "title": "Big science and open science",
+          "file": "06.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "authors per paper in a large collaboration ~10³ (empirical, particle physics)",
+          "q": "The number of authors per paper in a modern particle-physics large collaboration is of order 10 to what power?",
+          "key": "25-6cc0397b"
+        },
+        {
+          "title": "Experiments that changed physics: oil drops, scattering, and quantum transitions",
+          "file": "07.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "mg=6πηrv (with Stokes-drag correction); scattering count rate ∝1/sin⁴(θ/2)",
+          "q": "In the Franck–Hertz experiment, what is the approximate first excitation potential of mercury, in eV?",
+          "key": "25-723a2949"
+        },
+        {
+          "title": "The scientific method: induction, falsification, and paradigms",
+          "file": "08.html",
+          "stage": "Undergraduate core",
+          "kind": "lesson",
+          "formula": "testability = falsifiability; paradigm = shared exemplars for problem-solving",
+          "q": "What, for Popper, is the criterion of a theory's scientific character (falsifiability = 1, endorsement by authority = 2)?",
+          "key": "25-a6c73862"
+        }
+      ],
+      "project": {
+        "title": "Design a controlled study that can test learning transfer",
+        "file": "research.html",
+        "stage": "Research training",
+        "kind": "project"
+      },
+      "all_topics": [
+        "Foundations of quantum theory",
+        "Spacetime and causality",
+        "History of physics",
+        "Philosophy of science",
+        "Physics education research",
+        "Science communication",
+        "Physics and society"
+      ]
+    }
+  ]
+}

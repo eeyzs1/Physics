@@ -68,6 +68,10 @@ def extend(root, base_rows, page, link, sources):
  for a in parse(CORE,14):staged.append((a[1],[a[0]]+a[2:]))
  stage_order={'入门':0,'数学准备':0,'本科核心':1,'高阶选题':2}
  staged.sort(key=lambda s:(int(s[1][0]),stage_order[s[0]]))
+ # Every lesson gets a real forward link: next lesson, or research training, or back to the field page.
+ project_ids={int(a[0]) for a in parse(PROJECTS,7)}
+ last_no={n:len(fields[n]['lessons']) for n in fields}
+ for _,aa in staged:last_no[int(aa[0])]=last_no.get(int(aa[0]),0)+1
  for stage,a in staged:
   ident,title,pre,concept,formula,derivation,example,q,answer,solution,limit,transfer,transfer_solution=a[:13]
   detail=a[13] if len(a)>13 else ''
@@ -85,7 +89,11 @@ def extend(root, base_rows, page, link, sources):
   skey=f"{ident}-{hashlib.sha1(title.encode('utf-8')).hexdigest()[:8]}"
   reviews=[['不看正文，重新写出本课推导并解释每个符号。','从适用边界选一个被忽略因素，说明如何修改模型。','隔 1、3、7 天重做两道题，并把不懂的步骤发给我。'],['合上页面，向想象中的同学讲清本课模型的假设、推导与结论。','找一个适用边界之外的情形，判断公式中哪一项最先失效。','两天内不看解答重做两道自测，错哪一步就回到对应小节。'],['把本课公式代入一个自己编的数值情形，先估算量级再精确计算。','说明若去掉推导中最强的一个假设，结论会怎样变化。','下次复习先做进阶题再做基础题，对比两次的用时与错因。']]
   review_html=''.join('<li>'+E(s)+'</li>' for s in reviews[int(skey[-2:],16)%3])
-  body=f'''<nav>{link('总览','../index.html')} / {link(f['name'],'index.html')} / 第 {i} 课</nav><p class="eyebrow">{E(stage)} · 约 30–60 分钟</p><h1>{E(title)}</h1><p class="lead">目标：跟随推导建立模型，独立计算一个新情形，并指出近似何时失效。</p><aside>先修：{E(pre)}。先修不熟时先回到 {link('数学准备','../00-学习准备/index.html')}。同一分支的两节入门课不等于满足所有高阶先修。</aside><section><h2>问题与物理图像</h2><p>{E(concept)}</p><div class="formula">{E(formula)}</div><h2>从假设走到结果</h2><ol>{''.join('<li>'+E(s).rstrip('。')+'。</li>' for s in steps)}</ol><p>请在纸上补出中间代数步骤。不能复现时，先指出卡住的等式，再向我提问。</p>{detail_html}</section><section><h2>例题与核对</h2><p>{E(example)}</p><h3>适用边界</h3><p>{E(limit)}</p></section><section class="quiz" data-answer="{E(answer)}"><h2>独立计算</h2><label for="answer">{E(q)}（只填数值）</label><div class="answer-row"><input id="answer" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>展开本题解答</summary><p>{E(solution)}</p></details><h3>迁移与反例</h3><p>{E(transfer)}</p><details><summary>对照迁移题解答</summary><p>{E(transfer_solution)}</p></details></section>{quiz2_html}<section><h2>进入下一阶段前</h2><ol>{review_html}</ol><p>参考入口：{link(ref_title,ref_url)}。这些入口用于继续系统学习，不表示本小课已覆盖整门大学课程；具体课程和文献见 {link('分级学习路线','../learning-path.html')}。</p><label><input type="checkbox" class="complete" data-key="{skey}"> 我能独立推导并解释近似条件</label><p class="storage-note"></p></section><nav class="bottom-nav">{link('上一课',f'{i-1:02d}.html' if i>1 else 'index.html')}{link('返回分支与下一步','index.html')}</nav>'''
+  if i<last_no[n]:next_html=link('下一课',f'{i+1:02d}.html')
+  elif n in project_ids:next_html=link('研究训练','research.html')
+  else:next_html=link('返回分支','index.html')
+  prev_html=link('返回分支' if i==1 else '上一课','index.html' if i==1 else f'{i-1:02d}.html')
+  body=f'''<nav>{link('总览','../index.html')} / {link(f['name'],'index.html')} / 第 {i} 课</nav><p class="eyebrow">{E(stage)} · 约 30–60 分钟</p><h1>{E(title)}</h1><p class="lead">目标：跟随推导建立模型，独立计算一个新情形，并指出近似何时失效。</p><aside>先修：{E(pre)}。先修不熟时先回到 {link('数学准备','../00-学习准备/index.html')}。同一分支的两节入门课不等于满足所有高阶先修。</aside><section><h2>问题与物理图像</h2><p>{E(concept)}</p><div class="formula">{E(formula)}</div><h2>从假设走到结果</h2><ol>{''.join('<li>'+E(s).rstrip('。')+'。</li>' for s in steps)}</ol><p>请在纸上补出中间代数步骤。不能复现时，先指出卡住的等式，再向我提问。</p>{detail_html}</section><section><h2>例题与核对</h2><p>{E(example)}</p><h3>适用边界</h3><p>{E(limit)}</p></section><section class="quiz" data-answer="{E(answer)}"><h2>独立计算</h2><label for="answer">{E(q)}（只填数值）</label><div class="answer-row"><input id="answer" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>展开本题解答</summary><p>{E(solution)}</p></details><h3>迁移与反例</h3><p>{E(transfer)}</p><details><summary>对照迁移题解答</summary><p>{E(transfer_solution)}</p></details></section>{quiz2_html}<section><h2>进入下一阶段前</h2><ol>{review_html}</ol><p>参考入口：{link(ref_title,ref_url)}。这些入口用于继续系统学习，不表示本小课已覆盖整门大学课程；具体课程和文献见 {link('分级学习路线','../learning-path.html')}。</p><label><input type="checkbox" class="complete" data-key="{skey}"> 我能独立推导并解释近似条件</label><p class="storage-note"></p></section><nav class="bottom-nav">{prev_html}{next_html}</nav>'''
   folder=root/f['folder'];folder.mkdir(exist_ok=True);(folder/filename).write_text(page(title,body),encoding='utf-8')
   f['lessons'].append({'title':title,'file':filename,'stage':stage,'kind':'lesson','formula':formula,'q':q,'key':skey})
  # Research preparation pages have explicit deliverables and known-result checks.
@@ -125,7 +133,7 @@ def extend(root, base_rows, page, link, sources):
  (root/'learning-path.html').write_text(page('分级学习路线',path_body,0),encoding='utf-8')
  checklist_body=f'''<nav>{link('学习首页','index.html')} / {link('分类树','taxonomy.html')} / {link('分级路线','learning-path.html')}</nav><p class="eyebrow">逐课自查 · 复述 · 计算 · 边界</p><h1>核心概念清单。</h1><p class="lead">把“学过”变成可以逐项打勾的证据：每一行对应一节课，勾选前先闭卷完成它的自测题。</p><section><h2>打勾标准（四条全满足）</h2><ol><li>不看正文，用自己的话说出这个模型在描述什么、公式里每个量是什么。</li><li>默写公式，闭卷完成本行自测且数值正确。</li><li>说出公式的适用条件，并举出一个模型会失效的场景。</li><li>迁移题独立完成；任何一步卡住就取消勾选，回课程页复习后再来。</li></ol><p>覆盖 {total} 节正文课与 {len(project_rows)} 项研究训练；建议第 1、3、7 天回看勾选项。勾选保存在当前浏览器，仅作自查记录，不等于能力认证。</p></section>{''.join(cl)}'''
  (root/'checklist.html').write_text(page('核心概念清单',checklist_body,0),encoding='utf-8')
- intro=f'''<p class="eyebrow">中文离线物理教材 · 范围与完成度公开</p><h1>看清物理全景，<br>逐步学会做研究。</h1><p class="lead">从基础概念、控制方程和推导，走向计算、实验与论文复现。每一阶段都用可检查的证据检验学习。</p><div class="stats"><span><strong>{len(fields)-1}</strong>学习领域 + 共同准备</span><span><strong>{total}</strong>已编写正文课</span><span><strong>{len(project_rows)}</strong>研究训练任务</span><span><strong>{len(base_rows)}</strong>交互图示</span></div><section><h2>先看三张地图</h2><p>{link('分类树：所有本地列出的方向与覆盖边界','taxonomy.html')} → {link('分级路线：先修、阶段与考核','learning-path.html')} → {link('核心概念清单：逐课自查','checklist.html')}。</p><p>当前共有 {total} 节正文课与 {len(project_rows)} 项复现训练说明；这是扩展后的选题教材。未完成全部子方向的系统教材，也不把读完页面等同于精通。分类覆盖与课程完成度是两件事。</p><p>零基础先 00 → 01 → 02，再学 03、04、05，之后进入相对论、量子和感兴趣的专门方向。高级课程必须另外补齐数学先修。</p></section><h2>课程目录</h2><div class="grid">'''+''.join(cards)+f'''</div><section><h2>本地使用</h2><p>双击 index.html 即可离线学习；参考书与论文外链需联网。完成标记保存在当前浏览器，可能受本地文件存储限制，不等于能力认证。</p>{source_note}</section>'''
+ intro=f'''<p class="eyebrow">中文离线物理教材 · 范围与完成度公开</p><h1>看清物理全景，<br>逐步学会做研究。</h1><p class="lead">从基础概念、控制方程和推导，走向计算、实验与论文复现。每一阶段都用可检查的证据检验学习。</p><div class="stats"><span><strong>{len(fields)-1}</strong>学习领域 + 共同准备</span><span><strong>{total}</strong>已编写正文课</span><span><strong>{len(project_rows)}</strong>研究训练任务</span><span><strong>{len(base_rows)}</strong>交互图示</span></div><section><h2>先看三张地图</h2><p>{link('分类树：所有本地列出的方向与覆盖边界','taxonomy.html')} → {link('分级路线：先修、阶段与考核','learning-path.html')} → {link('核心概念清单：逐课自查','checklist.html')}。</p><p>当前共有 {total} 节正文课与 {len(project_rows)} 项复现训练说明；这是扩展后的选题教材。未完成全部子方向的系统教材，也不把读完页面等同于精通。分类覆盖与课程完成度是两件事。</p><p>零基础先 00 → 01 → 02，再学 03、04、05，之后进入相对论、量子和感兴趣的专门方向。高级课程必须另外补齐数学先修。</p><p>English edition: the same handbook in English lives in the {link('en/ mirror','en/index.html')}.</p></section><h2>课程目录</h2><div class="grid">'''+''.join(cards)+f'''</div><section><h2>本地使用</h2><p>双击 index.html 即可离线学习；参考书与论文外链需联网。完成标记保存在当前浏览器，可能受本地文件存储限制，不等于能力认证。</p>{source_note}</section>'''
  (root/'index.html').write_text(page('物理学学习手册',intro,0),encoding='utf-8')
  manifest={'lesson_count':total,'project_count':len(project_rows),'topic_entry_count':topic_count,'demo_count':len(base_rows),'fields':list(fields.values())}
  (root/'course-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -173,8 +181,9 @@ def extend(root, base_rows, page, link, sources):
 
 - 内容：`tools/build_course.py` 保留原课，`advanced_content.py`、`expanded_fields.py` 存新增内容，`extend_course.py` 生成扩展页面。
 - 重建：`python tools/build_course.py`。每次都会从内容源生成当前版本。
+- 英文版：[`en/`](en/index.html) 为本手册的英文镜像（总说明见 [README.en.md](README.en.md)）。英文版为静态翻译版，不由构建脚本生成，重建不会覆盖。
 - 依赖：Python 3.10+；验证工具需先 `pip install -r requirements.txt`，再运行 `python -m playwright install chromium` 安装浏览器。
-- 验证：`python tools/check_course.py`。检查链接、离线加载、答题、进度与手机布局；不把功能检查等同于物理专家审校。
+- 验证：`python tools/check_course.py`。检查中英两棵树的链接、离线加载、答题、进度、语言切换与手机布局；不把功能检查等同于物理专家审校。
 - 清单：`course-manifest.json`；检查记录：`verification/REPORT.md`。
 - 教学方法沿用 [teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md) 的小课时、检索练习与间隔复习；未全局安装第三方 skill。
 '''
