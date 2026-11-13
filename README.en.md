@@ -69,12 +69,16 @@ These gaps are already marked on each field's home page and in the learning path
 
 ## Maintenance and verification
 
-- Content: `tools/build_course.py` holds the original lessons; `advanced_content.py` and `expanded_fields.py` hold the newly added content; `extend_course.py` generates the extension pages.
-- Rebuild: `python tools/build_course.py`. Each run regenerates the current version from the content sources.
+- Content: DATA in `tools/build_course.py` holds the original lessons; `advanced_content.py`, `core_expansion.py`, and `expanded_fields.py` hold extension content. `extend_course.py` renders it. Edit the sources, then rebuild; validation rejects malformed rows, nonfinite answers, misplaced quizzes, and duplicate identities before generation.
+- Rebuild: `python tools/build_course.py` or `python -m tools.build_course`. Importing the module does not write files. Lesson titles determine progress keys; consider migration when renaming a title.
 - English edition: the [`en/`](en/index.html) tree is the English mirror of this handbook (English metadata: `en/course-manifest.json`). It is a hand-maintained static translation, not produced by the build script, so rebuilding does not overwrite it; when the Chinese sources change, update the corresponding `en/` pages (same filenames, directory names per the mapping in each `en/<chapter>/` slug), keep functional attributes (`data-answer`, `data-key`, `data-demo`, ids, classes) identical, and keep asset paths one level deeper (`../../assets/course.css`, `../assets/course.js` for chapter pages).
-- Dependencies: Python 3.10+; for the verification tooling, first run `pip install -r requirements.txt`, then run `python -m playwright install chromium` to install the browser.
-- Verify: `python tools/check_course.py`. It checks both language trees (Chinese and English) for links, offline loading, quiz answering, progress, the language switch, and the mobile layout; a functional check is not equated with review by physics experts.
-- Manifest: `course-manifest.json`; verification log: `verification/REPORT.md`.
+- Quick checks (Python 3.10+, no browser dependency): `python tools/check_course.py --structure-only` and `python -m unittest discover -s tests -v`.
+- Browser dependencies: `pip install -r requirements.txt`, then `python -m playwright install chromium` (add `--with-deps` on Linux if needed).
+- Verify: `python tools/check_course.py`. This is read-only by default and checks both editions, offline loading, grading boundaries, desktop/mobile layouts, dark-mode contrast, unavailable storage, and live cross-tab progress over local HTTP. Functional tests do not replace physics expert review.
+- To update bilingual reports and screenshots, run `python tools/check_course.py --write-report`; optionally set `--report-date YYYY-MM-DD`. Reports are `verification/REPORT.md` and `verification/REPORT.en.md`.
+- Local use: open `index.html` directly, or run `python -m http.server 8000 --bind 127.0.0.1` in the repository root and open the [local English home page](http://127.0.0.1:8000/en/). HTTP avoids browser differences in file-URL storage. Progress belongs to this browser and origin; it is not cloud synchronization.
+- Grading: nonzero answers allow 2% relative error; zero answers must be exactly zero. Follow the question's units and rounding instructions. Numeric checks do not assess the written reasoning.
+- Manifests: `course-manifest.json` and `en/course-manifest.json`. Review findings and sources: `REVIEW.md` and `REVIEW.en.md`.
 - The pedagogy follows the [teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md)'s short lessons, retrieval practice, and spaced review; no third-party skill is installed globally.
 
 ## Cross-check against official classifications

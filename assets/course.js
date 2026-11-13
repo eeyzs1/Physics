@@ -21,7 +21,7 @@ const labs={
  field:{intro:'简化均匀电场 E = 100 N/C。滑块控制正电荷 q（μC），箭头示意受力。',limit:'这是电场受力示意，不是磁约束或磁力线模拟。等离子体课中的磁场轨迹需要另用洛伦兹力分析。',draw:v=>{let s='';for(let y=60;y<190;y+=40){s+=svgLine(80,y,540,y,'#a8bfb0',2)+svgText(545,y+5,'→')}s+=svgCircle(250,120,17)+svgText(243,126,'+')+svgLine(275,120,275+v*20,120,'#b77632',5)+svgText(300,100,'受力方向 →');return[s,`q = ${v.toFixed(1)} μC；F = qE = ${(v*100).toFixed(0)} μN。力与电荷成正比。`]}},
  relativity:{intro:'滑块除以 10.1 得到速度与光速之比 β = v/c，比较固有时间 1 s 对应的实验室时间。',limit:'惯性匀速运动的时间间隔比较；不模拟引力、加速往返或光传播延迟。横轴为 β，纵轴为 γ。',draw:v=>{let b=v/10.1,g=1/Math.sqrt(1-b*b);return[axes('β = 0–0.99','γ = 1–8')+poly(Array.from({length:100},(_,i)=>[50+i/100*520,190-1/Math.sqrt(1-(i/100)**2)*19]))+svgCircle(50+b*520,190-g*19,6,'#b77632'),`β = ${b.toFixed(3)}；γ = ${g.toFixed(3)}。固有时间 1 s 对应实验室时间 ${g.toFixed(3)} s。`]}},
  quantum:{intro:'滑块四舍五入得到一维无限深势阱的量子数 n。观察概率密度的节点数怎样变化。',limit:'阱宽固定；纵轴为归一化的 L|ψ|²，无量纲。曲线不是粒子的轨迹。',draw:v=>{let n=Math.round(v);return[axes('位置 x/L：0–1','L|ψ|²：0–2')+poly(Array.from({length:401},(_,i)=>[50+i/400*520,190-150*Math.sin(n*Math.PI*i/400)**2])),`n = ${n}；Eₙ/E₁ = ${n*n}；内部概率密度节点数为 ${n-1}。`]}},
- phase:{intro:'滑块作为约化温度 T/Tc，查看一个简化平均场序参量模型，临界温度设为滑块值 5。',limit:'仅展示连续相变的玩具模型 M/M₀ = √max(0,1−T/Tc)，不是所有材料的通用相变公式。',draw:v=>{let m=Math.sqrt(Math.max(0,1-v/5));return[axes('滑块温度：0–10','M/M₀：0–1')+poly(Array.from({length:101},(_,i)=>[50+i*5.2,190-150*Math.sqrt(Math.max(0,1-i/50))]))+svgCircle(50+v*52,190-m*150,6,'#b77632'),`T/Tc = ${(v/5).toFixed(2)}；相对序参量 M/M₀ = ${m.toFixed(3)}。临界点以上该模型的序参量为零。`]}},
+ phase:{intro:'滑块值除以 5 得到约化温度 T/Tc，查看一个简化平均场序参量模型；临界温度对应滑块值 5。',limit:'仅展示连续相变的玩具模型 M/M₀ = √max(0,1−T/Tc)，不是所有材料的通用相变公式。',draw:v=>{let m=Math.sqrt(Math.max(0,1-v/5));return[axes('滑块温度：0–10','M/M₀：0–1')+poly(Array.from({length:101},(_,i)=>[50+i*5.2,190-150*Math.sqrt(Math.max(0,1-i/50))]))+svgCircle(50+v*52,190-m*150,6,'#b77632'),`T/Tc = ${(v/5).toFixed(2)}；相对序参量 M/M₀ = ${m.toFixed(3)}。临界点以上该模型的序参量为零。`]}},
  decay:{intro:'固定初始数量/强度为 100，调节经过的半衰期（或半值层）数。',limit:'指数衰减模型。核衰变中的纵轴是期望核数；单能窄束衰减中的纵轴可理解为强度。',draw:v=>[axes('半衰期/半值层数：0–10','剩余比例：0–100%')+poly(Array.from({length:101},(_,i)=>[50+i*5.2,190-150*2**(-i/10)]))+svgCircle(50+v*52,190-150*2**(-v),6,'#b77632'),`经过 ${v.toFixed(1)} 个半衰期/半值层，剩余比例 ${(100*2**(-v)).toFixed(3)}%。`]},
  collision:{intro:'固定真实产生 200 个事件，滑块除以 10 得到探测效率。观察记录数和真实数的差别。',limit:'仅展示期望事件计数；未包含背景、统计涨落与误识别。方块每个代表 10 个期望事件。',draw:v=>{let s='';for(let i=0;i<20;i++){let x=90+i%10*48,y=80+Math.floor(i/10)*55;s+=`<rect x="${x}" y="${y}" width="30" height="30" fill="${i<v*2?'#146a60':'#cad7cc'}"/>`}return[s+svgText(80,205,'深色：预期被探测的部分；浅色：未记录部分'),`效率 ε = ${(v/10).toFixed(2)}；预期记录 N = ${(20*v).toFixed(0)} / 200 个事件。`]}},
  universe:{intro:'固定天体光度，调节相对距离 d/d₀。观察接收到的相对通量。',limit:'各向同性、无吸收的欧氏空间反平方模型。宇宙学高红移下应使用合适的距离定义。',draw:v=>[axes('相对距离：1–10','相对通量：0–1')+poly(Array.from({length:101},(_,i)=>{let d=1+9*i/100;return[50+i*5.2,190-150/d**2]}))+svgCircle(50+(v-1)/9*520,190-150/v**2,6,'#b77632'),`d/d₀ = ${v.toFixed(1)}；F/F₀ = ${(1/v**2).toFixed(4)}。距离加倍，通量降至四分之一。`]},
@@ -38,10 +38,25 @@ document.querySelectorAll('.lab').forEach(el=>{
 });
 document.querySelectorAll('.quiz').forEach(el=>{
  const input=el.querySelector('input'),feedback=el.querySelector('.feedback');
- const check=()=>{if(input.value.trim()===''||!Number.isFinite(Number(input.value))){feedback.textContent='请先填入一个数值。';return;}const expected=Number(el.dataset.answer),ok=Math.abs(Number(input.value)-expected)<=Math.max(0.01,Math.abs(expected)*0.02);feedback.textContent=ok?'数值正确（2% 容差内）。再说出单位和适用条件，然后尝试迁移练习。':'再试一次：检查单位、正负方向和比例关系；可以展开提示并对照例题。';};
+ const check=()=>{if(input.value.trim()===''||!Number.isFinite(Number(input.value))){feedback.textContent='请先填入一个数值。';return;}const expected=Number(el.dataset.answer),ok=Number.isFinite(expected)&&(expected===0?Number(input.value)===0:Math.abs((Number(input.value)-expected)/expected)<=0.02+Number.EPSILON*8);feedback.textContent=ok?'数值正确（非零答案允许 2% 相对误差；零答案须填 0）。再说出单位和适用条件，然后尝试迁移练习。':'再试一次：检查单位、正负方向和比例关系；可以展开提示并对照例题。';};
  el.querySelector('button').addEventListener('click',check);input.addEventListener('keydown',e=>{if(e.key==='Enter')check();});
 });
 document.querySelectorAll('.complete').forEach(el=>{const note=el.closest('section').querySelector('.storage-note'),key='physics-course-'+el.dataset.key;try{el.checked=localStorage.getItem(key)==='true';note.textContent='完成标记保存在当前浏览器，仅表示你的自评。';}catch{note.textContent='此浏览器未开放本地存储，完成标记本次有效。';}el.addEventListener('change',()=>{try{localStorage.setItem(key,String(el.checked));}catch{note.textContent='无法保存完成标记，你仍可正常学习。';}});});
+
+// Keep open lessons and checklists in sync when another tab changes progress.
+function refreshProgress(key, value) {
+ document.querySelectorAll('.complete').forEach(el => {
+  const storageKey = 'physics-course-' + el.dataset.key;
+  if (key !== null && key !== storageKey) return;
+  try { el.checked = (key === null ? localStorage.getItem(storageKey) : value) === 'true'; }
+  catch { /* Storage may be disabled; keep the current session's marks. */ }
+ });
+}
+window.addEventListener('storage', event => {
+ try { if (event.storageArea === localStorage) refreshProgress(event.key, event.newValue); }
+ catch { /* The page still works when browser policy disables storage. */ }
+});
+window.addEventListener('pageshow', () => refreshProgress(null, null));
 
 // Language switch: link every page to its counterpart in the other language tree.
 const LANG_MAP=[["00-学习准备","00-learning-preparation"],["01-经典力学","01-classical-mechanics"],["02-振动、波动与声学","02-vibrations-waves-and-acoustics"],["03-热力学与统计物理","03-thermodynamics-and-statistical-physics"],["04-电磁学","04-electromagnetism"],["05-光学与光子学","05-optics-and-photonics"],["06-相对论与引力","06-relativity-and-gravitation"],["07-量子力学","07-quantum-mechanics"],["08-原子、分子与光物理","08-atomic-molecular-and-optical-physics"],["09-凝聚态与材料物理","09-condensed-matter-and-materials-physics"],["10-原子核物理","10-nuclear-physics"],["11-粒子物理与量子场论","11-particle-physics-and-quantum-field-theory"],["12-等离子体物理","12-plasma-physics"],["13-天体物理与宇宙学","13-astrophysics-and-cosmology"],["14-地球物理与空间物理","14-geophysics-and-space-physics"],["15-生物物理与医学物理","15-biophysics-and-medical-physics"],["16-数学物理","16-mathematical-physics"],["17-计算物理","17-computational-physics"],["18-实验物理与测量","18-experimental-physics-and-measurement"],["19-流体与连续介质物理","19-fluid-and-continuum-physics"],["20-非线性与复杂系统","20-nonlinear-and-complex-systems"],["21-量子信息与量子技术","21-quantum-information-and-quantum-technologies"],["22-化学物理与分子反应","22-chemical-physics-and-molecular-reactions"],["23-加速器与束流物理","23-accelerator-and-beam-physics"],["24-应用物理与能源","24-applied-physics-and-energy"],["25-物理基础、历史与教育","25-foundations-history-and-education-of-physics"]];
@@ -53,7 +68,7 @@ const LANG_MAP=[["00-学习准备","00-learning-preparation"],["01-经典力学"
  const rootPrefix=sheet?(sheet.getAttribute('href')||'').replace('assets/course.css',''):'';
  const pair=LANG_MAP.find(p=>p[0]===dir||p[1]===dir);
  let href=null,label='';
- const inEn=(segs.length&&segs[segs.length-1]==='en')||(pair&&pair[1]===dir);
+ const inEn=document.documentElement.lang==='en';
  if(inEn){
   href=rootPrefix+(pair?pair[0]+'/':'')+file;
   label='中文';
@@ -63,7 +78,7 @@ const LANG_MAP=[["00-学习准备","00-learning-preparation"],["01-经典力学"
  }
  if(!href)return;
  const a=document.createElement('a');
- a.className='lang';a.href=encodeURI(href);a.textContent=label;
+ a.className='lang';a.href=encodeURI(href);a.textContent=label;a.hreflang=inEn?'zh-CN':'en';
  const header=document.querySelector('header');
  if(header)header.appendChild(a);
 })();

@@ -503,7 +503,7 @@
           "file": "10.html",
           "stage": "Undergraduate core",
           "kind": "lesson",
-          "formula": "λ=1/(√2 nσ); D≈½ v̄ λ (order-of-magnitude estimate)",
+          "formula": "λ=1/(√2 nσ); isotropic three-dimensional gas: D≈v̄λ/3 (simple kinetic-theory estimate)",
           "q": "If the number density doubles (everything else unchanged), what fraction of the original mean free path remains?",
           "key": "03-0429eab3"
         },
@@ -1088,7 +1088,7 @@
           "stage": "Undergraduate core",
           "kind": "lesson",
           "formula": "Eₙ=(n+½)ℏω",
-          "q": "How many eV are needed to go from n=1 to n=3?",
+          "q": "What is the energy difference in eV between n=1 and n=3?",
           "key": "07-de3f6700"
         },
         {
@@ -1513,7 +1513,7 @@
           "stage": "Undergraduate core",
           "kind": "lesson",
           "formula": "nematic order S=〈(3cos²θ−1)/2〉; R_N∼N^ν",
-          "q": "The order parameter of a nematic liquid crystal ranges from what value to 1 (enter the lower limit 0)?",
+          "q": "Relative to a specified axis, the full mathematical range of S=〈(3cos²θ−1)/2〉 runs from what lower bound to 1?",
           "key": "09-e5233434"
         },
         {
@@ -1639,7 +1639,7 @@
           "stage": "Undergraduate core",
           "kind": "lesson",
           "formula": "dσ/dΩ=(Z₁Z₂e²/16πε₀E)²·1/sin⁴(θ/2)",
-          "q": "What is the ratio of the Rutherford cross section at θ=90° to that at θ=30°?",
+          "q": "At fixed energy, what is the Rutherford differential-cross-section ratio at θ=90° to θ=30° (four decimal places)?",
           "key": "10-b94593c5"
         },
         {
@@ -2768,7 +2768,7 @@
           "stage": "Undergraduate core",
           "kind": "lesson",
           "formula": "A(h)=A₀+c·h²+O(h⁴); combination [4A(h/2)−A(h)]/3",
-          "q": "Richardson extrapolation lifts the effective error order of a second-order method to what order?",
+          "q": "If A(h)=A₀+c₂h²+c₄h⁴+… has only even error powers, what is the leading error order after one Richardson extrapolation?",
           "key": "17-9126fc8a"
         },
         {
@@ -2794,8 +2794,8 @@
           "file": "13.html",
           "stage": "Undergraduate core",
           "kind": "lesson",
-          "formula": "weak form + element basis functions; spectral convergence ∝ e^(−N)",
-          "q": "The convergence rate of spectral methods for smooth problems is which (exponential = 1, power law = 2)?",
+          "formula": "Weak form + element basis; analytic solutions with compatible boundaries typically give spectral error ∝e^(−cN)",
+          "q": "For an analytic solution with compatible boundaries, how does a spectral expansion typically converge (exponentially=1, only fixed-order algebraically=2)?",
           "key": "17-9acb90e8"
         },
         {
@@ -3075,7 +3075,7 @@
           "stage": "Undergraduate core",
           "kind": "lesson",
           "formula": "ρ(∂v/∂t+v·∇v)=−∇p+μ∇²v+ρg",
-          "q": "What dimensionless number is the ratio of the inertial to the viscous term in the NS equations?",
+          "q": "For water with ρ=1000 kg/m³, U=0.01 m/s, L=0.01 m, and μ=0.001 Pa·s, what is the inertial-to-viscous scale ratio Re?",
           "key": "19-3e241e66"
         },
         {
@@ -3339,7 +3339,7 @@
           "stage": "Undergraduate core",
           "kind": "lesson",
           "formula": "three-qubit bit-flip code：|0_L⟩=|000⟩，|1_L⟩=|111⟩",
-          "q": "How many physical-qubit errors can the three-qubit bit-flip code correct at once?",
+          "q": "When noise consists only of bit-flip X errors, how many physical-qubit flips can the three-qubit bit-flip code correct at once?",
           "key": "21-4be8752b"
         },
         {
@@ -3392,8 +3392,8 @@
           "file": "11.html",
           "stage": "Undergraduate core",
           "kind": "lesson",
-          "formula": "Grover：amplitude amplification per iteration ∝√(1/N)，number of iterations ~π√N/4",
-          "q": "About how many iterations does a Grover search over N=256 need (π√N/4, rounded)?",
+          "formula": "Single-target Grover: θ=arcsin(1/√N), P_r=sin²[(2r+1)θ]; near the first peak use r=floor[π/(4θ)]",
+          "q": "For one marked item among N=256, how many iterations does r=floor[π/(4arcsin(1/√N))] give?",
           "key": "21-0ecade4b"
         },
         {
@@ -3515,7 +3515,7 @@
           "file": "09.html",
           "stage": "Undergraduate core",
           "kind": "lesson",
-          "formula": "London dispersion ∝−C₆/R⁶; hydrogen bond 10–40 kJ/mol",
+          "formula": "London dispersion: U=−C₆/R⁶; F_R=−6C₆/R⁷; hydrogen bonds: 10–40 kJ/mol",
           "q": "About how many eV is a typical hydrogen-bond energy (one decimal place)?",
           "key": "22-70bf9925"
         },
@@ -3752,7 +3752,7 @@
           "file": "09.html",
           "stage": "Undergraduate core",
           "kind": "lesson",
-          "formula": "GMR: resistance varies with parallel/antiparallel magnetization; negative refraction requires ε<0 and μ<0",
+          "formula": "GMR: resistance depends on parallel/antiparallel magnetization; in a local isotropic low-loss model, ε_r<0 and μ_r<0 can give negative refraction",
           "q": "Which kind of product was GMR technology first used in (hard-disk read head = 1; battery = 2)?",
           "key": "24-64cd3193"
         }

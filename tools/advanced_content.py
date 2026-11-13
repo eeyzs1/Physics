@@ -39,7 +39,5 @@ LESSONS = '''
 '''
 
 def lessons():
- result=[]
- for line in LESSONS.strip().splitlines():
-  a=line.split('\t');assert len(a) in (13,14,15),(len(a),a[:2]);result.append(a)
- return result
+ from tools.course_data import parse_rows
+ return parse_rows(LESSONS, 13, optional=2, source='LESSONS')

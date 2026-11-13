@@ -182,3 +182,26 @@ The grading tolerance was relaxed to max(0.01, 2%·|e|) and noted in the feedbac
 
 ### 9.3 Final scale
 175 → **319 lessons** (+144); interactive self-tests 223 → **638**; the rest unchanged (25 research trainings, 19 interactive figures, 369 direction entries). All items of the original review's §2/§3/§4/§5, and the P1/P2 expansion lists reported by the agents, have been implemented.
+
+## 10. Repository review and fixes (2026-11-13)
+
+Reviewed the generators, authored tables, both frontends, styles, CI, and all numeric question/answer entries; corrected **27 corresponding lessons in both languages**. Existing lesson order and progress keys are preserved. Earlier completion statements describe historical work, not a guarantee against future findings.
+
+Content corrections include variance of an average (σ²/2 for two independent measurements), relative Taylor error (0.67% at 0.2 rad), digital resolution uncertainty (0.02/√12 mm), Gaussian variance addition, the Gibbs N! factor, the conditions for Poisson particle counts, three-dimensional diffusion, coherence-length conversion (2500 μm), α²≈5.3×10⁻⁵, and the inverse half-angle Rutherford ratio (0.0179).
+
+Clarified oscillator selection rules, paraxial interference, perturbative truncations, inertia tensors and axis alignment, rigid-Earth versus Chandler periods, binary radial-velocity amplitudes, Schwarzschild thin-disk efficiency (5.7%), the full P₂ order-parameter range, dispersion potential versus force, NS assumptions, illustrative climate inputs, Richardson error expansions, analytic spectral convergence, DMRG entanglement and sign-free assumptions, and the golden-section retained fraction.
+
+The three-qubit repetition code only corrects one X error and has distance 1 against general quantum errors. Grover's first-peak iteration counts are 12 for N=256 and 78 for N=10⁴. The holography lesson now distinguishes large λ/small curvature from large N/weak string loops and removes the universal viscosity-bound claim. Metamaterial conclusions are restricted to their stated model; the unsupported billion-fold disk-density claim is removed.
+
+Independent calculations support the numeric corrections. Primary references include [NIST uncertainty propagation](https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-appendix-law-propagation-uncertainty), [Rutherford scattering](https://farside.ph.utexas.edu/teaching/plasma/lectures/node36.html), [MIT liquid-crystal order](https://www.mit.edu/~pezeril/wa_files/Thesis.pdf), [NASA Earth wobble](https://core2.gsfc.nasa.gov/MIRROR_www_astro_oma_be/chandwob.html), [NASA Schwarzschild disk model](https://heasarc.gsfc.nasa.gov/docs/software/xspec/manual/node216.html), [IBM error correction](https://quantum.cloud.ibm.com/learning/en/courses/tools-for-quantum-advantage/error-correction-ii), [IBM Grover iteration analysis](https://quantum.cloud.ibm.com/learning/en/courses/fundamentals-of-quantum-algorithms/grover-algorithm/number-of-iterations), [the original large-N holography paper](https://arxiv.org/abs/hep-th/9711200), and [viscosity-bound violations](https://arxiv.org/abs/0712.0805).
+
+Engineering fixes:
+
+- **P1 grading:** the old absolute tolerance 0.01 accepted zero for an expected answer of 0.001. Both editions now use 2% relative tolerance for nonzero answers and exact zero for zero answers.
+- **P2 dark readability:** fixed white-on-white numeric inputs, low-contrast buttons, and light text on light SVG canvases; checks require at least 4.5:1 contrast.
+- **P2 progress/navigation:** storage and pageshow handlers synchronize live lesson/checklist tabs, including both languages. Language detection uses the document language. Disabled-storage fallback remains usable.
+- **P2 generation:** importing the builder no longer writes files. Validation rejects malformed rows, nonfinite answers, misplaced advanced quizzes, duplicate identities, and unknown fields/stages before generation, including under Python optimization.
+- **P2 verification:** reconcile both manifests against real paths, progress keys, quiz counts/answers, demos, and language maps; check fragments, duplicate ids, labels, and offline assets; exercise grading boundaries, storage failure, four-tab progress, and an HTTP project prefix.
+- **Maintenance:** checks are read-only by default; reports/screenshots require `--write-report`. `--structure-only` needs no browser. Added 24 standard-library regression tests and a CI step. Counts across both editions are **748 pages, 638 lesson pages, 1276 quizzes, and 38 diagrams**; earlier logs mislabeled lesson-page counts as quiz counts.
+
+Commands and results are in `verification/REPORT.en.md`. No lesson-count expansion was attempted in this pass; additions focus on correct reasoning, explicit assumptions, reproducible answers, and maintenance. Automated checks do not establish correctness of every physics statement; the README continues to describe the larger curriculum and problem-set gaps.

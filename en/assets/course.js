@@ -21,7 +21,7 @@ const labs={
  field:{intro:'Simplified uniform electric field E = 100 N/C. The slider sets a positive charge q (μC); the arrow indicates the force.',limit:'This is an electric-field force sketch, not a magnetic-confinement or field-line simulation. Magnetic trajectories in the plasma lessons require the Lorentz-force analysis.',draw:v=>{let s='';for(let y=60;y<190;y+=40){s+=svgLine(80,y,540,y,'#a8bfb0',2)+svgText(545,y+5,'→')}s+=svgCircle(250,120,17)+svgText(243,126,'+')+svgLine(275,120,275+v*20,120,'#b77632',5)+svgText(300,100,'force direction →');return[s,`q = ${v.toFixed(1)} μC; F = qE = ${(v*100).toFixed(0)} μN. The force is proportional to the charge.`]}},
  relativity:{intro:'Slider ÷ 10.1 gives the speed as a fraction of light speed, β = v/c; compare the laboratory time for 1 s of proper time.',limit:'Comparison of time intervals for uniform inertial motion; gravity, accelerated round trips, and light-propagation delays are not modeled. Horizontal axis β, vertical axis γ.',draw:v=>{let b=v/10.1,g=1/Math.sqrt(1-b*b);return[axes('β = 0–0.99','γ = 1–8')+poly(Array.from({length:100},(_,i)=>[50+i/100*520,190-1/Math.sqrt(1-(i/100)**2)*19]))+svgCircle(50+b*520,190-g*19,6,'#b77632'),`β = ${b.toFixed(3)}; γ = ${g.toFixed(3)}. A proper time of 1 s corresponds to a laboratory time of ${g.toFixed(3)} s.`]}},
  quantum:{intro:'The slider rounds to the quantum number n of a 1-D infinite square well. Watch how the number of nodes in the probability density changes.',limit:'Fixed well width; the vertical axis is the normalized, dimensionless L|ψ|². The curve is not a particle trajectory.',draw:v=>{let n=Math.round(v);return[axes('position x/L: 0–1','L|ψ|²: 0–2')+poly(Array.from({length:401},(_,i)=>[50+i/400*520,190-150*Math.sin(n*Math.PI*i/400)**2])),`n = ${n}; Eₙ/E₁ = ${n*n}; number of interior probability-density nodes = ${n-1}.`]}},
- phase:{intro:'The slider acts as the reduced temperature T/Tc in a simplified mean-field order-parameter model, with the critical temperature fixed at slider value 5.',limit:'A toy model of a continuous phase transition, M/M₀ = √max(0,1−T/Tc); not a universal transition formula for all materials.',draw:v=>{let m=Math.sqrt(Math.max(0,1-v/5));return[axes('slider temperature: 0–10','M/M₀: 0–1')+poly(Array.from({length:101},(_,i)=>[50+i*5.2,190-150*Math.sqrt(Math.max(0,1-i/50))]))+svgCircle(50+v*52,190-m*150,6,'#b77632'),`T/Tc = ${(v/5).toFixed(2)}; relative order parameter M/M₀ = ${m.toFixed(3)}. Above the critical point the order parameter is zero in this model.`]}},
+ phase:{intro:'The slider value divided by 5 is the reduced temperature T/Tc in this simplified mean-field model; the critical temperature is at slider value 5.',limit:'A toy model of a continuous phase transition, M/M₀ = √max(0,1−T/Tc); not a universal transition formula for all materials.',draw:v=>{let m=Math.sqrt(Math.max(0,1-v/5));return[axes('slider temperature: 0–10','M/M₀: 0–1')+poly(Array.from({length:101},(_,i)=>[50+i*5.2,190-150*Math.sqrt(Math.max(0,1-i/50))]))+svgCircle(50+v*52,190-m*150,6,'#b77632'),`T/Tc = ${(v/5).toFixed(2)}; relative order parameter M/M₀ = ${m.toFixed(3)}. Above the critical point the order parameter is zero in this model.`]}},
  decay:{intro:'Initial amount/intensity fixed at 100; adjust the number of elapsed half-lives (or half-value layers).',limit:'Exponential-decay model. In nuclear decay the vertical axis is the expected number of nuclei; for a monoenergetic narrow beam it can be read as intensity.',draw:v=>[axes('half-lives / half-value layers: 0–10','fraction remaining: 0–100%')+poly(Array.from({length:101},(_,i)=>[50+i*5.2,190-150*2**(-i/10)]))+svgCircle(50+v*52,190-150*2**(-v),6,'#b77632'),`After ${v.toFixed(1)} half-lives (half-value layers), the remaining fraction is ${(100*2**(-v)).toFixed(3)}%.`]},
  collision:{intro:'200 genuinely produced events are fixed; slider ÷ 10 gives the detection efficiency. Watch the difference between recorded and true counts.',limit:'Expected event counts only; backgrounds, statistical fluctuations, and misidentification are not included. Each square represents 10 expected events.',draw:v=>{let s='';for(let i=0;i<20;i++){let x=90+i%10*48,y=80+Math.floor(i/10)*55;s+=`<rect x="${x}" y="${y}" width="30" height="30" fill="${i<v*2?'#146a60':'#cad7cc'}"/>`}return[s+svgText(80,205,'dark: fraction expected to be detected; light: not recorded'),`Efficiency ε = ${(v/10).toFixed(2)}; expected recorded N = ${(20*v).toFixed(0)} / 200 events.`]}},
  universe:{intro:'Fixed luminosity of the source; adjust the relative distance d/d₀ and watch the relative received flux.',limit:'Inverse-square model in Euclidean space with isotropic emission and no absorption. At cosmological redshifts the appropriate distance definition must be used.',draw:v=>[axes('relative distance: 1–10','relative flux: 0–1')+poly(Array.from({length:101},(_,i)=>{let d=1+9*i/100;return[50+i*5.2,190-150/d**2]}))+svgCircle(50+(v-1)/9*520,190-150/v**2,6,'#b77632'),`d/d₀ = ${v.toFixed(1)}; F/F₀ = ${(1/v**2).toFixed(4)}. Double the distance, one quarter the flux.`]},
@@ -38,10 +38,25 @@ document.querySelectorAll('.lab').forEach(el=>{
 });
 document.querySelectorAll('.quiz').forEach(el=>{
  const input=el.querySelector('input'),feedback=el.querySelector('.feedback');
- const check=()=>{if(input.value.trim()===''||!Number.isFinite(Number(input.value))){feedback.textContent='Please enter a numerical value first.';return;}const expected=Number(el.dataset.answer),ok=Math.abs(Number(input.value)-expected)<=Math.max(0.01,Math.abs(expected)*0.02);feedback.textContent=ok?'Correct value (within 2% tolerance). Now state the units and the validity conditions, then try the transfer exercise.':'Try again: check units, sign conventions, and proportionalities; you may expand the hints and compare with the worked example.';};
+ const check=()=>{if(input.value.trim()===''||!Number.isFinite(Number(input.value))){feedback.textContent='Please enter a numerical value first.';return;}const expected=Number(el.dataset.answer),ok=Number.isFinite(expected)&&(expected===0?Number(input.value)===0:Math.abs((Number(input.value)-expected)/expected)<=0.02+Number.EPSILON*8);feedback.textContent=ok?'Correct value (2% relative tolerance for nonzero answers; zero must be exact). Now state the units and the validity conditions, then try the transfer exercise.':'Try again: check units, sign conventions, and proportionalities; you may expand the hints and compare with the worked example.';};
  el.querySelector('button').addEventListener('click',check);input.addEventListener('keydown',e=>{if(e.key==='Enter')check();});
 });
 document.querySelectorAll('.complete').forEach(el=>{const note=el.closest('section').querySelector('.storage-note'),key='physics-course-'+el.dataset.key;try{el.checked=localStorage.getItem(key)==='true';note.textContent='Completion marks are stored in this browser only and reflect your self-assessment.';}catch{note.textContent='Local storage is unavailable in this browser; completion marks apply to this session only.';}el.addEventListener('change',()=>{try{localStorage.setItem(key,String(el.checked));}catch{note.textContent='Could not save the completion mark; you can still continue studying.';}});});
+
+// Keep open lessons and checklists in sync when another tab changes progress.
+function refreshProgress(key, value) {
+ document.querySelectorAll('.complete').forEach(el => {
+  const storageKey = 'physics-course-' + el.dataset.key;
+  if (key !== null && key !== storageKey) return;
+  try { el.checked = (key === null ? localStorage.getItem(storageKey) : value) === 'true'; }
+  catch { /* Storage may be disabled; keep the current session's marks. */ }
+ });
+}
+window.addEventListener('storage', event => {
+ try { if (event.storageArea === localStorage) refreshProgress(event.key, event.newValue); }
+ catch { /* The page still works when browser policy disables storage. */ }
+});
+window.addEventListener('pageshow', () => refreshProgress(null, null));
 
 // Language switch: link every page to its counterpart in the other language tree.
 const LANG_MAP=[["00-学习准备","00-learning-preparation"],["01-经典力学","01-classical-mechanics"],["02-振动、波动与声学","02-vibrations-waves-and-acoustics"],["03-热力学与统计物理","03-thermodynamics-and-statistical-physics"],["04-电磁学","04-electromagnetism"],["05-光学与光子学","05-optics-and-photonics"],["06-相对论与引力","06-relativity-and-gravitation"],["07-量子力学","07-quantum-mechanics"],["08-原子、分子与光物理","08-atomic-molecular-and-optical-physics"],["09-凝聚态与材料物理","09-condensed-matter-and-materials-physics"],["10-原子核物理","10-nuclear-physics"],["11-粒子物理与量子场论","11-particle-physics-and-quantum-field-theory"],["12-等离子体物理","12-plasma-physics"],["13-天体物理与宇宙学","13-astrophysics-and-cosmology"],["14-地球物理与空间物理","14-geophysics-and-space-physics"],["15-生物物理与医学物理","15-biophysics-and-medical-physics"],["16-数学物理","16-mathematical-physics"],["17-计算物理","17-computational-physics"],["18-实验物理与测量","18-experimental-physics-and-measurement"],["19-流体与连续介质物理","19-fluid-and-continuum-physics"],["20-非线性与复杂系统","20-nonlinear-and-complex-systems"],["21-量子信息与量子技术","21-quantum-information-and-quantum-technologies"],["22-化学物理与分子反应","22-chemical-physics-and-molecular-reactions"],["23-加速器与束流物理","23-accelerator-and-beam-physics"],["24-应用物理与能源","24-applied-physics-and-energy"],["25-物理基础、历史与教育","25-foundations-history-and-education-of-physics"]];
@@ -53,7 +68,7 @@ const LANG_MAP=[["00-学习准备","00-learning-preparation"],["01-经典力学"
  const rootPrefix=sheet?(sheet.getAttribute('href')||'').replace('assets/course.css',''):'';
  const pair=LANG_MAP.find(p=>p[0]===dir||p[1]===dir);
  let href=null,label='';
- const inEn=(segs.length&&segs[segs.length-1]==='en')||(pair&&pair[1]===dir);
+ const inEn=document.documentElement.lang==='en';
  if(inEn){
   href=rootPrefix+(pair?pair[0]+'/':'')+file;
   label='中文';
@@ -63,7 +78,7 @@ const LANG_MAP=[["00-学习准备","00-learning-preparation"],["01-经典力学"
  }
  if(!href)return;
  const a=document.createElement('a');
- a.className='lang';a.href=encodeURI(href);a.textContent=label;
+ a.className='lang';a.href=encodeURI(href);a.textContent=label;a.hreflang=inEn?'zh-CN':'en';
  const header=document.querySelector('header');
  if(header)header.appendChild(a);
 })();

@@ -1,4 +1,10 @@
 from pathlib import Path
+import sys
+
+if __package__ in (None, ""):
+ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tools.course_data import parse_rows, validate_content
 from html import escape as E
 import json
 import hashlib
@@ -42,31 +48,44 @@ def link(label, url): return f'<a href="{E(url,quote=True)}">{E(label)}</a>'
 def page(title, body, depth=1):
  p='../' if depth else ''
  return f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(title)} · 物理学习手册</title><link rel="stylesheet" href="{p}assets/course.css"><script defer src="{p}assets/course.js"></script></head><body><a class="skip" href="#main">跳到正文</a><header><a href="{p}index.html">PHYSICS / 物理学习手册</a><span>观察 · 建模 · 验证</span></header><main id="main">{body}</main><footer>离线中文教材 · 每次理解一个模型 · 阅读后第 1、3、7 天闭卷复习</footer></body></html>'''
-rows=[]
-for line in DATA.strip().splitlines():
- a=line.split('|'); assert len(a) in (20,21,22),(len(a),a[0]); rows.append(a)
-for a in rows:
- ident,name,group,pre,subs=a[:5]; n=int(ident); folder=f'{ident}-{name}'; dest=ROOT/folder; dest.mkdir(exist_ok=True)
- sk=source_key(n); st,su=SOURCES[sk]
- for j in range(2):
-  title,concept,formula,example,q,answer,pitfall=a[5+j*7:12+j*7]
-  adv_html=''
-  if len(a)>20+j and a[20+j]:
-   aq,aa,asol=a[20+j].split('::')
-   adv_html=f'<section class="quiz" data-answer="{E(aa)}"><h2>进阶自测</h2><p>比上一题多一步或需要换单位；第 1、3、7 天复习时换做本题，避免背答案。</p><label for="answer2">{E(aq)}（只填数值）</label><div class="answer-row"><input id="answer2" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>展开本题解答</summary><p>{E(asol)}</p></details></section>'
-  filename=f'{j+1:02d}.html'
-  demo=''
-  if j==0:
-   mode={0:'units',5:'refraction',8:'spectrum',12:'screening',15:'diffusion',16:'ode'}.get(n,a[19])
-   demo=f'''<section class="lab" data-demo="{mode}"><h2>动手观察 · 先预测，再拖动</h2><p class="lab-intro"></p><label>调节参数 <input type="range" min="1" max="10" value="4" step="0.1"><output></output></label><svg viewBox="0 0 640 230" role="img" aria-label="交互模型示意图"></svg><p class="lab-result" aria-live="polite"></p><p class="lab-limit"></p></section>'''
-  tv=int(hashlib.sha1(title.encode('utf-8')).hexdigest()[:2],16)
-  transfer_prompts=['将自测题的一个已知条件加倍，先判断答案会增大、减小还是不变，再用公式验证。向我解释你的推导，我可以继续帮你检查。','换一组你身边的数值重算本课公式，先估算量级再精确代入；说明哪个量最难可靠确定。','把本课模型用到适用边界附近的一个情形，先口头判断结论是否仍可靠，再动手验证。']
-  review_basics=[['合上页面，用两句话说出本课模型描述什么。','不看公式重做自测，并说出适用条件。','第 1、3、7 天重做；答错时记录错因，不只记录答案。'],['向想象中的同学解释公式里每个量的含义与单位。','把自测题的数值改编后考自己一次，再对照答案。','隔天先默写公式，然后才看提示。'],['画一张本课模型的示意图并标注各个量。','闭卷写下公式和它的适用条件各一遍。','三天后用改编过的题自测，而不是原题。']]
-  review_html=''.join('<li>'+s+'</li>' for s in review_basics[tv%3])
-  content=f'''<nav>{link('全部分支','../index.html')} / {link(name,'index.html')} / 第 {j+1} 课</nav><p class="eyebrow">{E(group)} · 约 15–25 分钟</p><h1>{E(title)}</h1><p class="lead">本课目标：能用自己的话解释“{E(title)}”，并独立完成下面的计算与适用条件判断。</p><aside>先修：{E(pre)}。如果公式暂时看不懂，先读例子，再回到 {link('学习准备','../00-学习准备/index.html')}。</aside><section><h2>先想一个问题</h2><p>{E(q)}先记下直觉答案；读完后比较你改变了哪一步想法。</p><h2>理解模型</h2><p>{E(concept)}</p><div class="formula">{E(formula)}</div><p>使用顺序：确认研究对象与条件 → 将单位统一 → 列式 → 代入 → 检查结果的单位和数量级。变量的具体意义与约定见下方例题。</p></section><section><h2>带着推理看例题</h2><p>{E(example)}</p><h3>检查边界</h3><p>{E(pitfall)}</p><p>回看例题：说出至少一个被忽略的因素，并解释它在什么情况下可能影响结果。改变一个条件后，原公式是否仍然适用？</p></section>{demo}<section class="quiz" data-answer="{E(answer)}"><h2>现在闭卷试一试</h2><label for="answer">{E(q)}（只填数值）</label><div class="answer-row"><input id="answer" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>查看答案与解题提示</summary><p>答案：{E(answer)}。找到本课公式，先写出已知量与未知量，再统一单位代入。若是比例题，固定其他变量，仅比较被改变的那一项。</p><p>本课例题的逐步推理：{E(example)}</p></details><h3>迁移练习</h3><p>{transfer_prompts[tv%3]}</p></section>{adv_html}<section><h2>课后复述与复习</h2><ol>{review_html}</ol><details><summary>延伸阅读与本课定位</summary><p>参考教材入口：{link(st,su)}。这是概念入门小课；该分支的后续专题与先修顺序见分支首页。解释和例题为原创编写，外链阅读需要联网。</p></details><label><input type="checkbox" class="complete" data-key="{ident}-{j}"> 我能独立解释并做对本课自测</label><p class="storage-note"></p></section><nav class="bottom-nav">{link('上一课' if j else '返回分支', '01.html' if j else 'index.html')}{link('下一课','02.html' if j==0 else '03.html')}</nav>'''
-  (dest/filename).write_text(page(title,content),encoding='utf-8')
+def build():
+ from tools.advanced_content import lessons
+ from tools.expanded_fields import FIELDS, EXTRA, PROJECTS
+ from tools.core_expansion import CORE
+ from tools.extend_course import extend
+
+ rows = parse_rows(DATA, 20, optional=2, source='DATA')
+ validate_content(
+  rows, parse_rows(FIELDS, 5, source='FIELDS'),
+  lessons() + parse_rows(EXTRA, 13, optional=2, source='EXTRA'),
+  parse_rows(CORE, 14, optional=2, source='CORE'),
+  parse_rows(PROJECTS, 7, source='PROJECTS'),
+ )
+ for a in rows:
+  ident,name,group,pre,subs=a[:5]; n=int(ident); folder=f'{ident}-{name}'; dest=ROOT/folder; dest.mkdir(exist_ok=True)
+  sk=source_key(n); st,su=SOURCES[sk]
+  for j in range(2):
+   title,concept,formula,example,q,answer,pitfall=a[5+j*7:12+j*7]
+   adv_html=''
+   if len(a)>20+j and a[20+j]:
+    aq,aa,asol=a[20+j].split('::')
+    adv_html=f'<section class="quiz" data-answer="{E(aa)}"><h2>进阶自测</h2><p>比上一题多一步或需要换单位；第 1、3、7 天复习时换做本题，避免背答案。</p><label for="answer2">{E(aq)}（只填数值）</label><div class="answer-row"><input id="answer2" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>展开本题解答</summary><p>{E(asol)}</p></details></section>'
+   filename=f'{j+1:02d}.html'
+   demo=''
+   if j==0:
+    mode={0:'units',5:'refraction',8:'spectrum',12:'screening',15:'diffusion',16:'ode'}.get(n,a[19])
+    demo=f'''<section class="lab" data-demo="{mode}"><h2>动手观察 · 先预测，再拖动</h2><p class="lab-intro"></p><label>调节参数 <input type="range" min="1" max="10" value="4" step="0.1"><output></output></label><svg viewBox="0 0 640 230" role="img" aria-label="交互模型示意图"></svg><p class="lab-result" aria-live="polite"></p><p class="lab-limit"></p></section>'''
+   tv=int(hashlib.sha1(title.encode('utf-8')).hexdigest()[:2],16)
+   transfer_prompts=['将自测题的一个已知条件加倍，先判断答案会增大、减小还是不变，再用公式验证。向我解释你的推导，我可以继续帮你检查。','换一组你身边的数值重算本课公式，先估算量级再精确代入；说明哪个量最难可靠确定。','把本课模型用到适用边界附近的一个情形，先口头判断结论是否仍可靠，再动手验证。']
+   review_basics=[['合上页面，用两句话说出本课模型描述什么。','不看公式重做自测，并说出适用条件。','第 1、3、7 天重做；答错时记录错因，不只记录答案。'],['向想象中的同学解释公式里每个量的含义与单位。','把自测题的数值改编后考自己一次，再对照答案。','隔天先默写公式，然后才看提示。'],['画一张本课模型的示意图并标注各个量。','闭卷写下公式和它的适用条件各一遍。','三天后用改编过的题自测，而不是原题。']]
+   review_html=''.join('<li>'+s+'</li>' for s in review_basics[tv%3])
+   content=f'''<nav>{link('全部分支','../index.html')} / {link(name,'index.html')} / 第 {j+1} 课</nav><p class="eyebrow">{E(group)} · 约 15–25 分钟</p><h1>{E(title)}</h1><p class="lead">本课目标：能用自己的话解释“{E(title)}”，并独立完成下面的计算与适用条件判断。</p><aside>先修：{E(pre)}。如果公式暂时看不懂，先读例子，再回到 {link('学习准备','../00-学习准备/index.html')}。</aside><section><h2>先想一个问题</h2><p>{E(q)}先记下直觉答案；读完后比较你改变了哪一步想法。</p><h2>理解模型</h2><p>{E(concept)}</p><div class="formula">{E(formula)}</div><p>使用顺序：确认研究对象与条件 → 将单位统一 → 列式 → 代入 → 检查结果的单位和数量级。变量的具体意义与约定见下方例题。</p></section><section><h2>带着推理看例题</h2><p>{E(example)}</p><h3>检查边界</h3><p>{E(pitfall)}</p><p>回看例题：说出至少一个被忽略的因素，并解释它在什么情况下可能影响结果。改变一个条件后，原公式是否仍然适用？</p></section>{demo}<section class="quiz" data-answer="{E(answer)}"><h2>现在闭卷试一试</h2><label for="answer">{E(q)}（只填数值）</label><div class="answer-row"><input id="answer" type="number" step="any" inputmode="decimal"><button type="button" class="check">检查答案</button></div><p class="feedback" role="status"></p><details><summary>查看答案与解题提示</summary><p>答案：{E(answer)}。找到本课公式，先写出已知量与未知量，再统一单位代入。若是比例题，固定其他变量，仅比较被改变的那一项。</p><p>本课例题的逐步推理：{E(example)}</p></details><h3>迁移练习</h3><p>{transfer_prompts[tv%3]}</p></section>{adv_html}<section><h2>课后复述与复习</h2><ol>{review_html}</ol><details><summary>延伸阅读与本课定位</summary><p>参考教材入口：{link(st,su)}。这是概念入门小课；该分支的后续专题与先修顺序见分支首页。解释和例题为原创编写，外链阅读需要联网。</p></details><label><input type="checkbox" class="complete" data-key="{ident}-{j}"> 我能独立解释并做对本课自测</label><p class="storage-note"></p></section><nav class="bottom-nav">{link('上一课' if j else '返回分支', '01.html' if j else 'index.html')}{link('下一课','02.html' if j==0 else '03.html')}</nav>'''
+   (dest/filename).write_text(page(title,content),encoding='utf-8')
 
 
-print(f'Built {len(rows)} directories, {len(rows)*2} lessons.')
-from extend_course import extend
-extend(ROOT, rows, page, link, SOURCES)
+ print(f'Built {len(rows)} directories, {len(rows)*2} lessons.')
+ extend(ROOT, rows, page, link, SOURCES)
+
+
+if __name__ == "__main__":
+ build()

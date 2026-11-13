@@ -69,12 +69,16 @@
 
 ## 维护与验证
 
-- 内容：`tools/build_course.py` 保留原课，`advanced_content.py`、`expanded_fields.py` 存新增内容，`extend_course.py` 生成扩展页面。
-- 重建：`python tools/build_course.py`。每次都会从内容源生成当前版本。
-- 英文版：[`en/`](en/index.html) 为本手册的英文镜像（总说明见 [README.en.md](README.en.md)）。英文版为静态翻译版，不由构建脚本生成，重建不会覆盖。
-- 依赖：Python 3.10+；验证工具需先 `pip install -r requirements.txt`，再运行 `python -m playwright install chromium` 安装浏览器。
-- 验证：`python tools/check_course.py`。检查中英两棵树的链接、离线加载、答题、进度、语言切换与手机布局；不把功能检查等同于物理专家审校。
-- 清单：`course-manifest.json`；检查记录：`verification/REPORT.md`。
+- 内容：`tools/build_course.py` 的 DATA 保留原课，`advanced_content.py`、`core_expansion.py`、`expanded_fields.py` 保存扩展内容，`extend_course.py` 生成页面。请修改内容源后重建；生成前会校验列数、数值答案、题目装配与重复标识。
+- 重建：`python tools/build_course.py`（也可 `python -m tools.build_course`）。导入构建模块不会写文件。标题用于生成稳定进度键，修改标题时应考虑旧进度迁移。
+- 英文版：[`en/`](en/index.html) 是单独维护的静态译本，重建不会覆盖。修改中文后同步对应英文正文、清单和 `en/course-manifest.json`；保留相同的 data-answer、data-key、data-demo，验证器会检查两版的一致性。
+- 快速检查（只需 Python 3.10+）：`python tools/check_course.py --structure-only`；数值与校验器回归：`python -m unittest discover -s tests -v`。
+- 浏览器依赖：`pip install -r requirements.txt`，然后 `python -m playwright install chromium`（Linux 可加 `--with-deps`）。
+- 完整验证：`python tools/check_course.py`。默认只读，检查两版离线运行、判分边界、桌面/手机、深色对比度、存储降级及本地 HTTP 下的跨标签进度同步。功能检查不等于物理专家审校。
+- 更新检查记录与截图：`python tools/check_course.py --write-report`；可用 `--report-date YYYY-MM-DD` 显式指定记录日期。中英报告位于 `verification/REPORT.md` 和 `verification/REPORT.en.md`。
+- 本地学习：双击 `index.html`，或在仓库根目录运行 `python -m http.server 8000 --bind 127.0.0.1` 后打开 [本地首页](http://127.0.0.1:8000/)。HTTP 方式可避免浏览器对 file:// 存储的差异；完成标记仅保存在该浏览器和来源中，不是云端同步。
+- 判分：非零答案允许 2% 相对误差，零答案必须填 0；题干要求的单位与舍入精度仍需遵守。数值自测不检查文字推理或完整能力。
+- 清单：`course-manifest.json` 与 `en/course-manifest.json`；本轮审查与来源：`REVIEW.md`、`REVIEW.en.md`。
 - 教学方法沿用 [teach skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md) 的小课时、检索练习与间隔复习；未全局安装第三方 skill。
 
 ## 官方分类对照

@@ -14,6 +14,8 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements.txt
       - run: python tools/build_course.py
+      - name: 内容数值与校验器回归测试
+        run: python -m unittest discover -s tests -v
       - name: 重建产物与提交内容一致（幂等检查）
         run: git diff --exit-code --stat
       - run: python -m playwright install chromium --with-deps
