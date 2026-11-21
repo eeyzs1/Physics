@@ -1,2 +1,10 @@
+# Python environments and test caches
 __pycache__/
-*.pyc
+*.py[co]
+.venv/
+.pytest_cache/
+
+# Local desktop metadata
+.DS_Store
+Thumbs.db
+Desktop.ini

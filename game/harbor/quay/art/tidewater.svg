@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="sky" x2=".22" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#78a7b5"/><stop offset=".40" stop-color="#adcbca"/><stop offset=".75" stop-color="#e2dac0"/><stop offset="1" stop-color="#e9cda8"/></linearGradient>
+    <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#a8c9be"/><stop offset=".23" stop-color="#78afa9"/><stop offset=".65" stop-color="#4e918e"/><stop offset="1" stop-color="#346c75"/></linearGradient>
+    <linearGradient id="foothills" x2=".15" y2="1"><stop stop-color="#91afa7"/><stop offset=".65" stop-color="#aac0ae"/><stop offset="1" stop-color="#92a69b"/></linearGradient>
+    <radialGradient id="sun"><stop stop-color="#ffedb8" stop-opacity=".82"/><stop offset=".23" stop-color="#f9e0af" stop-opacity=".65"/><stop offset="1" stop-color="#f5d8a5" stop-opacity="0"/></radialGradient>
+    <linearGradient id="haze" x2="0" y2="1"><stop stop-color="#e0dbbe" stop-opacity="0"/><stop offset=".76" stop-color="#e0dbbe" stop-opacity=".45"/><stop offset="1" stop-color="#e0dbbe" stop-opacity="0"/></linearGradient>
+    <g id="houses">
+      <g fill="#d5c5a4"><path d="M0 0v-12h18V0zm19 0v-21h21V0zm25 0v-15h14V0zm17 0v-24h24V0zm27 0v-10h17V0z"/></g>
+      <g fill="#aa9483"><path d="M-2-12l10-5 13 5zm19-9 10-6 16 6zm25 6 7-5 9 5zm17-8 12-8 16 8zm27 14 8-5 12 5z"/></g>
+      <g fill="#91a69d"><path d="M4-8h2v3H4zm6 0h2v3h-2zm13-7h3v4h-3zm7 0h3v4h-3zm0 8h3v3h-3zm16-3h3v4h-3zm17-7h3v3h-3zm7 0h3v3h-3zm7 0h3v3h-3zm-7 7h3v4h-3zm20 4h3v3h-3z"/></g>
+    </g>
+    <g id="pines" fill="#83a399"><path d="M0 0 3-10 5 0zm5 0 4-15 5 15zm8 0 3-8 3 8zm6 0 4-13 5 13zm8 0 3-8 3 8z"/></g>
+    <g id="warehouse"><path fill="#adad96" d="M0 0v-20l23-12 25 12v20z"/><path fill="#d0c4a6" d="M4 0v-18l18-9v27z"/><path fill="#a49b8a" d="M-3-19 22-34l29 14-3 3-26-12-22 12z"/><path fill="#91a29a" d="M9 0v-13h10V0zm18-15h5v5h-5zm9 0h5v5h-5z"/></g>
+    <g id="distant-crane" fill="none" stroke="#87a4a0" stroke-linecap="square">
+      <path d="M0 0 12-52h10L30 0M17-50v-38M-50-65l99-5M-45-65l62-24 29 19" stroke-width="3"/>
+      <path d="M0-3 24-25 11-39l15-13M-46-65l12-6 6 5 12-10 7 7 13-13 5 10 8-16 8 16 1-12 12 11M-39-66v24" stroke-width="1.2"/>
+      <path d="M12-75h14v6H12z" fill="#94aaa3" stroke-width="1"/>
+    </g>
+    <g id="low-cloud" fill="#eef0d9"><path d="M0 7c20-10 37-9 57-8 15-8 32-7 48-4 22-5 35-3 51 0 23-1 35-2 62 4-48 3-83 1-121 5C66 7 31 8 0 7z"/><path d="M56 13c30-4 62-5 90-3-20 3-58 5-90 3z" opacity=".58"/></g>
+  </defs>
+  <path d="M0 0h1600v900H0z" fill="url(#sky)"/>
+  <ellipse cx="308" cy="303" rx="490" ry="375" fill="url(#sun)"/>
+  <g opacity=".48"><use xlink:href="#low-cloud" transform="translate(-32 195) scale(1.35 .7)"/><use xlink:href="#low-cloud" transform="translate(438 158) scale(.85 .64)"/><use xlink:href="#low-cloud" transform="translate(603 240) scale(1.8 .90)"/><use xlink:href="#low-cloud" transform="translate(1218 183) scale(1.15 .72)"/><use xlink:href="#low-cloud" transform="translate(1377 278) scale(.93 .48)"/></g>
+  <g opacity=".32"><use xlink:href="#low-cloud" transform="translate(94 348) scale(1.4 .49)"/><use xlink:href="#low-cloud" transform="translate(885 307) scale(1.6 .45)"/><use xlink:href="#low-cloud" transform="translate(1081 336) scale(1.2 .41)"/></g>
+  <circle cx="281" cy="282" r="28" fill="#f9e4b8" opacity=".78"/>
+  <path d="M0 442 60 426 104 409 142 408 213 375 247 366 267 356 301 357 330 345 360 344 383 339 429 355 455 370 498 377 517 390 538 386 571 399 601 405 630 397 657 381 695 372 737 380 762 380 804 395 844 399 886 384 909 387 941 370 968 371 997 354 1024 348 1052 333 1082 338 1112 326 1141 328 1178 354 1202 362 1237 357 1274 382 1305 379 1345 399 1382 399 1414 386 1440 385 1478 367 1514 369 1550 350 1600 358V588H0z" fill="#a4bcb7"/>
+  <path d="m155 426 95-48 57-17 50-11 27-3 37 12-36-3-25 7-56 8-39 17-48 11zm815-32 90-54 37-2 21-7 20 1-34 12-22 19-31 6zm436 19 68-40 42 1 35-19 42 5-47 6-35 15-49 8z" fill="#c0cec1" opacity=".76"/>
+  <path d="M0 447 31 438 50 438 74 428 112 427 150 412 184 408 207 395 230 397 259 386 287 389 320 379 345 377 383 386 426 404 455 407 461 414 520 426 546 433 586 431 625 447 682 452 713 448 758 463 817 461 847 452 876 452 907 442 950 444 994 426 1034 425 1066 405 1105 405 1139 394 1169 399 1193 391 1235 402 1270 406 1308 399 1358 413 1408 414 1442 406 1485 413 1540 399 1600 400V566H0z" fill="url(#foothills)"/>
+  <g opacity=".60" fill="#c1c8ad"><path d="m34 456 121-36 51-13 41-9-29 13-39 9-27 10-74 14zm221-44 63-24 34-3 20 5-43 3-27 10zm785 39 61-34 41-12 26 2-49 12-17 10z"/><path d="m133 454 72-23 69-13 54-21 54 2-61 6-32 15-61 15zm1010-14 76-27 69 0-39 8-36 2z"/></g>
+  <g opacity=".76">
+    <use xlink:href="#houses" transform="translate(65 472) scale(.76)"/><use xlink:href="#houses" transform="translate(184 449) scale(.53)"/><use xlink:href="#houses" transform="translate(247 435) scale(.46)"/><use xlink:href="#houses" transform="translate(301 421) scale(.34)"/><use xlink:href="#houses" transform="translate(345 437) scale(.47)"/>
+    <use xlink:href="#houses" transform="translate(282 467) scale(.70)"/><use xlink:href="#houses" transform="translate(361 466) scale(.55)"/><use xlink:href="#houses" transform="translate(439 483) scale(.69)"/><use xlink:href="#houses" transform="translate(998 471) scale(.60)"/><use xlink:href="#houses" transform="translate(1095 450) scale(.40)"/><use xlink:href="#houses" transform="translate(1180 438) scale(.50)"/><use xlink:href="#houses" transform="translate(1273 454) scale(.63)"/><use xlink:href="#houses" transform="translate(1430 459) scale(.57)"/>
+    <g transform="translate(215 444)"><path fill="#ccb994" d="M0 0v-24h7V0zm2-24v-7h3v7z"/><path d="m-.5-24 4-11 4 11z" fill="#a79983"/></g>
+    <use xlink:href="#pines" transform="translate(119 463) scale(.75)"/><use xlink:href="#pines" transform="translate(230 447) scale(.62)"/><use xlink:href="#pines" transform="translate(324 432) scale(.66)"/><use xlink:href="#pines" transform="translate(413 454) scale(.70)"/><use xlink:href="#pines" transform="translate(1162 441) scale(.71)"/><use xlink:href="#pines" transform="translate(1240 445) scale(.89)"/>
+  </g>
+  <path d="M0 472 62 472 91 476 114 473 133 478 167 478 195 485 227 481 279 484 314 479 346 481 383 475 412 480 460 479 512 489 575 492 615 488 654 494 703 492 774 500 826 493 881 496 915 487 982 489 1018 479 1085 483 1152 475 1220 480 1290 469 1360 475 1445 468 1510 473 1600 465V534H0z" fill="#8fa8a1"/>
+  <g opacity=".85">
+    <use xlink:href="#warehouse" transform="translate(-5 499) scale(.90)"/><use xlink:href="#warehouse" transform="translate(46 498) scale(.85)"/><use xlink:href="#warehouse" transform="translate(95 498) scale(.72)"/><use xlink:href="#warehouse" transform="translate(187 503) scale(.75)"/><use xlink:href="#warehouse" transform="translate(228 503) scale(.72)"/>
+    <use xlink:href="#distant-crane" transform="translate(744 508) scale(.61)"/><use xlink:href="#distant-crane" transform="translate(819 506) scale(.78)"/><use xlink:href="#distant-crane" transform="translate(916 505) scale(.66)"/><use xlink:href="#warehouse" transform="translate(989 503) scale(.62)"/><use xlink:href="#warehouse" transform="translate(1021 504) scale(.70)"/>
+    <path d="M468 505v-5h72v-7h34l10 9h23v3zm619-4v-8h36v-4h18v6h29v7z" fill="#8da5a0"/>
+  </g>
+  <path d="M0 504c207-1 244 1 375 4 142 3 165 7 262 6 142-3 251-6 361-6s338-8 602-10v402H0z" fill="url(#sea)"/>
+  <path d="M0 431h1600v111H0z" fill="url(#haze)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M0 508q181-1 362 4m76 2 172 3m61 0 205-4m178-2 228-7m61-1 223-1" stroke="#dee1c6" stroke-width="2" opacity=".78"/>
+    <path d="M37 529q115 1 195 0m150 6h70m69-6 84 1m115 2h94m246-5 129-1m191-8h112M48 546l85 1m100 2 136 1m244-1h158m59-3h100m235-5h111m99-4h50M4 572l92 2m100 0 141 3m84-4h60m175 1 98-2m160 4 130-2m204-4h94" stroke="#c5d7be" opacity=".56" stroke-width="2"/>
+    <path d="m80 603 90 2m127-1 113 2m48-7 50 1m288 1h59m147-4h115m179-2h103M0 656l121 1m85-6 72 1m158 9 119 1m95 3 57 1m180-7h110m272-1 69-1m141-9 58 1M24 706l107 2m219 1 88 3m111-8 80 1m173-3 48 1m236-8 127 4m188-2 66 0M32 774l97 3m173-2 134 4m77-12 53 2m288-2 77 4m121-4h76m194-2 107 3" stroke="#a8c8af" opacity=".49" stroke-width="2.4"/>
+  </g>
+</svg>

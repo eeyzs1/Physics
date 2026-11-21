@@ -1,0 +1,11 @@
+# Godot import cache, editor state and local export credentials
+/.godot/
+/export_credentials.cfg
+
+# Local exports and recordings. Keep the marker that excludes this folder from Godot.
+/build/*
+!/build/.gdignore
+
+# Backups from Blender and temporary files from the handbook generator
+*.blend[0-9]*
+*.tmp

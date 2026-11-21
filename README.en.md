@@ -1,14 +1,20 @@
 # Physics Study Handbook
 
-Entry points: [HTML home](en/index.html) · [Detailed taxonomy](en/taxonomy.html) · [Learning path](en/learning-path.html) · [Core concepts checklist](en/checklist.html)
+[中文说明](README.md)
 
-## Answering the scope question first
+This repository contains an offline physics handbook in English and Chinese and a Chinese-language Godot desktop game, *Windseed Isles*. The handbook includes derivations and self-tests. The game puts physical models to work in freight loading, observation and flight.
 
-In the previous edition, the 18 items were a coarse-grained pedagogical grouping that did not enumerate every classification, and the 38 lessons were introductory topic surveys that did not cover all subfields. The current edition is filled out to **25 learning fields + shared preparation**, with fluids, nonlinear science, quantum information, chemical physics, accelerators, applied physics and energy, and foundations/history/education each broken out separately; related disciplines are no longer passed off as mutually exclusive foundational main branches.
+## Getting started
 
-**We still cannot claim that "every physics classification has been fully listed" or that "all tutorials from introductory level to mastery have been written."** Physics classifications overlap and keep evolving; reading a textbook cannot replace experiments, computation, close reading of papers, and feedback from advisors and peers.
+- **Read offline.** Clone or download the repository and open the home page for your language in a browser. [English home](en/index.html) · [Chinese home](index.html)
+- **Choose a topic.** Follow the prerequisites or look up a particular field or concept. [Learning path](en/learning-path.html) · [Taxonomy](en/taxonomy.html) · [Core concepts checklist](en/checklist.html)
+- **Play Windseed Isles.** Import the game project in Godot 4.7.2 and press F5. In the opening shift, put a pump on a flatbed and see how its position changes the load on each axle. [Godot project](game/project.godot) · [Controls, headless tests and Windows builds (Chinese)](game/README.md)
 
-The classification was cross-checked against [APS PhySH](https://physh.org/) and the [arXiv category taxonomy](https://arxiv.org/category_taxonomy), check date 2026-11-01. The local classification is a learning-oriented reorganization, not an item-by-item complete copy of the official catalogs.
+## Course scope
+
+The handbook grew from 18 broad categories and 38 introductory topics to **25 fields and a shared preparation track**. The taxonomy also lists directions for further study. Research training includes experiments, computation, reading papers and seeking feedback.
+
+The fields are arranged for study and were checked against two catalogs on 2026-11-01. [APS PhySH](https://physh.org/) · [arXiv taxonomy](https://arxiv.org/category_taxonomy)
 
 ## What is actually delivered
 
